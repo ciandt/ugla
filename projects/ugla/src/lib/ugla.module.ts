@@ -53,6 +53,7 @@ import { AsideComponent } from './components/aside/aside.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { PageFloatComponent } from './components/page-float/page-float.component';
 import { CardComponent } from './components/cards/card/card.component';
+import { LabelSpanComponent } from './components/label-span/label-span.component';
 
 registerPlugin(FilePondPluginFileValidateType,
   FilePondPluginFileValidateSize,
@@ -110,7 +111,8 @@ registerPlugin(FilePondPluginFileValidateType,
     AsideComponent,
     BreadcrumbComponent,
     PageFloatComponent,
-    CardComponent
+    CardComponent,
+    LabelSpanComponent
   ],
   exports: [
     UglaComponent,
@@ -153,7 +155,8 @@ registerPlugin(FilePondPluginFileValidateType,
     AsideComponent,
     BreadcrumbComponent,
     PageFloatComponent,
-    CardComponent
+    CardComponent,
+    LabelSpanComponent
   ],
   providers: [UglaService]
 })

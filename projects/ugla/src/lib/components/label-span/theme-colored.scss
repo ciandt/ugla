@@ -1,0 +1,9 @@
+.label-span {
+  @each $theme in $themes {
+    &.theme-colored-#{$theme} {
+      label {
+        background-color: color(_#{$theme}, medium);
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.label-span {
+  display: flex;
+  width: 100%;
+
+  label {
+    display: flex;
+    min-width: 130px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: color(_others, light);
+    border-radius: 5px 0 0 5px;
+    align-items: center;
+  }
+
+  span {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid color(_gray, extra-light);
+    border-right: 1px solid color(_gray, extra-light);
+    border-bottom: 1px solid color(_gray, extra-light);
+    background-color: color(_others, light);
+    align-items: center;
+
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}

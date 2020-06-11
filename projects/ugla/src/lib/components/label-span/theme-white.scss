@@ -1,0 +1,7 @@
+.label-span {
+  &.theme-white {
+    label {
+      background-color: color(_aquamarine, medium);
+    }
+  }
+}

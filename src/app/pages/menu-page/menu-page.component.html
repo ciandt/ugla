@@ -14,82 +14,8 @@
 
 <section class="has-header">
   <div class="container">
-    <ugl-card [one]="'Quick Expense'"
-              [two]="'Lorem Ipsum'"
-              [icon]="'launch'"
-              [colorIcon]="'aquamarine'"></ugl-card>
-
-  <ugl-card [one]="'Quick Expense'"
-              [icon]="'check'"
-              [colorIcon]="'green'"></ugl-card>
-
-  <ugl-card [one]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam obcaecati earum at eligendi ea culpa repudiandae unde laborum fuga maiores exercitationem'"
-              [two]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam obcaecati earum at eligendi ea culpa repudiandae unde laborum fuga maiores exercitationem'"
-              [three]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam obcaecati earum at eligendi ea culpa repudiandae unde laborum fuga maiores exercitationem'"
-              [icon]="'remove_circle_outline'"
-              [colorIcon]="'red'"></ugl-card>
-
-  <ugl-card [one]="'Quick Expense'"
-              [two]="'Lorem Ipsum'"
-              [three]="'Lorem Ipsum Lorem Ipsum'"
-              [icon]="icon"
-              [colorIcon]="'gray'"
-              (actionIcon)="changeIcon()"></ugl-card>
-
-  <ugl-card [one]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam obcaecati earum at eligendi ea culpa repudiandae unde laborum fuga maiores exercitationem'"
-              [two]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam obcaecati earum at eligendi ea culpa repudiandae unde laborum fuga maiores exercitationem'"
-              [three]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam obcaecati earum at eligendi ea culpa repudiandae unde laborum fuga maiores exercitationem'"
-              [icon]="'remove_circle_outline'"
-              [colorIcon]="'red'"></ugl-card>
-
-  <ugl-card [one]="'Quick Expense'"
-              [two]="'Lorem Ipsum'"
-              [three]="'Lorem Ipsum Lorem Ipsum'"
-              [icon]="icon"
-              [colorIcon]="'gray'"
-              (actionIcon)="changeIcon()"></ugl-card>
-
-  <ugl-card [one]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam obcaecati earum at eligendi ea culpa repudiandae unde laborum fuga maiores exercitationem'"
-              [two]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam obcaecati earum at eligendi ea culpa repudiandae unde laborum fuga maiores exercitationem'"
-              [three]="'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam obcaecati earum at eligendi ea culpa repudiandae unde laborum fuga maiores exercitationem'"
-              [icon]="'remove_circle_outline'"
-              [colorIcon]="'red'"></ugl-card>
-
-  <ugl-card [one]="'Quick Expense'"
-              [two]="'Lorem Ipsum'"
-              [three]="'Lorem Ipsum Lorem Ipsum'"
-              [icon]="icon"
-              [colorIcon]="'gray'"
-              (actionIcon)="changeIcon()"></ugl-card>
+    <ugl-label-span [label]="'Nome'" [texts]="['Texto 1']"></ugl-label-span>
+    <ugl-label-span [label]="'Nome'" [texts]="['Texto 1', 'Texto 2']"></ugl-label-span>
+    <ugl-label-span [label]="'Nome'" [texts]="['Texto 1', 'Texto 2', 'Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto 3']"></ugl-label-span>
   </div>
 </section>
-
-
-<ugl-page-float [title]="'AAAAAA'"
-  [show]="false"
-  [confirmText]="'Save'"
-  [confirmDisabled]="true"
-  [ngClass]="'float-size'"
-  [size]="'320px'">
-
-  <ugl-field [type]="'text'"
-    [name]="'name'"
-    [label]="'Name'"
-    [message]="'Ex.: PMS Administrator'"
-    [required]="true"
-    #floatName></ugl-field>
-
-  <ugl-field [type]="'text'"
-    [name]="'acronym'"
-    [label]="'Acronym'"
-    [message]="'Ex.: PMS_ADMIN'"
-    [required]="true"
-    #floatAcronym></ugl-field>
-
-  <ugl-field [type]="'text'"
-    [name]="'url'"
-    [label]="'URL'"
-    [message]="'URL Production'"
-    [required]="true"
-    #floatUrl></ugl-field>
-</ugl-page-float>

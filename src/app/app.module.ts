@@ -33,7 +33,7 @@ import { RulesPageComponent } from './pages/rules-page/rules-page.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    UglaModule.forRoot({themeName: Themes.AQUAMARINE}),
+    UglaModule.forRoot({themeName: Themes.AQUAMRINE}),
     UglaRulesModule.forRoot({ acronym: 'EXPENSE'}),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
