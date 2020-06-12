@@ -84,11 +84,13 @@ export class UglaRulesService {
   private getOperations(featureAcronym: string) {
     let operations: [];
 
-    this.application.features.forEach(item => {
-      if (item.acronym === featureAcronym) {
-        operations = item.operations;
-      }
-    });
+    if (this.application) {
+      this.application.features.forEach(item => {
+        if (item.acronym === featureAcronym) {
+          operations = item.operations;
+        }
+      });
+    }
 
     return operations;
   }

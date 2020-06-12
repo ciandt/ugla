@@ -13,48 +13,6 @@ export class AppComponent implements OnInit {
   constructor(
     private ugla: UglaService,
     private rules: UglaRulesService) {
-      rules.createRules([
-        {
-          code: 1,
-          name: 'Expense Managment',
-          acronym: 'EXPENSE',
-          features: [
-            {
-              code: 1,
-              name: 'INTEGRATIONS',
-              acronym: 'INT',
-              parent: null,
-              applicationCode: 1,
-              operations: [
-                {
-                  code: 2,
-                  name: 'VIEW',
-                  acronym: 'VW'
-                },
-                {
-                  code: 3,
-                  name: 'EDIT',
-                  acronym: 'ED'
-                }
-              ]
-            },
-            {
-              code: 2,
-              name: 'Client Reimbursement',
-              acronym: 'CLI',
-              parent: null,
-              applicationCode: 2,
-              operations: [
-                {
-                  code: 2,
-                  name: 'VIEW',
-                  acronym: 'VW'
-                }
-              ]
-            }
-          ]
-        }
-      ]);
     }
 
   isAutenticated = true;
@@ -80,6 +38,48 @@ export class AppComponent implements OnInit {
   ]);
 
   ngOnInit() {
+    this.rules.createRules([
+      {
+        code: 1,
+        name: 'Expense Managment',
+        acronym: 'EXPENSE',
+        features: [
+          {
+            code: 1,
+            name: 'INTEGRATIONS',
+            acronym: 'INT',
+            parent: null,
+            applicationCode: 1,
+            operations: [
+              {
+                code: 2,
+                name: 'VIEW',
+                acronym: 'VW'
+              },
+              {
+                code: 3,
+                name: 'EDIT',
+                acronym: 'ED'
+              }
+            ]
+          },
+          {
+            code: 2,
+            name: 'Client Reimbursement',
+            acronym: 'CLI',
+            parent: null,
+            applicationCode: 2,
+            operations: [
+              {
+                code: 2,
+                name: 'VIEW',
+                acronym: 'VW'
+              }
+            ]
+          }
+        ]
+      }
+    ]);
     this.header.people = this.people;
     this.header.menu = this.menu;
     this.ugla.headerShadow = true;
