@@ -22,7 +22,7 @@ Would you like to contribute to the Ugla project?
 To contribute to the Ugla project, you must first have an environment ready to run Angular.
 
 ### Starting
-Fork [Ugla] (https://github.com/ciandt/ugla), make any changes you feel necessary and submit a ** Pull Request **.
+Fork [Ugla](https://github.com/ciandt/ugla), make any changes you feel necessary and submit a **Pull Request**.
 PRs are evaluated and the code will be tested, if it meets our standards, will be integrated into the main code and a new version will be generated.
 
 ### Running
