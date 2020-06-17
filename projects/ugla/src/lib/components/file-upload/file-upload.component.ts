@@ -113,6 +113,11 @@ export class FileUploadComponent implements OnInit, AfterViewInit {
   @Input() infoMessage: string;
 
   /**
+   * Set initial files
+   */
+  @Input() files: any;
+
+  /**
    *  Emitter uploadPath function
    */
   @Output() onUploadPath = new EventEmitter<string>();

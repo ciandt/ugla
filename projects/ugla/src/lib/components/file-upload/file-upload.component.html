@@ -3,6 +3,7 @@
   <file-pond #myPond
              [options]="pondOptions"
              (oninit)="pondHandleInit()"
+             [files]="files"
              (onprocessfile)="pondHandleProcessFile($event)"
              (onaddfile)="pondHandleAddFile($event)"
              (onremovefile)="pondHandleRemoveFile($event)"
