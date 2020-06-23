@@ -9,9 +9,10 @@ branches:
     - stable
 
 jobs:
-  - stage: 'Deploy Ugla'
-    name: 'Deploy Ugla to npmjs'
-    cache:
-      - node_modules
-    script: .travis/deploy-ugla.sh
-    script: .travis/deploy-ugla-rules.sh
+  include:
+    - stage: 'Deploy Ugla'
+      name: 'Deploy Ugla to npmjs'
+      cache:
+        - node_modules
+      script: .travis/deploy-ugla.sh
+      script: .travis/deploy-ugla-rules.sh
