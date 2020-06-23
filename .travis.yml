@@ -13,11 +13,5 @@ jobs:
     name: 'Deploy Ugla to npmjs'
     cache:
       - node_modules
-    script:
-      .travis/deploy-ugla.sh
-  - stage: 'Deploy Ugla Rules'
-    name: 'Deploy Ugla Rules to npmjs'
-    cache:
-      - node_modules
-    script:
-      .travis/deploy-ugla-rules.sh
+    script: .travis/deploy-ugla.sh
+    script: .travis/deploy-ugla-rules.sh
