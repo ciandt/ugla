@@ -19,7 +19,7 @@ export class MenuPageComponent implements OnInit {
 
   menu = new Menu([
     new MenuItem('Home', '/', true),
-    new MenuItem('Login', '/login', true),
+    new MenuItem('Login', '/login', true, true),
     new MenuItem('E2E', '/e2e', true),
     new MenuItem('Menu', '/menu', true),
     new MenuItem('Menu with Toolbar', '/menu-with-toolbar', true),
