@@ -45,5 +45,5 @@ jobs:
     
     - name: Deploy
       run: |
-        cd $GITHUB_WORKSPACE/dist/ugla/
+        cd dist/ugla/
         npm publish
