@@ -44,7 +44,13 @@ jobs:
       run: cp -r LICENSE $GITHUB_WORKSPACE/dist/ugla
     
     - name: List directory
-      run: ls LICENSE $GITHUB_WORKSPACE/dist/ugla
+      run: |
+        echo "GITHUB"
+        ls LICENSE $GITHUB_WORKSPACE
+        echo "DIST"
+        ls LICENSE $GITHUB_WORKSPACE/dist
+        echo "DIST/ugla"
+        ls LICENSE $GITHUB_WORKSPACE/dist/ugla
     
     - name: Deploy
       run: |
