@@ -42,6 +42,7 @@ jobs:
     
     - name: Deploy
       run: |
-        printf "//`node -p \"require('url').parse('https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
         cd dist/ugla/
         npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ NPM_TOKEN }}
