@@ -6,7 +6,7 @@ Ugla is a library with make a frontend solutions.
 ![licence](https://img.shields.io/npm/l/ugla.svg)
 ![version](https://img.shields.io/github/package-json/v/ciandt/ugla.svg)
 [![angular](https://img.shields.io/github/package-json/dependency-version/ciandt/ugla/dev/@angular/cli.svg)](https://angular.io)
-![build](https://travis-ci.com/ciandt/ugla.svg?branch=master)
+![Deploy Ugla](https://github.com/ciandt/ugla/workflows/Deploy%20Ugla/badge.svg)
 
 ## Versioning
 Given a version number MAJOR.MINOR.PATCH, increment the:
