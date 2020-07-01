@@ -43,6 +43,9 @@ jobs:
     - name: Move LICENSE
       run: cp -r LICENSE $GITHUB_WORKSPACE/dist/ugla
     
+    - name: List directory
+      run: ls LICENSE $GITHUB_WORKSPACE/dist/ugla
+    
     - name: Deploy
       run: |
         cd $GITHUB_WORKSPACE/dist/ugla/
