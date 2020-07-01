@@ -12,6 +12,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
+    - name: Cache node_modules
+      uses: actions/cache@v2
+      with:
+        path: |
+          **/node_modules
+        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
     
     - name: Config npm
       run: printf "//`node -p \"require('url').parse('https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
@@ -27,8 +34,8 @@ jobs:
     
     - name: Move files and contents
       run: |
-        cp -r projects/ugla/src/sass dist/ugla/sass
-        cp LICENSE dist/ugla
+        cp -r projects/ugla/src/sass /home/runner/work/ugla/ugla
+        cp LICENSE /home/runner/work/ugla/ugla
     
     - name: Commit changes
       run: >-
