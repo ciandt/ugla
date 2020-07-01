@@ -13,11 +13,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Cache node_modules
-      uses: actions/cache@v2
+    - name: Cache node modules
+      uses: actions/cache@v1
+      env:
+        cache-name: cache-node-modules
       with:
-        path: node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+        path: ~/.npm
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
     
     - name: Config npm
       run: printf "//`node -p \"require('url').parse('https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
@@ -38,4 +44,4 @@ jobs:
       run: cp -r LICENSE $GITHUB_WORKSPACE/dist/ugla
     
     - name: Deploy
-      run: cd $GITHUB_WORKSPACE/dist/ugla && npm publish
+      run: npm publish $GITHUB_WORKSPACE/dist/ugla
