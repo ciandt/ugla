@@ -37,18 +37,6 @@ jobs:
   
     - name: Move LICENSE
       run: cp -r LICENSE $GITHUB_WORKSPACE/dist/ugla
-
-    - name: Commit changes
-      run: >-
-        git config --global user.email $NPM_EMAIL
-        git config --global user.name $NPM_NAME
-        if [[ `git status --porcelain` ]]; then
-          git checkout -b build-version
-          git add .
-          git commit --message "Build: $BUILD_NUMBER"
-          git request-pull build-version https://github.com/ciandt/ugla master
-          git push origin build-version:master
-        fi
     
     - name: Deploy
-      run: cd /home/runner/work/ugla/ugla && npm deploy
+      run: cd $GITHUB_WORKSPACE/dist/ugla && npm deploy
