@@ -43,10 +43,7 @@ jobs:
     - name: Move LICENSE
       run: cp -r LICENSE dist/ugla
     
-    - name: List directory
-      run:  ls LICENSE dist/ugla
-    
-    # - name: Deploy
-    #   run: |
-    #     cd $GITHUB_WORKSPACE/dist/ugla/
-    #     npm publish
+    - name: Deploy
+      run: |
+        cd $GITHUB_WORKSPACE/dist/ugla/
+        npm publish
