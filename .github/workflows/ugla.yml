@@ -28,9 +28,6 @@ jobs:
     - name: Config npm
       run: printf "//`node -p \"require('url').parse('https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
 
-    - name: Install global dependencies
-      run: npm i -g @angular/cli
-
     - name: Install dependencies
       run: npm i
     
@@ -38,7 +35,7 @@ jobs:
       run: node -e 'require("./version").changeConfig()';
       
     - name: Build library
-      run: ng build --project=ugla
+      run: node_modules/.bin/ng build --project=ugla
     
     - name: Move sass
       run: cp -r projects/ugla/src/sass dist/ugla
