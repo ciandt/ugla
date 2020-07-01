@@ -12,18 +12,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: Config npm
-      run: printf "//`node -p \"require('url').parse('https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
-
-    - name: Install dependencies
-      run: npm i
 
     - name: Cache node_modules
       uses: actions/cache@v2
       with:
         path: node_modules
         key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+    
+    - name: Config npm
+      run: printf "//`node -p \"require('url').parse('https://registry.npmjs.org').host\"`/:_authToken=${NPM_TOKEN}\nregistry=${NPM_REGISTRY_URL:-https://registry.npmjs.org}\n" >> ~/.npmrc
+
+    - name: Install dependencies
+      run: npm i
     
     - name: Generate file version
       run: node -e 'require("./version").changeConfig()';
