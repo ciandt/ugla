@@ -26,9 +26,9 @@ jobs:
           ${{ runner.os }}-
     
     - uses: actions/setup-node@v1
-        with:
-          node-version: 14
-          registry-url: https://registry.npmjs.org/
+      with:
+        node-version: 14
+        registry-url: https://registry.npmjs.org/
 
     - name: Install dependencies
       run: npm i
