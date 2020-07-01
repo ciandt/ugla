@@ -33,10 +33,15 @@ jobs:
       run: npm run build --project=ugla
     
     - name: Move sass
-      run: cp -r projects/ugla/src/sass /home/runner/work/ugla/ugla
+      run: cp -r projects/ugla/src/sass $GITHUB_WORKSPACE/dist/ugla
+  
+    - name: Move LICENSE
+      run: cp -r LICENSE $GITHUB_WORKSPACE/dist/ugla
 
     - name: Commit changes
       run: >-
+        git config --global user.email $NPM_EMAIL
+        git config --global user.name $NPM_NAME
         if [[ `git status --porcelain` ]]; then
           git checkout -b build-version
           git add .
