@@ -49,4 +49,4 @@ jobs:
         fi
     
     - name: Deploy
-      run: npm deploy
+      run: cd /home/runner/work/ugla/ugla && npm deploy
