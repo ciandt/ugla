@@ -36,7 +36,7 @@ jobs:
       run: cp -r projects/ugla/src/sass /home/runner/work/ugla/ugla
     
     - name: Move LICENSE
-      run: cp LICENSE /home/runner/work/ugla/ugla
+      run: cp ./LICENSE /home/runner/work/ugla/ugla
 
     - name: Commit changes
       run: >-
