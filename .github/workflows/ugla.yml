@@ -44,7 +44,4 @@ jobs:
       run: cp -r LICENSE $GITHUB_WORKSPACE/dist/ugla
     
     - name: Deploy
-      run: ls $GITHUB_WORKSPACE
-    
-    - name: Deploy
-      run: ls $GITHUB_WORKSPACE/dist
+      run: npm publish $GITHUB_WORKSPACE/dist/ugla/package.json
