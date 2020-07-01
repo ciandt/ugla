@@ -46,6 +46,6 @@ jobs:
       run: cp -r LICENSE dist/ugla
     
     - name: Deploy
-      run: cd dist/ugla/ || npm publish
+      run: cd dist/ugla/ && npm publish
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
