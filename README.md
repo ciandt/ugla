@@ -2,9 +2,15 @@
 
 [![Open issues](https://img.shields.io/github/issues-raw/ciandt/ugla.svg)](https://github.com/ciandt/ugla/issues)
 ![licence](https://img.shields.io/npm/l/ugla.svg)
-![version](https://img.shields.io/github/package-json/v/ciandt/ugla.svg)
 [![angular](https://img.shields.io/github/package-json/dependency-version/ciandt/ugla/dev/@angular/cli.svg)](https://angular.io)
+
+## Ugla
+![version](https://img.shields.io/npm/v/ugla)
 ![Deploy Ugla](https://github.com/ciandt/ugla/workflows/Deploy%20Ugla/badge.svg)
+
+## Ugla Rules
+![version](https://img.shields.io/npm/v/ugla-rules)
+![Deploy Ugla Rules](https://github.com/ciandt/ugla/workflows/Deploy%20Ugla%20Rules/badge.svg)
 
 ## Versioning
 Given a version number MAJOR.MINOR.PATCH, increment the:

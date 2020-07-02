@@ -1,24 +1,27 @@
-# UglaRules
+# Ugla Rules
+Ugla is a library with make a frontend solutions.
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dab0deb9bbe1463a8c5ef52c1f55a03a)](https://www.codacy.com/app/ciandt/ugla?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ciandt/ugla&amp;utm_campaign=Badge_Grade)
+[![Open issues](https://img.shields.io/github/issues-raw/ciandt/ugla.svg)](https://github.com/ciandt/ugla/issues)
+![licence](https://img.shields.io/npm/l/ugla.svg)
+![version](https://img.shields.io/npm/v/ugla-rules)
+[![angular](https://img.shields.io/github/package-json/dependency-version/ciandt/ugla/dev/@angular/cli.svg)](https://angular.io)
+![Deploy Ugla Rules](https://github.com/ciandt/ugla/workflows/Deploy%20Ugla%20Rules/badge.svg)
 
-## Code scaffolding
+## Versioning
+Given a version number MAJOR.MINOR.PATCH, increment the:
 
-Run `ng generate component component-name --project ugla-rules` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ugla-rules`.
-> Note: Don't forget to add `--project ugla-rules` or else it will be added to the default project in your `angular.json` file. 
+1. MAJOR version when you make incompatible API changes,
+1. MINOR version when you add functionality in a backwards-compatible manner, and
+1. PATCH version when you make backwards-compatible bug fixes.
 
-## Build
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
-Run `ng build ugla-rules` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Install
+Run `npm install ugla-rules` for install Ugla.
 
-## Publishing
+## Oficial Site
+Read more on: [Ugla Rules](https://ugla.dev/rules/)
 
-After building your library with `ng build ugla-rules`, go to the dist folder `cd dist/ugla-rules` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test ugla-rules` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Contributors
+[![](https://sourcerer.io/fame/regivaldo/ciandt/ugla/images/0)](https://sourcerer.io/fame/regivaldo/ciandt/ugla/links/0)
