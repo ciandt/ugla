@@ -24,13 +24,14 @@
   }
 
   a {
+    height: 20px;
     font-size: 1rem;
     color: color(_aquamarine, medium);
     align-items: center;
 
     &.no-link {
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     &:hover {
