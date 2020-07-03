@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Header, MenuItem, Menu, People, UglaService, Select, Options } from 'projects/ugla/src';
+import { Header, MenuItem, Menu, People, UglaService, Select, Options, ModalService } from 'projects/ugla/src';
 
 @Component({
   selector: 'app-menu-page',
@@ -7,7 +7,7 @@ import { Header, MenuItem, Menu, People, UglaService, Select, Options } from 'pr
   styleUrls: ['./menu-page.component.scss']
 })
 export class MenuPageComponent implements OnInit {
-  constructor(private ugla: UglaService) {}
+  constructor(private ugla: UglaService, private modaService: ModalService) {}
 
   icon = 'check_box_outline_blank';
 
@@ -43,6 +43,10 @@ export class MenuPageComponent implements OnInit {
 
   hideMenu() {
     this.isAutenticated = false;
+  }
+
+  openModal() {
+    this.modaService.error('Teste', 'Teste teste teste');
   }
 
   logout() {

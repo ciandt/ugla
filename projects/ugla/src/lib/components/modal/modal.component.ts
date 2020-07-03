@@ -35,12 +35,12 @@ export class ModalComponent implements OnInit {
   /**
    * Set text to cancel button
    */
-  @Input() cancelButtonText: string;
+  @Input() cancelButtonText = 'Cancel';
 
   /**
    * Set text to confirm button
    */
-  @Input() confirmButtonText: string;
+  @Input() confirmButtonText = 'Confirm';
 
   /**
    * Hide confirm button
@@ -88,8 +88,9 @@ export class ModalComponent implements OnInit {
         this.icon = this.selectIcon(this.type);
 
         setTimeout(() => {
-          if (modal.open) {
-            this.element.querySelector('.modal-body').focus();
+          const element = this.element.querySelector('.modal-body');
+          if (modal.open && element !== undefined && element !== null) {
+            element.focus();
           }
         }, 0);
 

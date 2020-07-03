@@ -3,12 +3,11 @@
     <ugl-button
       [id]="'test'"
       [size]="'small'"
-      [color]="'white'"
-      [style]="'fill'"
+      [color]="'purple'"
       [wave]="true"
       [title]="'Ocultar Menu'"
       [type]="'button'"
-      (action)="hideMenu()">Ocultar Menu</ugl-button>
+      (action)="openModal()">Ocultar Menu</ugl-button>
   </div>
 </ugl-header>
 
@@ -19,3 +18,5 @@
     <ugl-label-span [label]="'Nome'" [texts]="['Texto 1', 'Texto 2', 'Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto 3']"></ugl-label-span>
   </div>
 </section>
+
+<ugl-modal></ugl-modal>
