@@ -1,5 +1,8 @@
-<aside>
+<aside [ngClass]="{'closed': !toggleMenu}">
   <header>
+    <button class="menu" (click)="toggle()">
+      <span class="material-icons">menu</span>
+    </button>
     <img [src]="people.photo" [alt]="people.name + ' ' + altPhoto" tabindex='0'>
     <div class="infos" tabindex='0'>
       <span class="name">{{ people.name }}</span>
@@ -12,7 +15,7 @@
           [routerLinkActive]="item.url ? 'active' : ''"
           [routerLinkActiveOptions]="{exact: true}"
           class="gtm-menu-item"
-          (click)="toogleSubmenu(idx)"
+          (click)="toggleSubmenu(idx)"
           [ngClass]="{'submenu' : item.submenu, 'active': item.open}"
           [id]="'aside-menu-' + idx">{{ item.description }}<span class="material-icons">{{ item.icon || getIcon(idx) }}</span></a>
       <ul *ngIf="item.submenu && item.open !== undefined && item.open">
@@ -26,7 +29,7 @@
       </ul>
     </li>
   </ul>
-  <button (click)="logout()" tabindex='0'>
+  <button (click)="logout()" class="logout" tabindex='0'>
     <span class="material-icons">{{ iconLogout }}</span> {{ textLogout }}
   </button>
 </aside>

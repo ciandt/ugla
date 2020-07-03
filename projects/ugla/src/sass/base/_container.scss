@@ -51,6 +51,10 @@ section {
 
   &.has-aside {
     margin-left: 200px;
+
+    &.aside-small {
+      margin-left: 0;
+    }
   }
 
   &.has-breadcrumb {

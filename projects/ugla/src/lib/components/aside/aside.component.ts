@@ -1,7 +1,5 @@
-import { Subject } from 'rxjs';
-import { Menu } from './../../models/menu';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, AfterViewInit } from '@angular/core';
 import { People } from './../../models/people';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AsideItem } from './../../models/aside-item';
 
 @Component({
@@ -9,7 +7,7 @@ import { AsideItem } from './../../models/aside-item';
   templateUrl: './aside.component.html',
   styleUrls: ['./aside.component.scss']
 })
-export class AsideComponent implements OnInit {
+export class AsideComponent implements OnInit, AfterViewInit {
 
   @Input() people: People;
   @Input() menu: AsideItem[];
@@ -20,7 +18,9 @@ export class AsideComponent implements OnInit {
 
   @Output() logoutAction = new EventEmitter<any>();
 
-  constructor() { }
+  toggleMenu = true;
+
+  constructor(private el: ElementRef) { }
 
   ngOnInit() {
     const path = location.pathname;
@@ -35,11 +35,15 @@ export class AsideComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit() {
+    this.resizeContent();
+  }
+
   logout() {
     this.logoutAction.emit();
   }
 
-  toogleSubmenu(index: string) {
+  toggleSubmenu(index: string) {
     this.menu[index].open = !this.menu[index].open;
   }
 
@@ -65,6 +69,40 @@ export class AsideComponent implements OnInit {
       return this.iconLinks[1];
     } else {
       return this.iconLinks[2];
+    }
+  }
+
+  toggle() {
+    this.toggleMenu = !this.toggleMenu;
+    this.resizeContent();
+  }
+
+  resizeContent() {
+    const sections = document.getElementsByClassName('has-aside');
+    const breadcrumb = document.getElementsByClassName('breadcrumb');
+
+    if (!this.toggleMenu) {
+      this.toggleClass(sections, true);
+      this.toggleClass(breadcrumb, true);
+    } else {
+      this.toggleClass(sections, false);
+      this.toggleClass(breadcrumb, false);
+    }
+  }
+
+  toggleClass(list: any, add = false) {
+    if (add) {
+      for (let i = 0; i <= list.length; i++) {
+        if (list.item(i) !== null) {
+          list.item(i).classList.add('aside-small');
+        }
+      }
+    } else {
+      for (let i = 0; i <= list.length; i++) {
+        if (list.item(i) !== null) {
+          list.item(i).classList.remove('aside-small');
+        }
+      }
     }
   }
 }

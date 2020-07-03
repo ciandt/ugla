@@ -1,11 +1,13 @@
 <nav class="breadcrumb">
   <a href="/dev" class="dashboard"><span class="material-icons">dashboard</span></a>
-  <div *ngIf="menu">
-    <a *ngFor="let item of menu.items; let idx = index"
-          [routerLink]="item.url"
-          [routerLinkActive]="'active'"
-          [routerLinkActiveOptions]="{exact: true}"
-          class="gtm-menu-item"
-          [id]="'breadcrumb-' + idx">{{ item.description }}</a>
+  <span class="material-icons">chevron_right</span>
+  <div *ngFor="let item of menu?.items; let idx = index; let last = last">
+    <a [routerLink]="item.url"
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{exact: true}"
+      class="gtm-menu-item"
+      [ngClass]="{'no-link': last}"
+      [id]="'breadcrumb-' + idx">{{ item.description }}</a>
+      <span class="material-icons" *ngIf="!last">chevron_right</span>
   </div>
 </nav>

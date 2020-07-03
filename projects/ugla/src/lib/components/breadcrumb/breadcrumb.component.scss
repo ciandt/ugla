@@ -10,44 +10,47 @@
   z-index: map-get($z-index, 'toolbar');
   align-items: center;
 
+  &.aside-small {
+    margin-left: 32px;
+  }
+
   @include mobile() {
     display: none;
   }
 
   > div {
     display: flex;
+    align-items: center;
   }
 
   a {
-    display: flex;
-    font-size: 14px;
+    font-size: 1rem;
     color: color(_aquamarine, medium);
-    text-decoration: none;
     align-items: center;
 
-    .material-icons {
-      font-size: 18px;
+    &.no-link {
+      text-decoration: none;
+      font-weight: bold;
     }
 
     &:hover {
       font-weight: 600;
     }
 
-    &:before {
-      @extend %material-icons;
-      content: 'keyboard_arrow_right';
-      font-size: 14px;
-      color: color(_gray, medium);
-
-    }
-
     &.dashboard {
       display: flex;
       align-items: center;
+      text-decoration: none;
 
-      &:before {
-        display: none;
+      > .material-icons {
+        font-size: 18px;
+        color: color(_aquamarine, medium);
       }
     }
   }
+}
+
+.material-icons {
+  font-size: 14px;
+  color: color(_gray, medium);
 }

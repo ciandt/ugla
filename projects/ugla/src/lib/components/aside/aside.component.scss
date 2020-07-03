@@ -10,6 +10,15 @@ aside {
   box-shadow: 0 2px 4px 0 color(_others, dark-alpha);
   z-index: map-get($z-index, 'menu');
 
+  &.closed {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+  }
+
   @include mobile() {
     width: 100%;
   }
@@ -21,11 +30,20 @@ header {
   background-color: color(_aquamarine, medium);
   align-items: center;
 
+  .closed & {
+    width: 34px;
+    height: 34px;
+  }
+
   img {
     width: 42px;
     height: 42px;
     border: 1px solid color(_gray, extra-light);
     border-radius: 100%;
+
+    .closed & {
+      display: none;
+    }
   }
 
   .infos {
@@ -52,6 +70,10 @@ header {
         font-size: 14px;
       }
     }
+
+    .closed & {
+      display: none;
+    }
   }
 }
 
@@ -62,6 +84,10 @@ ul {
   padding: 10px;
   overflow-y: auto;
   list-style: none;
+
+  .closed & {
+    display: none;
+  }
 
   li {
     > ul {
@@ -107,7 +133,7 @@ ul {
   }
 }
 
-button {
+.logout {
   display: flex;
   width: 100%;
   height: 40px;
@@ -127,5 +153,25 @@ button {
 
   .material-icons {
     margin-right: 10px;
+  }
+
+  .closed & {
+    display: none;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  > .material-icons {
+    font-size: 1.5rem;
+    color: color(_others, light);
   }
 }
