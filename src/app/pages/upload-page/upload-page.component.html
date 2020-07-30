@@ -8,15 +8,50 @@
           [cancelText]="'Cancelar'"
           [submitText]="'Enviar'">
 
-    <ugl-file-upload class="upload-component"
-      #fileUpload
-      [pondOptions]="pondOptions"
-      [id]="'upload'"
-      (onAddFile)="onChangeAddFile($event)"
-      (onRemoveFile)="onChangeRemoveFile($event)"
-      [label]="'File'"
-      [infoMessage]="'.png, .jpg, .pdf'"
-      [required]="true"></ugl-file-upload>
+    <ugl-page-title firstTitle="Backoffice" secondTitle="Photos"></ugl-page-title>
+
+    <div uglGrid [grid]="true" col="2" *ngIf="uploadCount > 1">
+      <div>
+        <ugl-quote [text]="txtPw"></ugl-quote>
+        <ugl-file-upload class="upload-component"
+          #fileUploadPw
+          [pondOptions]="pondOptions"
+          [id]="'uploadPw'"
+          (onAddFile)="onChangeAddFile($event)"
+          (onRemoveFile)="onChangeRemoveFile($event)"
+          [label]="'Photos P&W'"
+          [infoMessage]="'.png, .jpg, .pdf'"
+          [required]="true"></ugl-file-upload>
+      </div>
+      <div>
+        <ugl-quote [text]="txtColored"></ugl-quote>
+        <ugl-file-upload class="upload-component"
+          #fileUploadC
+          [pondOptions]="pondOptions"
+          [id]="'uploadC'"
+          (onAddFile)="onChangeAddFile($event)"
+          (onRemoveFile)="onChangeRemoveFile($event)"
+          [label]="'Photos Colored'"
+          [infoMessage]="'.png, .jpg, .pdf'"
+          [required]="true"></ugl-file-upload>
+      </div>
+    </div>
+
+    <div uglGrid [grid]="true" col="2" *ngIf="uploadCount == 1">
+      <ugl-quote [text]="txtPw"></ugl-quote>
+      <ugl-quote [text]="txtColored"></ugl-quote>
+      <div uglGrid [span]="2">
+        <ugl-file-upload class="upload-component"
+          #fileUploadAll
+          [pondOptions]="pondOptions"
+          [id]="'uploadAll'"
+          (onAddFile)="onChangeAddFile($event)"
+          (onRemoveFile)="onChangeRemoveFile($event)"
+          [label]="'Photos'"
+          [infoMessage]="'.png, .jpg, .pdf'"
+          [required]="true"></ugl-file-upload>
+      </div>
+    </div>
 
   </ugl-form>
 </section>

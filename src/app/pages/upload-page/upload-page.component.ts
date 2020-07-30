@@ -29,8 +29,21 @@ export class UploadPageComponent implements OnInit {
     new MenuItem('Aside', '/aside', true),
     new MenuItem('Aside with Breadcrumb', '/aside-with-breadcrumb', true),
   ]);
+
+  uploadCount = 1;
+
+  txtPw = `<strong>Photo B&W:</strong><br/>
+  - Tamanho máximo de 800KB.<br/>
+  - Dimensões: 150 a 1500px de altura X 150 a 1500px de largura<br/>
+  - Apenas arquivos JPEG (.jpg)
+  `;
+
+  txtColored = `<strong>Photo Color / Foto Colorida:</strong><br/>
+  - Tamanho máximo de 800KB.<br/>
+  - Dimensões: 500 a 1500px de altura X 500 a 1500px de largura<br/>
+  - Apenas arquivos JPEG (.jpg)
+  `;
   
-  @ViewChild('myPond') myPond: any;
   pondOptions = uploadComponentConfig;
 
   ngOnInit() {
