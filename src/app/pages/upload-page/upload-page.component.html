@@ -1,0 +1,22 @@
+<ugl-header [header]="header" (logoutAction)="logout($event)" [logoutText]="'Logout now'" *ngIf="isAutenticated"></ugl-header>
+
+<section class="has-header">
+  <ugl-form [ngClass]="'has-header central white'"
+          [hiddenButtonSubmit]="false"
+          (cancelClick)="onCancelClick()"
+          (submitClick)="onSubmitClick()"
+          [cancelText]="'Cancelar'"
+          [submitText]="'Enviar'">
+
+    <ugl-file-upload class="upload-component"
+      #fileUpload
+      [pondOptions]="pondOptions"
+      [id]="'upload'"
+      (onAddFile)="onChangeAddFile($event)"
+      (onRemoveFile)="onChangeRemoveFile($event)"
+      [label]="'File'"
+      [infoMessage]="'.png, .jpg, .pdf'"
+      [required]="true"></ugl-file-upload>
+
+  </ugl-form>
+</section>
