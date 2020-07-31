@@ -71,7 +71,7 @@
 
         .filepond--item {
           position: inherit;
-          margin: 0 5px 0 0;
+          margin: 0 5px 5px 0;
           height: 90px !important;
           will-change: transform,opacity;
           display: block;
@@ -174,12 +174,12 @@
 
       legend {
         position: absolute;
-        display: none;
-        left: 0;
-        text-align: center;
-        color: color(_others, light);
-        z-index: 2;
         width: 100%;
+        left: 0;
+        font-size: 12px;
+        color: color(_others, light);
+        text-align: center;
+        z-index: 9;
       }
     }
 
@@ -216,11 +216,19 @@
       transform: none !important;
     }
 
+
     .filepond--image-bitmap,
     .filepond--image-bitmap canvas {
       width: 100% !important;
-      height: fit-content !important;
       object-fit: cover;
+    }
+
+    .filepond--image-bitmap {
+      height: fit-content !important;
+    }
+
+    .filepond--image-bitmap canvas {
+      height: -webkit-fill-available !important;
     }
   
     .filepond--browser {
