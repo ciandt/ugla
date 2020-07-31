@@ -3,7 +3,7 @@ export const uploadComponentConfig = {
     instantUpload: false,
     imageTransformOutputQuality: 20,
     imagePreviewHeight: 300,
-    multiple: true,
+    multiple: false,
     styleButtonRemoveItemPosition: 'center bottom',
     labelButtonRemoveItem: '', // Empty for X icon
     maxFileSize: '5Mb',
