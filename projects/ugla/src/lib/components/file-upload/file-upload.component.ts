@@ -117,6 +117,8 @@ export class FileUploadComponent implements OnInit, AfterViewInit {
    */
   @Input() files: any;
 
+  @Input() photosPerColumn = 8;
+
   /**
    *  Emitter uploadPath function
    */
@@ -151,7 +153,6 @@ export class FileUploadComponent implements OnInit, AfterViewInit {
   private element: Element;
 
   public valid = true;
-
   /**
    * Instance of file pond
    */
