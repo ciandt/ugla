@@ -1,0 +1,60 @@
+<ugl-header [header]="header" (logoutAction)="logout($event)" [logoutText]="'Logout now'" *ngIf="isAutenticated"></ugl-header>
+
+<section class="has-header">
+  <ugl-form [ngClass]="'has-header central white'"
+          [hiddenButtonSubmit]="false"
+          (cancelClick)="onCancelClick()"
+          (submitClick)="onSubmitClick()"
+          [cancelText]="'Cancelar'"
+          [submitText]="'Enviar'">
+
+    <ugl-page-title firstTitle="Backoffice" secondTitle="Photos"></ugl-page-title>
+
+    <div uglGrid [grid]="true" col="2" *ngIf="uploadCount > 1">
+      <div>
+        <ugl-quote [text]="txtPw"></ugl-quote>
+        <ugl-file-upload class="upload-component"
+          #fileUploadPw
+          [pondOptions]="pondOptions"
+          [id]="'uploadPw'"
+          [photosPerColumn]="3"
+          (onAddFile)="onChangeAddFile($event)"
+          (onRemoveFile)="onChangeRemoveFile($event)"
+          [label]="'Photos P&W'"
+          [infoMessage]="'.png, .jpg, .pdf'"
+          [required]="true"></ugl-file-upload>
+      </div>
+      <div>
+        <ugl-quote [text]="txtColored"></ugl-quote>
+        <ugl-file-upload class="upload-component"
+          #fileUploadC
+          [pondOptions]="pondOptions"
+          [id]="'uploadC'"
+          [photosPerColumn]="3"
+          (onAddFile)="onChangeAddFile($event)"
+          (onRemoveFile)="onChangeRemoveFile($event)"
+          [label]="'Photos Colored'"
+          [infoMessage]="'.png, .jpg, .pdf'"
+          [required]="true"></ugl-file-upload>
+      </div>
+    </div>
+
+    <div uglGrid [grid]="true" col="2" *ngIf="uploadCount == 1">
+      <ugl-quote [text]="txtPw"></ugl-quote>
+      <ugl-quote [text]="txtColored"></ugl-quote>
+      <div uglGrid [span]="2">
+        <ugl-file-upload class="upload-component"
+          #fileUploadAll
+          [pondOptions]="pondOptions"
+          [id]="'uploadAll'"
+          [photosPerColumn]="6"
+          (onAddFile)="onChangeAddFile($event)"
+          (onRemoveFile)="onChangeRemoveFile($event)"
+          [label]="'Photos'"
+          [infoMessage]="'.png, .jpg, .pdf'"
+          [required]="true"></ugl-file-upload>
+      </div>
+    </div>
+
+  </ugl-form>
+</section>

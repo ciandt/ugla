@@ -1,13 +1,15 @@
-<div class="file-upload" [id]="id" tabindex="0" (keypress)="browse($event)">
+<div class="file-upload" [id]="id" tabindex="0" (keypress)="browse($event)" [ngClass]="{'multiple' : pondOptions?.multiple}">
   <label [for]="id" [ngClass]="{'required': required}">{{ label }}</label>
   <file-pond #myPond
-             [options]="pondOptions"
-             (oninit)="pondHandleInit()"
-             [files]="files"
-             (onprocessfile)="pondHandleProcessFile($event)"
-             (onaddfile)="pondHandleAddFile($event)"
-             (onremovefile)="pondHandleRemoveFile($event)"
-             (onupdatefiles)="pondHandleUpdateFiles($event)">
+    [class]="'photos-' + photosPerColumn"
+    [ngClass]="{'multiple' : pondOptions?.multiple}"
+    [options]="pondOptions"
+    (oninit)="pondHandleInit()"
+    [files]="files"
+    (onprocessfile)="pondHandleProcessFile($event)"
+    (onaddfile)="pondHandleAddFile($event)"
+    (onremovefile)="pondHandleRemoveFile($event)"
+    (onupdatefiles)="pondHandleUpdateFiles($event)">
   </file-pond>
   <div class="infos">
     <span *ngIf="valid" [id]="id + 'info'" [attr.aria-details]="infoMessage" class="infos__message"
