@@ -88,7 +88,7 @@ export class FileUploadComponent implements OnInit, AfterViewInit {
   /**
    * Object pontOptions
    */
-  @Input() pondOptions: object;
+  @Input() pondOptions: {multiple: false};
 
   /**
    * Text to attribute id
