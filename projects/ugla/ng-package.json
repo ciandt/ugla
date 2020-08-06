@@ -14,6 +14,7 @@
     "filepond-plugin-image-transform",
     "filepond-plugin-image-preview",
     "filepond-plugin-image-exif-orientation",
+    "filepond-plugin-image-validate-size",
     "moment",
     "lodash",
     "tooltip.js"

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Menu, MenuItem, Header, People, UglaService } from 'projects/ugla/src';
+import { Menu, MenuItem, Header, People, UglaService, ToastService } from 'projects/ugla/src';
 import { uploadComponentConfig } from '../../../environments/uploadComponentConfig';
 
 @Component({
@@ -9,7 +9,7 @@ import { uploadComponentConfig } from '../../../environments/uploadComponentConf
 })
 export class UploadPageComponent implements OnInit {
 
-  constructor(private ugla: UglaService) {}
+  constructor(private ugla: UglaService, private toast: ToastService) {}
 
   icon = 'check_box_outline_blank';
 
@@ -51,6 +51,7 @@ export class UploadPageComponent implements OnInit {
     this.header.menu = this.menu;
     this.ugla.headerShadow = true;
     this.ugla.hasToolBar();
+    this.toast.error('Teste de Erro', 'Foi um teste só');
   }
 
   onChangeRemoveFile() {}
