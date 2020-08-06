@@ -1,6 +1,6 @@
 {
   "name": "ugla",
-  "version": "1.10.3",
+  "version": "1.11.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:ciandt/ugla.git"
@@ -29,6 +29,7 @@
     "filepond-plugin-image-preview": "^4.0.3",
     "filepond-plugin-image-resize": "^2.0.2",
     "filepond-plugin-image-transform": "^3.2.2",
+    "filepond-plugin-image-validate-size": "^1.2.4",
     "js-datepicker": "^4.0.10",
     "ngx-filepond": "^5.0.0",
     "moment": "^2.24.0",
@@ -50,6 +51,7 @@
         "filepond-plugin-image-transform": "FilePondPluginImageTransform",
         "filepond-plugin-image-preview": "FilePondPluginImagePreview",
         "filepond-plugin-image-exif-orientation": "FilePondPluginImageExifOrientation",
+        "filepond-plugin-image-validate-size": "FilePondPluginImageValidateSize",
         "moment": "moment_",
         "lodash": "lodash",
         "tooltip.js": "Tooltip"
@@ -65,6 +67,7 @@
       "filepond-plugin-image-transform",
       "filepond-plugin-image-preview",
       "filepond-plugin-image-exif-orientation",
+      "filepond-plugin-image-validate-size",
       "moment"
     ]
   }

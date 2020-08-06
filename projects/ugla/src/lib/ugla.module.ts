@@ -31,6 +31,7 @@ import FilePondPluginImageResize from 'filepond-plugin-image-resize';
 import FilePondPluginImageTransform from 'filepond-plugin-image-transform';
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation';
+import FilePondPluginImageValidateSize from 'filepond-plugin-image-validate-size';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { SwitchComponent } from './components/switch/switch.component';
 import { ListLinksComponent } from './components/list-links/list-links.component';
@@ -61,7 +62,8 @@ registerPlugin(FilePondPluginFileValidateType,
   FilePondPluginImageResize,
   FilePondPluginImageTransform,
   FilePondPluginImageExifOrientation,
-  FilePondPluginImagePreview);
+  FilePondPluginImagePreview,
+  FilePondPluginImageValidateSize);
 
 /**
  * Imports: Common and Router

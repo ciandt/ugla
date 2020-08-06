@@ -10,6 +10,12 @@ export const uploadComponentConfig = {
     allowFileSizeValidation: true,
     labelIdle: '<i class="material-icons">insert_photo</i>',
     acceptedFileTypes: 'image/jpeg, image/png, application/pdf',
+    allowImageValidateSize: true,
+    imageValidateSizeMinWidth: 500,
+    imageValidateSizeMaxWidth: 1000,
+    imageValidateSizeMinHeight: 500,
+    imageValidateSizeMaxHeight: 1000,
+    imageValidateSizeLabelExpectedMinSize: 'O tamanho minímo é de {minWidth}px × {minHeight}px',
     server: {
       url: '/',
       process: (fieldName, file, metadata, load, error, progress, abort) => {
