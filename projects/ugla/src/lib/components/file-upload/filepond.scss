@@ -39,6 +39,7 @@
           color: color(_red, medium);
           font-size: 0.8rem;
           height: 54px;
+          z-index: 99;
 
           @include mobile() {
             bottom: -4rem;
@@ -54,16 +55,27 @@
 
     &.multiple {
       .filepond--wrapper {
-        height: 65px;
+        height: auto;
+        border: 0;
+
+        &.error {
+          border: 0 !important;
+        }
+      }
+
+      .filepond--drop-label {
+        border: 1px solid color(_gray, medium);
+        border-radius: 10px !important;
       }
 
       .filepond--list-scroller {
+        position: relative;
         height: 100%;
       }
 
       .filepond--list {
         position: relative;
-        margin: 2rem 0 0 0;
+        margin: 0;
         padding: 0;
         list-style-type: none;
         display: flex;
@@ -71,12 +83,34 @@
 
         .filepond--item {
           position: inherit;
-          margin: 0 5px 5px 0;
+          margin: 0 5px 1.5rem 0;
           height: 90px !important;
           will-change: transform,opacity;
           display: block;
           width: 100%;
           transform: none !important;
+
+          .filepond--file-status {
+            transform: none !important;
+            font-size: .8rem;
+            color: color(_red, medium);
+
+            &-main {
+              display: block;
+            }
+
+            &-sub {
+              display: none;
+            }
+          }
+
+          &[data-filepond-item-state=load-invalid] {
+            box-shadow: 1px 1px 1px color(_red, medium), -1px -1px 1px color(_red, medium);
+          }
+
+          &[data-filepond-item-state=idle] {
+            box-shadow: 1px 1px 1px color(_green, medium), -1px -1px 1px color(_green, medium);
+          }
         }
       }
     }
@@ -84,10 +118,13 @@
     .filepond--root.filepond--hopper {
       position: relative;
       display: flex;
+      flex-direction: column;
       width: 100%;
       height: 100% !important;
 
       &.multiple {
+        display: block;
+        
         @for $i from 1 through 24 {
           &.photos-#{$i} {
             .filepond--item {
@@ -99,10 +136,9 @@
     }
   
     .filepond--assistant {
-      position: absolute;
-      display: block;
+      display: none;
+      position: relative;
       width: 100%;
-      height: 1px;
       padding: 0;
       border: 0;
       bottom: 0;
@@ -161,7 +197,6 @@
   
       .filepond--item {
         border-radius: 5px;
-        overflow: hidden;
         height: 100% !important;
       }
     }
@@ -169,7 +204,6 @@
     .filepond--file-wrapper {
       width: 100%;
       height: 100%;
-      overflow: hidden;
       top: 0;
       border: 0;
 
@@ -222,6 +256,7 @@
     .filepond--image-bitmap canvas {
       width: 100% !important;
       object-fit: cover;
+      border-radius: 5px;
     }
 
     .filepond--image-bitmap {
@@ -261,7 +296,6 @@
       }
     }
 
-    // new
     .filepond--image-preview-overlay {
       display: block;
       position: absolute;
