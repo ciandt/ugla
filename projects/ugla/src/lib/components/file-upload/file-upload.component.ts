@@ -117,7 +117,7 @@ export class FileUploadComponent implements OnInit, AfterViewInit {
    */
   @Input() files: any;
 
-  @Input() photosPerColumn = 8;
+  @Input() photosPerColumn = 2;
 
   /**
    *  Emitter uploadPath function

@@ -30,7 +30,7 @@ export class UploadPageComponent implements OnInit {
     new MenuItem('Aside with Breadcrumb', '/aside-with-breadcrumb', true),
   ]);
 
-  uploadCount = 1;
+  uploadCount = 2;
 
   txtPw = `<strong>Photo B&W:</strong><br/>
   - Tamanho máximo de 800KB.<br/>
@@ -43,7 +43,7 @@ export class UploadPageComponent implements OnInit {
   - Dimensões: 500 a 1500px de altura X 500 a 1500px de largura<br/>
   - Apenas arquivos JPEG (.jpg)
   `;
-  
+
   pondOptions = uploadComponentConfig;
 
   ngOnInit() {
@@ -51,7 +51,6 @@ export class UploadPageComponent implements OnInit {
     this.header.menu = this.menu;
     this.ugla.headerShadow = true;
     this.ugla.hasToolBar();
-    this.toast.error('Teste de Erro', 'Foi um teste só');
   }
 
   onChangeRemoveFile() {}

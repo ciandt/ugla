@@ -17,11 +17,9 @@
           #fileUploadPw
           [pondOptions]="pondOptions"
           [id]="'uploadPw'"
-          [photosPerColumn]="3"
           (onAddFile)="onChangeAddFile($event)"
           (onRemoveFile)="onChangeRemoveFile($event)"
           [label]="'Photos P&W'"
-          [infoMessage]="'.png, .jpg, .pdf'"
           [required]="true"></ugl-file-upload>
       </div>
       <div>
@@ -30,11 +28,9 @@
           #fileUploadC
           [pondOptions]="pondOptions"
           [id]="'uploadC'"
-          [photosPerColumn]="3"
           (onAddFile)="onChangeAddFile($event)"
           (onRemoveFile)="onChangeRemoveFile($event)"
           [label]="'Photos Colored'"
-          [infoMessage]="'.png, .jpg, .pdf'"
           [required]="true"></ugl-file-upload>
       </div>
     </div>
@@ -47,11 +43,9 @@
           #fileUploadAll
           [pondOptions]="pondOptions"
           [id]="'uploadAll'"
-          [photosPerColumn]="6"
           (onAddFile)="onChangeAddFile($event)"
           (onRemoveFile)="onChangeRemoveFile($event)"
           [label]="'Photos'"
-          [infoMessage]="'.png, .jpg, .pdf'"
           [required]="true"></ugl-file-upload>
       </div>
     </div>

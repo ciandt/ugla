@@ -54,6 +54,26 @@
     }
 
     &.multiple {
+      .filepond--file-wrapper {
+        width: 100%;
+        min-height: 32px;
+        top: 0;
+        border: 0;
+        display: flex;
+        flex-direction: row;
+
+        legend {
+          display: none;
+        }
+      }
+
+      .filepond--action-remove-item {
+        top: 5px;
+        bottom: inherit;
+        right: .5rem;
+        left: inherit;
+      }
+
       .filepond--wrapper {
         height: auto;
         border: 0;
@@ -71,6 +91,8 @@
       .filepond--list-scroller {
         position: relative;
         height: 100%;
+        margin-top: .5rem;
+        transform: none !important;
       }
 
       .filepond--list {
@@ -83,24 +105,45 @@
 
         .filepond--item {
           position: inherit;
-          margin: 0 5px 1.5rem 0;
-          height: 90px !important;
+          margin: 0 5px .5rem 0;
           will-change: transform,opacity;
           display: block;
           width: 100%;
           transform: none !important;
 
-          .filepond--file-status {
-            transform: none !important;
+          .filepond--file {
+            display: flex;
+            padding: 5px;
+            min-height: 32px;
+            flex-direction: column;
+            justify-content: center;
+
+            button:not(.filepond--action-remove-item),
+            .filepond--processing-complete-indicator {
+              display: none;
+            }
+          }
+
+          .filepond--file-info {
+            display: block;
             font-size: .8rem;
+            transform: none !important;
+
+            &-sub {
+              display: none;
+            }
+          }
+
+          .filepond--file-status {
+            position: inherit;
+            transform: none !important;
+            height: auto;
+            font-size: .8rem;
+            line-height: 1;
             color: color(_red, medium);
 
             &-main {
               display: block;
-            }
-
-            &-sub {
-              display: none;
             }
           }
 
@@ -124,7 +167,6 @@
 
       &.multiple {
         display: block;
-        
         @for $i from 1 through 24 {
           &.photos-#{$i} {
             .filepond--item {
