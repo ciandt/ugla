@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { Form } from '../../enum';
 import { UglaService } from '../../ugla.service';
 import { NgClass } from '@angular/common';
@@ -11,7 +11,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, OnChanges {
 
   /**
    * @ignore
@@ -91,5 +91,15 @@ export class FormComponent implements OnInit {
     this.hiddenButtonSubmit = (this.hiddenButtonSubmit === undefined) ? false : this.hiddenButtonSubmit;
     this.disableSubmitButton = (this.disableSubmitButton === undefined) ? false : this.disableSubmitButton;
     this.submitColor = (this.submitColor === undefined) ? this.ugla.color : this.submitColor;
+  }
+
+  /**
+   * Watch updates on disable submit button
+   * @param changes SimpleChanges
+   */
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.disableSubmitButton !== undefined) {
+      this.disableSubmitButton = changes.disableSubmitButton.currentValue;
+    }
   }
 }
