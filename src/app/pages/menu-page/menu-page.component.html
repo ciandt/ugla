@@ -1,13 +1,11 @@
 <ugl-header [header]="header" (logoutAction)="logout($event)" [logoutText]="'Logout now'" *ngIf="isAutenticated">
   <div uglGrid [grid]="true" [col]="1">
     <ugl-button
-      [id]="'test'"
+      [color]="'aquamarine'"
       [size]="'small'"
-      [color]="'purple'"
-      [wave]="true"
-      [title]="'Ocultar Menu'"
-      [type]="'button'"
-      (action)="openModal()">Ocultar Menu</ugl-button>
+      [style]="'border'"
+      [wave]="false"
+      (action)="openModal()"><i class="material-icons">add</i> Ocultar Menu</ugl-button>
   </div>
 </ugl-header>
 

@@ -19,7 +19,7 @@ button,
     width: 100%;
     min-width: 120px;
     height: 3rem;
-    padding: 0 .5rem;
+    padding: 0 1.5rem;
     font-size: 1rem;
     border-radius: $radius;
     cursor: pointer;
@@ -46,6 +46,10 @@ button,
     &.small {
       height: 38px;
       font-size: .875rem;
+
+      i {
+        font-size: 1rem;
+      }
     }
   }
 
