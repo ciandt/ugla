@@ -11,7 +11,8 @@
          [ngClass]="{'hide-mobile' : item.hideMobile }"
          class="gtm-menu-item"
          (click)="closeMenu()"
-         [id]="'item-menu-' + idx">{{ item.description }}</a>
+         [id]="'item-menu-' + idx"
+         [innerHtml]="item.description"></a>
   </nav>
   <div class="right" [ngClass]="open ? 'opened' : ''" id="header-right" #headerRight>
     <div class="content">

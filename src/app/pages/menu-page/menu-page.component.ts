@@ -25,7 +25,7 @@ export class MenuPageComponent implements OnInit {
     new MenuItem('Menu with Toolbar', '/menu-with-toolbar', true),
     new MenuItem('Rules', '/rules', true),
     new MenuItem('Aside', '/aside', true),
-    new MenuItem('Aside with Breadcrumb', '/aside-with-breadcrumb', true),
+    new MenuItem('Aside with<br/>Breadcrumb', '/aside-with-breadcrumb', true),
   ]);
 
   select = new Select('Select', [
