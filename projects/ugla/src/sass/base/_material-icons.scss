@@ -28,16 +28,6 @@
 }
 
 .btn {
-  i {
-    position: absolute;
-    left: 5px;
-    top: 0.5rem;
-
-    @include mobile() {
-      top: 0.6rem;
-    }
-  }
-
   &.large {
     i {
       font-size: 2.5rem;
