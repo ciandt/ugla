@@ -1,36 +1,41 @@
 # CHANCELOG
+## Ugla
+### 1.11.10
+- Fix button pagging left and right
+- Fix icon size
+- Add html support on menu item
 
-## 1.5.6
+### 1.5.6
   - Create a new structure HTML from containers
   - Fix form and table for containers
 
-## 1.4.0
+### 1.4.0
   - Criação do Lightbox Service e Lightbox Directive
 
-## 1.3.10
+### 1.3.10
   - Fix on hasIcon attribute
 
-## 1.3.9
+### 1.3.9
   - Fix minor bugs
   - Remove ngx-highlightjs and highlight-js
   - Change rules on scss-lint
 
-## 1.3.8
+### 1.3.8
   - Fix scss-lint
   - Fix on Lightbox Component
 
-## 1.3.7
+### 1.3.7
   - Fix on Lightbox Component
 
-## 1.3.6
+### 1.3.6
 Add arrow key navigation on Lighbox component
 
-## 1.3.5
+### 1.3.5
 Minor fix on style of Toolbar component
 
-## BEFORE 1.3.4
+### BEFORE 1.3.4
 
-### Create the models
+* Create the models
   - checkbox-column-item
   - checkbox-list
   - table-column
@@ -90,5 +95,3 @@ Minor fix on style of Toolbar component
   - tables
   - toast
   - toolbar
-
-### Creating project
