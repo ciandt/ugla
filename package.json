@@ -12,6 +12,7 @@
     "preinstall": "npm install js-datepicker ngx-filepond tooltip.js",
     "deploy:site": "ng build && firebase deploy",
     "compodoc:s": "node_modules/@compodoc/compodoc/bin/index-cli.js -p projects/ugla/tsconfig.lib.json -s --theme material",
+    "build:all": "npm run build-lib:ugla && npm run build-lib:ugla-rules",
     "build-lib:ugla": "node -e 'require(\"./version\").changeConfig()' && ng-packagr -p projects/ugla/package.json && cp -r projects/ugla/src/sass/ dist/ugla/sass && cd dist/ugla && npm pack",
     "build-lib:ugla-rules": "ng-packagr -p projects/ugla-rules/package.json && cd dist/ugla-rules && npm pack"
   },
