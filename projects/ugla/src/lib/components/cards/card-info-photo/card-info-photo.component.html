@@ -1,0 +1,7 @@
+<div class="card" (click)="handler()" [ngClass]="{'clicked': clicked}">
+  <img [src]="photo" [alt]="title">
+  <div class="infos">
+    <h3>{{title}}</h3>
+    <p *ngFor="let info of infos">{{ info }}</p>
+  </div>
+</div>

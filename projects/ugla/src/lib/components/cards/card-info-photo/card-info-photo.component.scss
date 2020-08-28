@@ -1,0 +1,37 @@
+@import '../../../../sass/index';
+
+.card {
+  border-radius: 5px;
+  background-color: color(_others, light);
+  overflow: hidden;
+
+  &.clicked {
+    cursor: pointer;
+    transition: box-shadow .5s;
+
+    &:hover {
+      transition: box-shadow .5s;
+      box-shadow: 2px 2px 4px color(_others, shadow);
+    }
+  }
+
+  .infos {
+    padding: 5px 10px 10px;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    text-align: center;
+  }
+}

@@ -13,6 +13,24 @@
 </ugl-header>
 
 <section class="has-header">
+  <div class="container container--central">
+    <div class="list" uglGrid [grid]="true" [col]="6">
+      <ugl-card-info-photo [photo]="'https://lh3.googleusercontent.com/a-/AOh14GhcJQjeII0Z44AvD0U5ZoCRB6B0s38bcAtcHCdVsQ=s96-c'"
+                           [title]="'Regivaldo Silva'"
+                           [clicked]="true"
+                           [infos]="['regivaldo@ciandt.com', 'Developer', 'IT Team', 'Campinas / 23A']"></ugl-card-info-photo>
+      <ugl-card-info-photo [photo]="'https://lh3.googleusercontent.com/a-/AOh14GhcJQjeII0Z44AvD0U5ZoCRB6B0s38bcAtcHCdVsQ=s96-c'"
+                          [title]="'Regivaldo Silva'"
+                          [infos]="['regivaldo@ciandt.com', 'Developer', 'IT Team', 'Campinas / 23A']"></ugl-card-info-photo>
+      <ugl-card-info-photo [photo]="'https://lh3.googleusercontent.com/a-/AOh14GhcJQjeII0Z44AvD0U5ZoCRB6B0s38bcAtcHCdVsQ=s96-c'"
+                           [title]="'Regivaldo Silva'"
+                           [infos]="['regivaldo@ciandt.com', 'Developer', 'IT Team', 'Campinas / 23A']"></ugl-card-info-photo>
+
+    </div>
+  </div>
+</section>
+
+<section class="has-header" *ngIf="false">
   <div class="container container--central container--white">
     <ugl-page-title [firstTitle]="'Ugla'" [secondTitle]="'Library'"></ugl-page-title>
     <div uglGrid [grid]="true" [col]="2" [colSm]="1" [gap]="1">

@@ -1,5 +1,9 @@
 # CHANCELOG
 ## Ugla
+
+### 1.12.0
+- Include the Card Info Photo component
+
 ### 1.11.10
 - Fix button pagging left and right
 - Fix icon size

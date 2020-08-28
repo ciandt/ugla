@@ -40,3 +40,4 @@ export { RadioComponent } from './radio/radio.component';
 export { BannerComponent } from './banner/banner.component';
 export { QuoteComponent } from './quote/quote.component';
 export { LightboxService } from './lightbox/lightbox.service';
+export { CardInfoPhotoComponent } from './cards/card-info-photo/card-info-photo.component';
