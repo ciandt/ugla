@@ -30,31 +30,22 @@ jobs:
         node-version: 14
         registry-url: https://registry.npmjs.org/
 
-    # - name: Install dependencies
-    #   run: npm i
+    - name: Install dependencies
+      run: npm i
     
-    # - name: Generate file version
-    #   run: node -e 'require("./version").changeConfig()';
+    - name: Generate file version
+      run: node -e 'require("./version").changeConfig()';
       
-    # - name: Build library
-    #   run: node_modules/.bin/ng build --project=ugla
+    - name: Build library
+      run: node_modules/.bin/ng build --project=ugla
     
-    # - name: Move sass
-    #   run: cp -r projects/ugla/src/sass dist/ugla
+    - name: Move sass
+      run: cp -r projects/ugla/src/sass dist/ugla
   
-    # - name: Move LICENSE
-    #   run: cp -r LICENSE dist/ugla
+    - name: Move LICENSE
+      run: cp -r LICENSE dist/ugla
     
-    - name: Send message Telegram
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: |
-          New build by Ugla
-          The ${{ github.event_name }} event triggered final step.
-    
-    # - name: Deploy
-    #   run: cd dist/ugla/ && npm publish
-    #   env:
-    #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    - name: Deploy
+      run: cd dist/ugla/ && npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
