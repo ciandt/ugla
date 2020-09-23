@@ -30,25 +30,25 @@ jobs:
         node-version: 14
         registry-url: https://registry.npmjs.org/
 
-    # - name: Install dependencies
-    #   run: npm i
+    - name: Install dependencies
+      run: npm i
     
-    # - name: Generate file version
-    #   run: node -e 'require("./version").changeConfig()';
+    - name: Generate file version
+      run: node -e 'require("./version").changeConfig()';
       
-    # - name: Build library
-    #   run: node_modules/.bin/ng build --project=ugla --prod
+    - name: Build library
+      run: node_modules/.bin/ng build --project=ugla --prod
     
-    # - name: Move sass
-    #   run: cp -r projects/ugla/src/sass dist/ugla
+    - name: Move sass
+      run: cp -r projects/ugla/src/sass dist/ugla
   
-    # - name: Move LICENSE
-    #   run: cp -r LICENSE dist/ugla
+    - name: Move LICENSE
+      run: cp -r LICENSE dist/ugla
     
-    # - name: Deploy
-    #   run: cd dist/ugla/ && npm publish --tag beta
-    #   env:
-    #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    - name: Deploy
+      run: cd dist/ugla/ && npm publish --tag beta
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
     
     - name: Read package.json
       uses: tyankatsu0105/read-package-version-actions@v1
@@ -62,5 +62,5 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          *bold \Ugla* was deployed on npmjs by *{{ repo.namespace }}*
+          Ugla was deployed on npmjs by {{ repo.namespace }}
           New version is ${{ steps.package-version.outputs.version }}
