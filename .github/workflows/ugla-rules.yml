@@ -46,12 +46,3 @@ jobs:
       run: cd dist/ugla-rules/ && npm publish
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-    
-    - name: Send message Telegram
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: |
-          New build by Ugla Rules
-          The ${{ github.event_name }} event triggered final step.

@@ -45,15 +45,6 @@ jobs:
     - name: Move LICENSE
       run: cp -r LICENSE dist/ugla
     
-    - name: Send message Telegram
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: |
-          New build by Ugla
-          The ${{ github.event_name }} event triggered final step.
-    
     - name: Deploy
       run: cd dist/ugla/ && npm publish
       env:
