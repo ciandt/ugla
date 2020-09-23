@@ -56,5 +56,5 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          New build by Ugla
-          The ${{ github.event_name }} event triggered final step.
+          **Ugla** was deployed on npmjs by {{ repo.namespace }}
+          New version is **{{ $VERSION }}**
