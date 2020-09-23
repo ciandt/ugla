@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/ugla-workspace",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -31,8 +32,7 @@
               "src/styles.scss",
               "node_modules/js-datepicker/dist/datepicker.min.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -58,6 +58,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ],
               "serviceWorker": true,
@@ -126,41 +130,11 @@
           "options": {
             "tsConfig": "projects/ugla/tsconfig.lib.json",
             "project": "projects/ugla/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ugla/src/test.ts",
-            "tsConfig": "projects/ugla/tsconfig.spec.json",
-            "karmaConfig": "projects/ugla/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ugla/tsconfig.lib.json",
-              "projects/ugla/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "ugla-rules": {
-      "root": "projects/ugla-rules",
-      "sourceRoot": "projects/ugla-rules/src",
-      "projectType": "library",
-      "prefix": "ugl",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ugla-rules/tsconfig.lib.json",
-            "project": "projects/ugla-rules/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ugla/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -188,6 +162,6 @@
   },
   "defaultProject": "ugla-workspace",
   "cli": {
-    "analytics": true
+    "analytics": "b8fe49e8-b851-44cc-850c-a5a4787a7c52"
   }
 }

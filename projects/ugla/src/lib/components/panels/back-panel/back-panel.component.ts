@@ -37,7 +37,7 @@ export class BackPanelComponent {
   /**
    * Emit the back button click
    */
-  @Output('backButtonClicked') backButtonClicked = new EventEmitter<any>();
+  @Output() backButtonClicked = new EventEmitter<any>();
 
   /**
    * @ignore

@@ -1,6 +1,6 @@
 {
   "name": "ugla",
-  "version": "1.12.00",
+  "version": "1.5.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:ciandt/ugla.git"
@@ -35,6 +35,9 @@
     "moment": "^2.24.0",
     "lodash": "^4.17.11",
     "tooltip.js": "^1.3.3"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   },
   "ngPackage": {
     "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",

@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
   /**
    * Instance of header right area
    */
-  @ViewChild('headerRight') headerRightInstance: ElementRef;
+  @ViewChild('headerRight') headerRightInstance !: ElementRef;
 
   /**
    * Object type Header

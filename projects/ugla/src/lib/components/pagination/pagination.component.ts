@@ -130,7 +130,8 @@ export class PaginationComponent implements OnInit, OnChanges {
   /**
    * Items per page component.
    */
-  @ViewChild('itemsPerPageComponent') itemsPerPageComponent: PaginationItemsPerPageComponent;
+  @ViewChild('itemsPerPageComponent') itemsPerPageComponent !: PaginationItemsPerPageComponent;
+
 
   /**
    * Emitter for changed pagination size.
@@ -300,7 +301,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   /**
    * Fire page navigation.
    *
-   * @param page any
+   * @param page is a selected page
    */
   fireNavigatePageEvent(page) {
     this.selectedPage = page;

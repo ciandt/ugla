@@ -218,7 +218,7 @@ export class FieldComponent implements OnInit, OnChanges {
 
   /**
    * Event keyup input
-   * @param event
+   * @param event is a Event value
    */
   keyupHandler(event) {
     const val = event.currentTarget.value;
@@ -237,7 +237,7 @@ export class FieldComponent implements OnInit, OnChanges {
 
   /**
    * Event on change input
-   * @param event
+   * @param event is a Event value
    */
   changeHandler(event) {
     this.value = event.currentTarget.value;
@@ -247,7 +247,7 @@ export class FieldComponent implements OnInit, OnChanges {
 
   /**
    * Event focus out
-   * @param event
+   * @param event is a Event value
    */
   focusoutHandler(event) {
     const val = event.currentTarget.value;

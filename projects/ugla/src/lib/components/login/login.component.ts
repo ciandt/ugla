@@ -12,13 +12,13 @@ import { FieldComponent } from '../field/field.component';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  @Input() header: string = 'Header';
-  @Input() subheader: string = 'Subheader';
-  @Input() desktopImage: string = '';
-  @Input() mobileImage: string = '';
+  @Input() header = 'Header';
+  @Input() subheader = 'Subheader';
+  @Input() desktopImage = '';
+  @Input() mobileImage = '';
   @Input() buttonBackgroud = 'red';
-  @Input() fieldUser: string = 'User';
-  @Input() fieldPass: string = 'Password';
+  @Input() fieldUser = 'User';
+  @Input() fieldPass = 'Password';
 
   /**
    * Type of auth
@@ -37,12 +37,12 @@ export class LoginComponent implements OnInit {
    * Image to float logo
    */
   @Input() floatLogo: string;
-  @Input() buttonText: string = 'Button';
+  @Input() buttonText = 'Button';
   @Output() signIn = new EventEmitter<any>();
 
-  @ViewChild('authButton') loginButton: ButtonComponent;
-  @ViewChild('authUser') authUser: FieldComponent;
-  @ViewChild('authPassword') authPassword: FieldComponent;
+  @ViewChild('authButton') loginButton !: ButtonComponent;
+  @ViewChild('authUser') authUser !: FieldComponent;
+  @ViewChild('authPassword') authPassword !: FieldComponent;
 
   constructor() {}
 
@@ -52,10 +52,10 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   authenticate() {
-    if(!this.hasForm) {
+    if (!this.hasForm) {
       this.signIn.emit();
     } else {
-      let auth = new Auth(this.authUser.value, this.authPassword.value);
+      const auth = new Auth(this.authUser.value, this.authPassword.value);
       this.signIn.emit(auth);
     }
   }

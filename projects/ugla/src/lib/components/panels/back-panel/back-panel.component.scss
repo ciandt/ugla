@@ -1,6 +1,6 @@
 @import '../../../../sass/index';
 
-:host /deep/ {
+:host ::ng-deep {
   section.back-panel {
     #back-button {
       font-size: .875rem;

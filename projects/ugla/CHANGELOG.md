@@ -1,19 +1,10 @@
 # CHANCELOG
 ## Ugla
 
-### 1.12.0
-- Include the Card Info Photo component
+## 1.5.0
+  - Upagrade angular version
 
-### 1.11.10
-- Fix button pagging left and right
-- Fix icon size
-- Add html support on menu item
-
-### 1.5.6
-  - Create a new structure HTML from containers
-  - Fix form and table for containers
-
-### 1.4.0
+## 1.4.0
   - Criação do Lightbox Service e Lightbox Directive
 
 ### 1.3.10

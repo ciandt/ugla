@@ -179,7 +179,7 @@ export class UglaModule {
    * @param config typeof ThemeConfig
    * @returns typeof ModuleWithProviders
    */
-  static forRoot(config: ThemeConfig): ModuleWithProviders {
+  static forRoot(config: ThemeConfig): ModuleWithProviders<UglaModule> {
     return {
       ngModule: UglaModule,
       providers: [
@@ -191,7 +191,7 @@ export class UglaModule {
   /**
    * Use when import on Lazy Loading module
    */
-  static forChild(): ModuleWithProviders {
+  static forChild(): ModuleWithProviders<UglaModule> {
     return {
       ngModule: UglaModule,
       providers: []

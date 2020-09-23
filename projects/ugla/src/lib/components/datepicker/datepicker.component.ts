@@ -10,30 +10,6 @@ import * as moment_ from 'moment';
 const datepicker = datepicker_;
 const moment = moment_;
 
-/**
- * Datepicker
- *
- * @example
- * <ugl-datepicker
- *   [name]="'date'"
- *   [label]="'Date'"
- *   [message]="'Select one date'"
- *   [options]="Documentation -> https://github.com/qodesmith/datepicker"
- *   [required]="true"
- *   [disabled]="true"
- *   [invalid]="false"
- *   [datePattern]="'MM/YYYY'"
- *   (onSelectValue)="onDateChange($event)"></ugl-datepicker>
- *
- ```typescript
- options: object;
- this.options = {
-      minDate: new Date(2019, 1, 3), //hide dates before
-      maxDate: new Date(2019, 12, 3), //hide dates after
-      position: 'tr' //position of calendar | tr = top right
-    };
- ```
- */
 @Component({
   selector: 'ugl-datepicker',
   templateUrl: './datepicker.component.html',
@@ -210,7 +186,7 @@ export class DatepickerComponent implements OnInit, AfterViewInit {
 
   /**
    * Event on change inputs
-   * @param picker
+   * @param picker is a instance of Picker
    */
   onDateChange(picker) {
     if (picker) {
@@ -297,7 +273,7 @@ export class DatepickerComponent implements OnInit, AfterViewInit {
 
   /**
    * Event focus in
-   * @param instance
+   * @param instance is a instance of Picker
    */
   onFocusIn(instance) {
     const input: HTMLInputElement = instance.el;
@@ -308,7 +284,7 @@ export class DatepickerComponent implements OnInit, AfterViewInit {
 
   /**
    * Event focus out
-   * @param instance
+   * @param instance is a instance of Picker
    */
   onFocusOut(instance) {
     // Both instances will be set because they are linked by `id`.
@@ -354,7 +330,7 @@ export class DatepickerComponent implements OnInit, AfterViewInit {
 
   /**
    * Set a date
-   * @param date
+   * @param date is a selected Date
    */
   setDate(date: Date) {
     if (date === null) {

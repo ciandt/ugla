@@ -2,46 +2,12 @@ import { Directive, ElementRef, Input, AfterViewInit, OnChanges, SimpleChanges }
 import Tooltip from 'tooltip.js';
 import { Options, TitleFunction } from 'tooltip.js';
 
-
-/**
- * Tooltip
- *
- * @example
- * <div [uglTooltip] [uglTooltipTitle]="Title">Content</div>
- *
- * @example
- * <div [uglTooltip]="{placement: 'left', trigger: 'click'}" [uglTooltipTitle]="Title">Content</div>
- *
- ```typescript
-  options: Object;
-  // See https://popper.js.org/tooltip-documentation.html
-  this.options = Options {
-    placement?: string | Placement; // tooltip direction, default 'top'
-    arrowSelector?: string;
-    innerSelector?: string;
-    container?: HTMLElement | string;
-    delay?: number | Delay;
-    html?: boolean;
-    template?: string;
-    title?: string | HTMLElement | TitleFunction;
-    // available options are click, hover, focus, manual
-    // required to form a space delimited string
-    // e.g. 'hover focus'
-    trigger?: string;
-    closeOnClickOutside?: boolean;
-    boundariesElement?: Boundary | HTMLElement;
-    offset?: number | string;
-    popperOptions?: PopperOptions;
-  }
- ```
- */
 @Directive({
   selector: '[uglTooltip]',
   exportAs: 'uglTooltip'
 })
-export class TooltipDirective implements AfterViewInit, OnChanges {
-
-  _tooltip: Tooltip;
+export class TooltipDirective implements AfterViewInit {
+  _tooltip: any;
 
   /**
    * Default tooltip options
@@ -64,7 +30,11 @@ export class TooltipDirective implements AfterViewInit, OnChanges {
   @Input('uglTooltip')
   set options(value: {} | Options) {
     if (value) {
+<<<<<<< HEAD
       this._options = Object.assign(this._options as Object, value);
+=======
+      this._options = Object.assign(this._options as object, value);
+>>>>>>> upgrade
     }
   }
 

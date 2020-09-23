@@ -57,13 +57,13 @@ export class CardTimelineComponent {
   /**
    * Emitter for card clicked.
    */
-  @Output('cardClicked') cardClicked = new EventEmitter<boolean>();
+  @Output() cardClicked = new EventEmitter<boolean>();
 
   constructor() { }
 
   /**
    * Function called on click of the card. Emit true.
-   * @param event
+   * @param event is null
    */
   onCardClicked(event) {
     this.cardClicked.emit(true);

@@ -56,7 +56,7 @@ export class FilterComponent implements OnInit, OnChanges {
   /**
    * Param to receive the theme name
    * @param ugla: UglaService
-  */
+   */
   constructor(private ugla: UglaService,
               private changeDetector: ChangeDetectorRef) {
     this.classes = ugla.theme;
@@ -79,7 +79,7 @@ export class FilterComponent implements OnInit, OnChanges {
   /**
    * Function to identify whether
    * the filter has been opened or closed.
-  */
+   */
   toggleFilter() {
     this.toggleLockFilter();
     this.filterEmitter.emit();
@@ -87,7 +87,7 @@ export class FilterComponent implements OnInit, OnChanges {
 
   /**
    * Function to lock the filter on the screen
-  */
+   */
   toggleLockFilter() {
     if (document.getElementsByClassName('has-filter').length === 0) {
       const elements = Array.from(document.getElementsByClassName('need-filter'));
