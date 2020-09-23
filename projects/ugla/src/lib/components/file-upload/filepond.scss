@@ -1,6 +1,6 @@
 @import '../../../sass/index';
 
-:host /deep/ {
+:host ::ng-deep {
   file-pond {
     .filepond--action-process-item,
     .filepond--progress-indicator,
