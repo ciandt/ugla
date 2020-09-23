@@ -37,7 +37,7 @@ jobs:
       run: node -e 'require("./version").changeConfig()';
       
     - name: Build library
-      run: node_modules/.bin/ng build --project=ugla-rules
+      run: node_modules/.bin/ng build --project=ugla-rules --prod
   
     - name: Move LICENSE
       run: cp -r LICENSE dist/ugla-rules

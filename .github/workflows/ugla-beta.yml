@@ -37,7 +37,7 @@ jobs:
       run: node -e 'require("./version").changeConfig()';
       
     - name: Build library
-      run: node_modules/.bin/ng build --project=ugla
+      run: node_modules/.bin/ng build --project=ugla --prod
     
     - name: Move sass
       run: cp -r projects/ugla/src/sass dist/ugla
