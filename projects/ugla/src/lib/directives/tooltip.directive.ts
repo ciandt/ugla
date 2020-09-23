@@ -30,11 +30,7 @@ export class TooltipDirective implements AfterViewInit {
   @Input('uglTooltip')
   set options(value: {} | Options) {
     if (value) {
-<<<<<<< HEAD
-      this._options = Object.assign(this._options as Object, value);
-=======
       this._options = Object.assign(this._options as object, value);
->>>>>>> upgrade
     }
   }
 
