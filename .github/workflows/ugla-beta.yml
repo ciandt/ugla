@@ -51,10 +51,10 @@ jobs:
     #     NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
     
     - name: Read package.json
-        uses: tyankatsu0105/read-package-version-actions@v1
-        with: 
-          path: "./path/to/projects/ugla/package.json"
-        id: package-version
+      uses: tyankatsu0105/read-package-version-actions@v1
+      with: 
+        path: "./path/to/projects/ugla/package.json"
+      id: package-version
 
     - name: Send message Telegram
       uses: appleboy/telegram-action@master
