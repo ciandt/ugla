@@ -1,0 +1,48 @@
+name: Deploy Ugla Rules
+
+on:
+  push:
+    branches: [ upgrade-10 ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: |
+          ~/.npm
+          node_modules/
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+    
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 14
+        registry-url: https://registry.npmjs.org/
+
+    - name: Install dependencies
+      run: npm i
+    
+    - name: Generate file version
+      run: node -e 'require("./version").changeConfig()';
+      
+    - name: Build library
+      run: node_modules/.bin/ng build --project=ugla-rules
+  
+    - name: Move LICENSE
+      run: cp -r LICENSE dist/ugla-rules
+    
+    - name: Deploy
+      run: cd dist/ugla-rules/ && npm publish --tag beta
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
