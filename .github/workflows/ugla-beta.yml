@@ -53,7 +53,7 @@ jobs:
     - name: Read package.json
       uses: tyankatsu0105/read-package-version-actions@v1
       with: 
-        path: "./projects/ugla/package.json"
+        path: "projects/ugla/package.json"
       id: package-version
 
     - name: Send message Telegram
