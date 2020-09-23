@@ -1,8 +1,8 @@
-name: Deploy Ugla
+name: Deploy Ugla beta Version
 
 on:
   push:
-    branches: [ upgrade-10 ]
+    branches: [ beta ]
 
 jobs:
   build:
