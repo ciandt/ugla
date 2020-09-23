@@ -50,11 +50,6 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
-    - name: Deploy
-      run: cd dist/ugla/ && npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
     - name: Read package.json
       uses: tyankatsu0105/read-package-version-actions@v1
       with: 
