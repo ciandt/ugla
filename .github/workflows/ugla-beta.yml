@@ -57,4 +57,4 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
           *Ugla* was deployed on npmjs by *{{ repo.namespace }}*
-          New version is {{ node -e 'require("./version").getVerstion }}
+          New version is ${{ node -e 'require("./version").getVerstion }}
