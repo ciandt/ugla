@@ -34,3 +34,7 @@ module.exports.changeVersion = function(version) {
     { encoding: 'utf-8' }
   );
 }
+
+module.exports.getVerstion = function() {
+  return packageProject.version;
+}
