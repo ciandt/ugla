@@ -62,5 +62,5 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          *Ugla* was deployed on npmjs by *{{ repo.namespace }}*
+          *bold \*Ugla* was deployed on npmjs by *{{ repo.namespace }}*
           New version is ${{ steps.package-version.outputs.version }}
