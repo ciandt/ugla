@@ -23,5 +23,8 @@ Run `npm install ugla-rules` for install Ugla.
 ## Oficial Site
 Read more on: [Ugla Rules](https://ugla.dev/rules/)
 
+## Telegram Channel
+Follow the Telegram Channel for you will be notified all updates: https://t.me/ugla_builds
+
 ## Contributors
 [![](https://sourcerer.io/fame/regivaldo/ciandt/ugla/images/0)](https://sourcerer.io/fame/regivaldo/ciandt/ugla/links/0)
