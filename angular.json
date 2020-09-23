@@ -143,6 +143,46 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "main": "projects/ugla/src/test.ts",
+            "tsConfig": "projects/ugla/tsconfig.spec.json",
+            "karmaConfig": "projects/ugla/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ugla/tsconfig.lib.json",
+              "projects/ugla/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ugla-rules": {
+      "root": "projects/ugla-rules",
+      "sourceRoot": "projects/ugla-rules/src",
+      "projectType": "library",
+      "prefix": "ugl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ugla-rules/tsconfig.lib.json",
+            "project": "projects/ugla-rules/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ugla-rules/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
             "main": "projects/ugla-rules/src/test.ts",
             "tsConfig": "projects/ugla-rules/tsconfig.spec.json",
             "karmaConfig": "projects/ugla-rules/karma.conf.js"
