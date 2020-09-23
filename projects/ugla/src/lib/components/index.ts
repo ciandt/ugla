@@ -1,6 +1,4 @@
-import { PageFloatComponent } from './page-float/page-float.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-import { LabelSpanComponent } from './label-span/label-span.component';
+export { LabelSpanComponent } from './label-span/label-span.component';
 export { AsideComponent } from './aside/aside.component';
 export { BrandComponent } from './brand/brand.component';
 export { ButtonComponent } from './button/button.component';
