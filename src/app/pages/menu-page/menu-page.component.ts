@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Header, MenuItem, Menu, People, UglaService, Select, Options, ModalService } from 'projects/ugla/src';
+import { Header, MenuItem, Menu, People, UglaService, Select, Options, ModalService, ListOptionsItem } from 'projects/ugla/src';
 
 @Component({
   selector: 'app-menu-page',
@@ -8,6 +8,13 @@ import { Header, MenuItem, Menu, People, UglaService, Select, Options, ModalServ
 })
 export class MenuPageComponent implements OnInit {
   constructor(private ugla: UglaService, private modaService: ModalService) {}
+
+  names = ['Amanda Diane', 'Diogo Torres', 'Job Jon Job'];
+  items = [
+    new ListOptionsItem('Roberta Piva', true),
+    new ListOptionsItem('Michele', false),
+    new ListOptionsItem('Getulio', true),
+  ];
 
   icon = 'check_box_outline_blank';
 
@@ -67,5 +74,9 @@ export class MenuPageComponent implements OnInit {
     } else {
       this.icon = 'check_box_outline_blank';
     }
+  }
+
+  selectCoachee(event) {
+    const coachee = console.log(event);
   }
 }

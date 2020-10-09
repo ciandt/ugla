@@ -10,8 +10,10 @@
         }
 
         &:hover {
-          background: color(_aquamarine, 'medium');
-          color: color(_others, 'light');
+          &:not(.no-active) {
+            background: color(_aquamarine, 'medium');
+            color: color(_others, 'light');
+          }
 
           i {
             color: color(_others, 'light');

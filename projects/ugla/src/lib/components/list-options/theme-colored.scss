@@ -11,8 +11,10 @@
           }
 
           &:hover {
-            background: color(_#{$theme}, 'medium');
-            color: color(_others, 'light');
+            &:not(.no-active) {
+              background: color(_#{$theme}, 'medium');
+              color: color(_others, 'light');
+            }
 
             i {
               color: color(_others, 'light');
