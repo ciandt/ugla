@@ -14,6 +14,9 @@
 
       <ugl-page-title [firstTitle]="'Teste do'" [secondTitle]="'Formulário'"></ugl-page-title>
 
+      <div uglGrid [grid]="true" col="3">
+
+
       <ugl-field [label]="'Nova senha'"
                 [name]="'newPassword'"
                 [required]="true"
@@ -30,5 +33,41 @@
                 [messageRequired]="'Obrigatório'"
                 #confirmPassword>
       </ugl-field>
+      <ugl-field [label]="'Confirmação da senha'"
+                [name]="'confirmPassword2'"
+                [required]="true"
+                [type]="'password'"
+                [message]="'Informe novamente a senha'"
+                [messageRequired]="'Obrigatório'"
+                #confirmPassword>
+      </ugl-field>
+      <ugl-field [label]="'Revenue Company Account'"
+                [name]="'revenueAccount2'"
+                [required]="true"
+                [type]="'autocomplete'"
+                [message]="'Informe novamente a Conta Contabil'"
+                [messageRequired]="'Obrigatório'"
+                [autoCompleteOptions]="autoCompleteOptions"
+                #autocomplete>
+      </ugl-field>
+      <ugl-field [label]="'Invoice Company Account'"
+                [name]="'invoiceAccount'"
+                [required]="true"
+                [type]="'autocomplete'"
+                [message]="'Informe novamente a Conta Contabil'"
+                [messageRequired]="'Obrigatório'"
+                [autoCompleteOptions]="autoCompleteOptions"
+                #autocomplete>
+      </ugl-field>
+      <ugl-field [label]="'Client Company Account'"
+                [name]="'clientAccount'"
+                [required]="true"
+                [type]="'autocomplete'"
+                [message]="'Informe novamente a Conta Contabil'"
+                [messageRequired]="'Obrigatório'"
+                [autoCompleteOptions]="autoCompleteOptions"
+                #autocomplete>
+      </ugl-field>
+    </div>
     </ugl-form>
 </section>

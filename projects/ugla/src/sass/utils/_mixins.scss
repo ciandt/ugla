@@ -17,6 +17,12 @@
   }
 }
 
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  transform: $value;
+}
+
 @mixin font($size: 1rem, $weight: regular) {
   font-size: $size;
   font-weight: map-get($font-weight, $weight);
