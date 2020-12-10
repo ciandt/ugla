@@ -69,8 +69,8 @@
         (keyup.ArrowUp)="onArrowUp($event)"
         (keyup.enter)="onEnter($event)"
         (blur)="onBlur(labelInput, inputSearch)"
-        [disabled]="isDisabled"
-        [ngClass]="{ 'disabled' : isDisabled }"
+        [disabled]="disabled"
+        [ngClass]="{ 'disabled' : disabled }"
         #inputSearch>
     <label [for]="'field-' + name" #labelInput>{{ label }}</label>
     <div *ngIf="allAutocompleteOptions.length > 0" class="autocomplete-container z-depth-1">
