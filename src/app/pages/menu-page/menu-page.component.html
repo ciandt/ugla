@@ -10,10 +10,20 @@
 </ugl-header>
 
 <section class="has-header">
-  <div class="container">
-    <ugl-label-span [label]="'Nome'" [texts]="['Texto 1']"></ugl-label-span>
-    <ugl-label-span [label]="'Nome'" [texts]="['Texto 1', 'Texto 2']"></ugl-label-span>
-    <ugl-label-span [label]="'Nome'" [texts]="['Texto 1', 'Texto 2', 'Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto 3']"></ugl-label-span>
+  <div class="container container--central container--white">
+    <ugl-list-options
+        [id]="'list-my-coachees'"
+        [names]="names"
+        uglGrid [span]="'1'"
+        (onClick)="selectCoachee($event)">
+    </ugl-list-options>
+
+    <ugl-list-options
+        [id]="'list-my-coachees'"
+        [items]="items"
+        uglGrid [span]="'1'"
+        (onClick)="selectCoachee($event)">
+    </ugl-list-options>
   </div>
 </section>
 

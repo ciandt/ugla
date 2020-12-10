@@ -28,7 +28,10 @@
       text-decoration: none;
       padding: 10px;
       align-items: center;
-      cursor: pointer;
+      
+      &:not(.no-active) {
+        cursor: pointer;
+      }
 
       i {
         font-size: 1.5rem;

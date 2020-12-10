@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { Form } from '../../enum';
+import { CodeName } from '../../models/code-name';
 import { UglaService } from '../../ugla.service';
+
+declare var $: any;
 
 /**
  * Field
@@ -74,6 +77,11 @@ export class FieldComponent implements OnInit, OnChanges {
    * Set max value (for type number or date)
    */
   @Input() max: string;
+
+  /**
+   * Set a list of objects CodeName
+   */
+  @Input() autoCompleteOptions = new Array<CodeName>();
 
   /**
    * Set message
@@ -216,6 +224,10 @@ export class FieldComponent implements OnInit, OnChanges {
     this.theme = ugla.theme;
   }
 
+  allAutocompleteOptions = new Array<CodeName>();
+  autocompleteSelectedIndex = null;
+  inputAutocompleteSelected: CodeName;
+
   /**
    * Event keyup input
    * @param event is a Event value
@@ -301,5 +313,102 @@ export class FieldComponent implements OnInit, OnChanges {
 
   private removeDecimal(event: any) {
     event.target.value = parseInt(event.target.value, 10) || '';
+  }
+
+  onValueChange(event, search: HTMLInputElement) {
+    if (search.value.length === 0) {
+      this.allAutocompleteOptions = new Array<CodeName>();
+      this.onChangeValue.emit(null);
+      this.inputAutocompleteSelected = null;
+    }
+    if (search.value.length >= 1) {
+       this.allAutocompleteOptions = this.autoCompleteOptions.filter(e =>
+         e.name.toUpperCase().includes(search.value.toUpperCase()) ||
+         (e.name !== null && e.name.toUpperCase().includes(search.value.toUpperCase())));
+       if (this.allAutocompleteOptions.length === 0) {
+          this.onChangeValue.emit(null);
+          this.inputAutocompleteSelected = null;
+        }
+     }
+   }
+
+  reset() {
+    this.allAutocompleteOptions = new Array<CodeName>();
+    this.value = null;
+    this.inputAutocompleteSelected = null;
+  }
+
+  onBlur(labelInput: HTMLInputElement, search: HTMLInputElement) {
+    if (!this.inputAutocompleteSelected && this.allAutocompleteOptions.length === 0) {
+      this.reset();
+      labelInput.className = '';
+      search.value = '';
+    }
+  }
+
+  onClick(option: CodeName, inputSearch: HTMLInputElement) {
+    this.allAutocompleteOptions = new Array<CodeName>();
+    inputSearch.value = option.name;
+    this.inputAutocompleteSelected = option;
+    this.onChangeValue.emit(option.name);
+  }
+
+  onScroll(event) {
+    const items = document.getElementsByClassName('valign-wrapper');
+    if (items.length > 0) {
+      const hover = document.getElementsByClassName('valign-wrapper-hover').item(0);
+      const container = document.getElementsByClassName('autocomplete-container').item(0);
+      if (event.keyCode === 40) {
+          for (let i = 0; i < items.length; i++) {
+            if (items[i].classList.contains('selected') && items[i].nextElementSibling != null) {
+              items[i].classList.remove('valign-wrapper-hover');
+              items[i + 1].classList.add('valign-wrapper-hover');
+            }
+          }
+          if (hover && hover.getClientRects().item(0).top / 234 > 2) {
+            container.scrollTo({top: container.scrollTop + 85});
+          }
+      } else if (event.keyCode === 38) {
+        for (let i = 0; i < items.length; i++) {
+          if (items[i].classList.contains('selected') && items[i].previousElementSibling != null) {
+            items[i].classList.remove('valign-wrapper-hover');
+            items[i - 1].classList.add('valign-wrapper-hover');
+          }
+        }
+        if (hover && hover.getClientRects().item(0).top - container.getClientRects().item(0).height < 0) {
+          container.scrollTo({top: container.scrollTop - 100});
+        }
+      }
+    }
+  }
+
+
+  onArrowDown(event) {
+    if (this.autocompleteSelectedIndex === null) {
+      this.autocompleteSelectedIndex = 0;
+    } else {
+      this.autocompleteSelectedIndex = this.autocompleteSelectedIndex >= (this.allAutocompleteOptions.length - 1) ?
+      this.allAutocompleteOptions.length - 1 : this.autocompleteSelectedIndex + 1;
+    }
+    this.onScroll(event);
+  }
+
+  onArrowUp(event) {
+    if (this.autocompleteSelectedIndex === null || this.autocompleteSelectedIndex === 0) {
+      this.autocompleteSelectedIndex = 0;
+    } else {
+        this.autocompleteSelectedIndex = this.autocompleteSelectedIndex - 1;
+    }
+    this.onScroll(event);
+  }
+
+  onEnter(event) {
+    if (this.allAutocompleteOptions.length > 0) {
+      this.value = this.allAutocompleteOptions[this.autocompleteSelectedIndex].name;
+      this.onChangeValue.emit(this.value);
+      this.inputAutocompleteSelected = this.allAutocompleteOptions[this.autocompleteSelectedIndex];
+      this.autocompleteSelectedIndex = null;
+      this.allAutocompleteOptions = new Array<CodeName>();
+    }
   }
 }

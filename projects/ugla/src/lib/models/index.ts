@@ -14,3 +14,4 @@ export { TableHeader } from './table/table-header';
 export { TableRow } from './table/table-row';
 export { CheckboxColumnItem } from './checkbox/checkbox-column-item';
 export { CheckboxListColumn } from './checkbox/checkbox-list-column';
+export { ListOptionsItem } from './items-options';

@@ -79,5 +79,8 @@ Run `npm install` on the project and Ugla will be installed and can be tested as
 ## Oficial Site
 Read more on: [Ugla](https://ugla.dev)
 
+## Telegram Channel
+Follow the Telegram Channel for you will be notified all updates: https://t.me/ugla_builds
+
 ## Contributors
 [![](https://sourcerer.io/fame/regivaldo/ciandt/ugla/images/0)](https://sourcerer.io/fame/regivaldo/ciandt/ugla/links/0)[![](https://sourcerer.io/fame/regivaldo/ciandt/ugla/images/1)](https://sourcerer.io/fame/regivaldo/ciandt/ugla/links/1)[![](https://sourcerer.io/fame/regivaldo/ciandt/ugla/images/2)](https://sourcerer.io/fame/regivaldo/ciandt/ugla/links/2)[![](https://sourcerer.io/fame/regivaldo/ciandt/ugla/images/3)](https://sourcerer.io/fame/regivaldo/ciandt/ugla/links/3)[![](https://sourcerer.io/fame/regivaldo/ciandt/ugla/images/4)](https://sourcerer.io/fame/regivaldo/ciandt/ugla/links/4)[![](https://sourcerer.io/fame/regivaldo/ciandt/ugla/images/5)](https://sourcerer.io/fame/regivaldo/ciandt/ugla/links/5)[![](https://sourcerer.io/fame/regivaldo/ciandt/ugla/images/6)](https://sourcerer.io/fame/regivaldo/ciandt/ugla/links/6)[![](https://sourcerer.io/fame/regivaldo/ciandt/ugla/images/7)](https://sourcerer.io/fame/regivaldo/ciandt/ugla/links/7)
