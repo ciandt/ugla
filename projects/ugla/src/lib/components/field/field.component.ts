@@ -330,6 +330,7 @@ export class FieldComponent implements OnInit, OnChanges {
           this.inputAutocompleteSelected = null;
         }
      }
+     this.focusoutHandler(event);
    }
 
   reset() {

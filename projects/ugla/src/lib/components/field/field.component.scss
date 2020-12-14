@@ -470,7 +470,10 @@ $label-animate-time: 0.2s;
       border-left: 1px solid color(_gray, light);
       border-radius: 0 0 .5rem .5rem;
       background-color: color(_others, light);
-      z-index: 99999999;
+      z-index: 999;
+      display: block;
+      position: absolute;
+      width: 100%;
 
       .autocomplete-card {
         min-height: 3rem;
@@ -500,4 +503,8 @@ $label-animate-time: 0.2s;
     background-color: color(_others, body);
   }
 
+}
+
+.autocomplete-main {
+  z-index: 999 !important;
 }
