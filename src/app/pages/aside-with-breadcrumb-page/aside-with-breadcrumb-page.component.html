@@ -16,6 +16,34 @@
 
       <div uglGrid [grid]="true" col="3">
 
+        <ugl-field [label]="'Revenue Company Account'"
+                [name]="'revenueAccount2'"
+                [disabled]="true"
+                [required]="true"
+                [type]="'autocomplete'"
+                [message]="'Informe novamente a Conta Contabil'"
+                [messageRequired]="'Obrigatório'"
+                [autoCompleteOptions]="autoCompleteOptions"
+                #autocomplete>
+      </ugl-field>
+      <ugl-field [label]="'Invoice Company Account'"
+                [name]="'invoiceAccount'"
+                [required]="false"
+                [type]="'autocomplete'"
+                [message]="'Informe novamente a Conta Contabil'"
+                [messageRequired]="'Obrigatório'"
+                [autoCompleteOptions]="autoCompleteOptions"
+                #autocomplete2>
+      </ugl-field>
+      <ugl-field [label]="'Client Company Account'"
+                [name]="'clientAccount'"
+                [required]="true"
+                [type]="'autocomplete'"
+                [message]="'Informe novamente a Conta Contabil'"
+                [messageRequired]="'Obrigatório'"
+                [autoCompleteOptions]="autoCompleteOptions"
+                #autocomplete3>
+      </ugl-field>
 
       <ugl-field [label]="'Nova senha'"
                 [name]="'newPassword'"
@@ -41,34 +69,7 @@
                 [messageRequired]="'Obrigatório'"
                 #confirmPassword>
       </ugl-field>
-      <ugl-field [label]="'Revenue Company Account'"
-                [name]="'revenueAccount2'"
-                [disabled]="true"
-                [required]="true"
-                [type]="'autocomplete'"
-                [message]="'Informe novamente a Conta Contabil'"
-                [messageRequired]="'Obrigatório'"
-                [autoCompleteOptions]="autoCompleteOptions"
-                #autocomplete>
-      </ugl-field>
-      <ugl-field [label]="'Invoice Company Account'"
-                [name]="'invoiceAccount'"
-                [required]="true"
-                [type]="'autocomplete'"
-                [message]="'Informe novamente a Conta Contabil'"
-                [messageRequired]="'Obrigatório'"
-                [autoCompleteOptions]="autoCompleteOptions"
-                #autocomplete>
-      </ugl-field>
-      <ugl-field [label]="'Client Company Account'"
-                [name]="'clientAccount'"
-                [required]="true"
-                [type]="'autocomplete'"
-                [message]="'Informe novamente a Conta Contabil'"
-                [messageRequired]="'Obrigatório'"
-                [autoCompleteOptions]="autoCompleteOptions"
-                #autocomplete>
-      </ugl-field>
+
     </div>
     </ugl-form>
 </section>

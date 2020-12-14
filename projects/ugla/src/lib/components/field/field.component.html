@@ -60,7 +60,7 @@
   </div>
 </div>
 
-<div [ngClass]="classes" class="field" *ngIf="type === 'autocomplete'">
+<div [ngClass]="classes" class="autocomplete-main field" *ngIf="type === 'autocomplete'">
   <div class="position-relative">
     <input [id]="'field-' + name"
         type="text" value="{{this.value}}"
@@ -68,7 +68,9 @@
         (keyup.ArrowDown)="onArrowDown($event)"
         (keyup.ArrowUp)="onArrowUp($event)"
         (keyup.enter)="onEnter($event)"
+        [required]="required"
         (blur)="onBlur(labelInput, inputSearch)"
+        (focusout)="focusoutHandler($event)"
         [disabled]="disabled"
         [ngClass]="{ 'disabled' : disabled }"
         #inputSearch>
