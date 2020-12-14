@@ -27,7 +27,7 @@ import { UglaRulesService, RulesConfig } from './ugla-rules.service';
 export class UglaRulesModule {
   constructor(@Optional() @SkipSelf() parentModule: UglaRulesModule) {}
 
-  static forRoot(config: RulesConfig): ModuleWithProviders {
+  static forRoot(config: RulesConfig): ModuleWithProviders<UglaRulesModule> {
     return {
       ngModule: UglaRulesModule,
       providers: [
@@ -36,7 +36,7 @@ export class UglaRulesModule {
     };
   }
 
-  static forChild(): ModuleWithProviders {
+  static forChild(): ModuleWithProviders<UglaRulesModule> {
     return {
       ngModule: UglaRulesModule,
       providers: []

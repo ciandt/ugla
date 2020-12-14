@@ -31,8 +31,7 @@
               "src/styles.scss",
               "node_modules/js-datepicker/dist/datepicker.min.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
