@@ -128,6 +128,13 @@ export class FieldComponent implements OnInit, OnChanges {
   @Input() multiple: boolean;
 
   /**
+   * Z-index of the field. Optional.
+   *
+   * Default: 3
+   */
+  @Input() zindex = 3;
+
+  /**
    * Is invalid
    *
    * Default: false

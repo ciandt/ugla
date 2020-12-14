@@ -60,7 +60,7 @@
   </div>
 </div>
 
-<div [ngClass]="classes" class="autocomplete-main field" *ngIf="type === 'autocomplete'">
+<div [ngClass]="classes" [ngStyle]="{'z-index': zindex }" class="field" *ngIf="type === 'autocomplete'">
   <div class="position-relative">
     <input [id]="'field-' + name"
         type="text" value="{{this.value}}"
