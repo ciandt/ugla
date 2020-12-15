@@ -135,6 +135,13 @@ export class FieldComponent implements OnInit, OnChanges {
   @Input() zindex = 3;
 
   /**
+   * Number of digits for start search on list. Optional.
+   *
+   * Default: 1
+   */
+  @Input() autocompleteStartDigits = 1;
+
+  /**
    * Is invalid
    *
    * Default: false
@@ -270,6 +277,9 @@ export class FieldComponent implements OnInit, OnChanges {
    */
   focusoutHandler(event) {
     const val = event.currentTarget.value;
+    if (val && val === '') {
+      this.allAutocompleteOptions = new Array<CodeName>();
+    }
 
     if (event.currentTarget.hasAttribute('required') && val === '') {
       this._message = this.messageRequired;
@@ -282,6 +292,10 @@ export class FieldComponent implements OnInit, OnChanges {
       }
       this._message = this.originalMessage;
     }
+  }
+
+  focusinHandler() {
+    this.allAutocompleteOptions = this.autoCompleteOptions;
   }
 
   /**
@@ -328,7 +342,7 @@ export class FieldComponent implements OnInit, OnChanges {
       this.onChangeValue.emit(null);
       this.inputAutocompleteSelected = null;
     }
-    if (search.value.length >= 1) {
+    if (search.value.length >= this.autocompleteStartDigits) {
        this.allAutocompleteOptions = this.autoCompleteOptions.filter(e =>
          e.name.toUpperCase().includes(search.value.toUpperCase()) ||
          (e.name !== null && e.name.toUpperCase().includes(search.value.toUpperCase())));

@@ -18,13 +18,14 @@
 
         <ugl-field [label]="'Revenue Company Account'"
                 [name]="'revenueAccount2'"
-                [disabled]="true"
+                [disabled]="false"
                 [required]="true"
                 [zindex]="999"
                 [type]="'autocomplete'"
-                [message]="'Informe novamente a Conta Contabil'"
-                [messageRequired]="'Obrigatório'"
+                [message]="'Fill a Account'"
+                [messageRequired]="'Required'"
                 [autoCompleteOptions]="autoCompleteOptions"
+                [autocompleteStartDigits]="3"
                 #autocomplete>
       </ugl-field>
       <ugl-field [label]="'Invoice Company Account'"
