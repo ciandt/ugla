@@ -69,7 +69,7 @@
         (keyup.enter)="onEnter($event)"
         [required]="required"
         (focusout)="focusoutHandler($event)"
-        (focusin)="focusinHandler($event, inputSearch)"
+        (focusin)="focusinHandler()"
         [disabled]="disabled"
         [ngClass]="{ 'disabled' : disabled }"
         #inputSearch>
