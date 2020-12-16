@@ -355,21 +355,23 @@ export class FieldComponent implements OnInit, OnChanges {
   }
 
   onValueChange(event, search: HTMLInputElement) {
-    if (search.value.length === 0) {
-      this.allAutocompleteOptions = new Array<CodeName>();
-      this.onChangeValue.emit(null);
-      this.inputAutocompleteSelected = null;
+    if (event.keyCode !== 40 && event.keyCode !== 38) {
+      if (search.value.length === 0) {
+        this.allAutocompleteOptions = new Array<CodeName>();
+        this.onChangeValue.emit(null);
+        this.inputAutocompleteSelected = null;
+      }
+      if (search.value.length >= this.autocompleteStartDigits) {
+         this.allAutocompleteOptions = this.autoCompleteOptions.filter(e =>
+           e.name.toUpperCase().includes(search.value.toUpperCase()) ||
+           (e.name !== null && e.name.toUpperCase().includes(search.value.toUpperCase())));
+         if (this.allAutocompleteOptions.length === 0) {
+            this.onChangeValue.emit(null);
+            this.inputAutocompleteSelected = null;
+          }
+       }
+       this.focusoutHandler(event);
     }
-    if (search.value.length >= this.autocompleteStartDigits) {
-       this.allAutocompleteOptions = this.autoCompleteOptions.filter(e =>
-         e.name.toUpperCase().includes(search.value.toUpperCase()) ||
-         (e.name !== null && e.name.toUpperCase().includes(search.value.toUpperCase())));
-       if (this.allAutocompleteOptions.length === 0) {
-          this.onChangeValue.emit(null);
-          this.inputAutocompleteSelected = null;
-        }
-     }
-     this.focusoutHandler(event);
    }
 
   reset() {

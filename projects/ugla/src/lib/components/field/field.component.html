@@ -64,6 +64,7 @@
   <div class="position-relative">
     <input [id]="autocompleteRandomID + '-' + name"
         type="text" value="{{this.value}}"
+        (keyup)="onValueChange($event, inputSearch)"
         (keyup.ArrowDown)="onArrowDown($event)"
         (keyup.ArrowUp)="onArrowUp($event)"
         (keyup.enter)="onEnter($event)"
