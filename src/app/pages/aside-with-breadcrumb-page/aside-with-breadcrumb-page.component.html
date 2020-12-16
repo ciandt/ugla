@@ -37,40 +37,17 @@
                 [autoCompleteOptions]="autoCompleteOptions"
                 #autocomplete2>
       </ugl-field>
-      <ugl-field [label]="'Client Company Account'"
-                [name]="'clientAccount'"
+      <ugl-field [label]="'Client Company '"
+                [name]="'teste'"
                 [required]="true"
                 [type]="'autocomplete'"
-                [message]="'Informe novamente a Conta Contabil'"
+                [message]="'teste'"
                 [messageRequired]="'Obrigatório'"
                 [autoCompleteOptions]="autoCompleteOptions"
                 #autocomplete3>
       </ugl-field>
 
-      <ugl-field [label]="'Nova senha'"
-                [name]="'newPassword'"
-                [required]="true"
-                [type]="'password'"
-                [message]="'Informe nova senha'"
-                [messageRequired]="'Obrigatório'"
-                #newPassword>
-      </ugl-field>
-      <ugl-field [label]="'Confirmação da senha'"
-                [name]="'confirmPassword'"
-                [required]="true"
-                [type]="'password'"
-                [message]="'Informe novamente a senha'"
-                [messageRequired]="'Obrigatório'"
-                #confirmPassword>
-      </ugl-field>
-      <ugl-field [label]="'Confirmação da senha'"
-                [name]="'confirmPassword2'"
-                [required]="true"
-                [type]="'password'"
-                [message]="'Informe novamente a senha'"
-                [messageRequired]="'Obrigatório'"
-                #confirmPassword>
-      </ugl-field>
+      <ugl-select *ngIf="revenueSourceSelect" [select]="revenueSourceSelect" [id]="'select-revenue-source'" [stylized]="false" width="100%" (selected)="changeSelect($event, 1)"></ugl-select>
 
     </div>
     </ugl-form>

@@ -62,16 +62,14 @@
 
 <div [ngClass]="classes" [ngStyle]="{'z-index': zindex }" class="field" *ngIf="type === 'autocomplete'">
   <div class="position-relative">
-    <input [id]="'new-password-' + name"
+    <input [id]="autocompleteRandomID + '-' + name"
         type="text" value="{{this.value}}"
-        (keyup)="onValueChange($event, inputSearch)"
         (keyup.ArrowDown)="onArrowDown($event)"
         (keyup.ArrowUp)="onArrowUp($event)"
         (keyup.enter)="onEnter($event)"
         [required]="required"
-        (blur)="onBlur(labelInput, inputSearch)"
         (focusout)="focusoutHandler($event)"
-        (focusin)="focusinHandler()"
+        (focusin)="focusinHandler($event, inputSearch)"
         [disabled]="disabled"
         [ngClass]="{ 'disabled' : disabled }"
         #inputSearch>
@@ -84,9 +82,7 @@
           *ngFor="let option of allAutocompleteOptions; let index = index"
           [ngClass]="{'selected': index === autocompleteSelectedIndex}"
           (click)="onClick(option, inputSearch)">
-
           <span>{{ option.name }}</span>
-
       </div>
     </div>
   </div>

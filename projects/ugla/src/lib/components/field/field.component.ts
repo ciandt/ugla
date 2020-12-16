@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges, Renderer2, ElementRef } from '@angular/core';
 import { Form } from '../../enum';
 import { CodeName } from '../../models/code-name';
 import { UglaService } from '../../ugla.service';
@@ -221,6 +221,8 @@ export class FieldComponent implements OnInit, OnChanges {
 
   validateEmail: boolean;
 
+  listenClick: () => void;
+
   /**
    * Classes of the component
    */
@@ -234,13 +236,16 @@ export class FieldComponent implements OnInit, OnChanges {
   /**
    * @ignore
    */
-  constructor(private ugla: UglaService) {
+  constructor(private ugla: UglaService,
+              protected elementRef: ElementRef,
+              private renderer: Renderer2) {
     this.theme = ugla.theme;
   }
 
   allAutocompleteOptions = new Array<CodeName>();
   autocompleteSelectedIndex = null;
   inputAutocompleteSelected: CodeName;
+  autocompleteRandomID: string;
 
   /**
    * Event keyup input
@@ -276,26 +281,34 @@ export class FieldComponent implements OnInit, OnChanges {
    * @param event is a Event value
    */
   focusoutHandler(event) {
-    const val = event.currentTarget.value;
-    if (val && val === '') {
-      this.allAutocompleteOptions = new Array<CodeName>();
-    }
+    if (event.currentTarget !== undefined) {
+      const val = event.currentTarget.value;
 
-    if (event.currentTarget.hasAttribute('required') && val === '') {
-      this._message = this.messageRequired;
+      if (event.currentTarget.hasAttribute('required') && val === '') {
+        this._message = this.messageRequired;
 
-      event.currentTarget.classList.remove('valid');
-      event.currentTarget.classList.add('invalid');
-    } else {
-      if (!this.invalid) {
-        event.currentTarget.classList.remove('invalid');
+        event.currentTarget.classList.remove('valid');
+        event.currentTarget.classList.add('invalid');
+      } else {
+        if (!this.invalid) {
+          event.currentTarget.classList.remove('invalid');
+        }
+        this._message = this.originalMessage;
       }
-      this._message = this.originalMessage;
+    } else if (!this.invalid && this.inputAutocompleteSelected) {
+      event.classList.remove('invalid');
     }
+
   }
 
   focusinHandler() {
     this.allAutocompleteOptions = this.autoCompleteOptions;
+
+    this.listenClick = this.renderer.listen('window', 'click', (evt) => {
+      if (!this.elementRef.nativeElement.contains(evt.target)) {
+        this.allAutocompleteOptions = new Array<CodeName>();
+      }
+    });
   }
 
   /**
@@ -318,6 +331,7 @@ export class FieldComponent implements OnInit, OnChanges {
     this.maxLength = (this.maxLength !== undefined) ? this.maxLength : 1000;
     this.allowDecimal = (this.allowDecimal !== undefined) ? this.allowDecimal : true;
     this.classes = `${this.theme}`;
+    this.autocompleteRandomID = this.getRandomID();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -334,6 +348,10 @@ export class FieldComponent implements OnInit, OnChanges {
 
   private removeDecimal(event: any) {
     event.target.value = parseInt(event.target.value, 10) || '';
+  }
+
+  getRandomID(): string {
+    return Math.random().toString(36).substr(2, 9);
   }
 
   onValueChange(event, search: HTMLInputElement) {
@@ -373,6 +391,7 @@ export class FieldComponent implements OnInit, OnChanges {
     inputSearch.value = option.name;
     this.inputAutocompleteSelected = option;
     this.onChangeValue.emit(option.name);
+    this.focusoutHandler(inputSearch);
   }
 
   onScroll(event) {
