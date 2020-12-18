@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UglaService, Header, People, AsideItem, Menu, MenuItem } from 'projects/ugla/src';
+import { UglaService, Header, People, AsideItem, Menu, MenuItem, Select, Options } from 'projects/ugla/src';
+import { CodeName } from 'projects/ugla/src/lib/models/code-name';
+
 
 @Component({
   selector: 'app-aside-with-breadcrumb-page',
@@ -14,6 +16,26 @@ export class AsideWithBreadcrumbPageComponent implements OnInit {
   header = new Header('Ugla', './assets/imgs/logo.png', 'home', true);
 
   people = new People('Jack Connor', 'jack.connor@ugla.dev', './assets/imgs/people.png');
+
+  revenueSourceSelect = new Select('Select',[
+    new Options('Limit', '-1'),
+    new Options('20', '20'),
+    new Options('50', '50'),
+    new Options('100', '100')]);
+
+  autoCompleteOptions = [
+    new CodeName(1, '400410001 - Revenue National'),
+    new CodeName(2, '400410002 - Revenue National 2'),
+    new CodeName(3, '400410003 - Invoice National 3'),
+    new CodeName(2, '400410002 - Revenue National 2'),
+    new CodeName(3, '400410003 - Invoice National 3'),
+    new CodeName(2, '400410002 - Revenue National 2'),
+    new CodeName(3, '400410003 - Invoice National 3'),
+    new CodeName(2, '400410002 - Revenue National 2'),
+    new CodeName(3, '400410003 - Invoice National 3'),
+    new CodeName(2, '400410002 - Revenue National 2'),
+    new CodeName(3, '400410003 - Invoice National 3')
+  ];
 
   menu = [
     new AsideItem('Home', '/', true),
@@ -35,6 +57,7 @@ export class AsideWithBreadcrumbPageComponent implements OnInit {
     this.header.people = this.people;
     this.ugla.headerShadow = true;
     this.ugla.hasToolBar();
+
   }
 
   hideMenu() {

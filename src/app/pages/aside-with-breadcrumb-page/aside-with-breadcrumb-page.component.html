@@ -14,21 +14,41 @@
 
       <ugl-page-title [firstTitle]="'Teste do'" [secondTitle]="'Formulário'"></ugl-page-title>
 
-      <ugl-field [label]="'Nova senha'"
-                [name]="'newPassword'"
+      <div uglGrid [grid]="true" col="3">
+
+        <ugl-field [label]="'Revenue Company Account'"
+                [name]="'revenueAccount2'"
+                [disabled]="false"
                 [required]="true"
-                [type]="'password'"
-                [message]="'Informe nova senha'"
-                [messageRequired]="'Obrigatório'"
-                #newPassword>
+                [zindex]="999"
+                [type]="'autocomplete'"
+                [message]="'Fill a Account'"
+                [messageRequired]="'Required'"
+                [autoCompleteOptions]="autoCompleteOptions"
+                [autocompleteStartDigits]="3"
+                #autocomplete>
       </ugl-field>
-      <ugl-field [label]="'Confirmação da senha'"
-                [name]="'confirmPassword'"
+      <ugl-field [label]="'Invoice Company Account'"
+                [name]="'invoiceAccount'"
+                [required]="false"
+                [type]="'autocomplete'"
+                [message]="'Informe novamente a Conta Contabil'"
+                [messageRequired]="'Obrigatório'"
+                [autoCompleteOptions]="autoCompleteOptions"
+                #autocomplete2>
+      </ugl-field>
+      <ugl-field [label]="'Client Company '"
+                [name]="'teste'"
                 [required]="true"
-                [type]="'password'"
-                [message]="'Informe novamente a senha'"
+                [type]="'autocomplete'"
+                [message]="'teste'"
                 [messageRequired]="'Obrigatório'"
-                #confirmPassword>
+                [autoCompleteOptions]="autoCompleteOptions"
+                #autocomplete3>
       </ugl-field>
+
+      <ugl-select *ngIf="revenueSourceSelect" [select]="revenueSourceSelect" [id]="'select-revenue-source'" [stylized]="false" width="100%" (selected)="changeSelect($event, 1)"></ugl-select>
+
+    </div>
     </ugl-form>
 </section>

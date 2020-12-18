@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { List } from '../../models';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { ListOptionsItem } from '../../models';
 import { UglaService } from '../../ugla.service';
 
 /**
@@ -20,7 +20,7 @@ import { UglaService } from '../../ugla.service';
   templateUrl: './list-options.component.html',
   styleUrls: ['./list-options.component.scss']
 })
-export class ListOptionsComponent {
+export class ListOptionsComponent implements OnChanges {
 
   /**
    *  Receive onClick function
@@ -31,6 +31,11 @@ export class ListOptionsComponent {
    * Receive an array of strings
    */
   @Input() names: string[];
+
+  /**
+   * Receive an array os strings
+   */
+  @Input() items: ListOptionsItem[];
 
   /**
    * Text to attribute id
@@ -50,8 +55,19 @@ export class ListOptionsComponent {
     this.theme = ugla.theme;
   }
 
-  selectItem(index) {
+  selectName(index) {
     this.onClick.emit(index);
   }
 
+  selectItem(index) {
+    if (this.items[index].active) {
+      this.onClick.emit(index); 
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['items'] !== undefined) {
+      this.items = changes.items.currentValue;
+    }
+  }
 }

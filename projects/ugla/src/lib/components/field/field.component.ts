@@ -1,6 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges, Renderer2, ElementRef } from '@angular/core';
 import { Form } from '../../enum';
+import { CodeName } from '../../models/code-name';
 import { UglaService } from '../../ugla.service';
+
+declare var $: any;
 
 /**
  * Field
@@ -76,6 +79,11 @@ export class FieldComponent implements OnInit, OnChanges {
   @Input() max: string;
 
   /**
+   * Set a list of objects CodeName
+   */
+  @Input() autoCompleteOptions = new Array<CodeName>();
+
+  /**
    * Set message
    */
   @Input() set message(value: string) {
@@ -118,6 +126,20 @@ export class FieldComponent implements OnInit, OnChanges {
    *
    */
   @Input() multiple: boolean;
+
+  /**
+   * Z-index of the field. Optional.
+   *
+   * Default: 3
+   */
+  @Input() zindex = 3;
+
+  /**
+   * Number of digits for start search on list. Optional.
+   *
+   * Default: 1
+   */
+  @Input() autocompleteStartDigits = 1;
 
   /**
    * Is invalid
@@ -199,6 +221,8 @@ export class FieldComponent implements OnInit, OnChanges {
 
   validateEmail: boolean;
 
+  listenClick: () => void;
+
   /**
    * Classes of the component
    */
@@ -212,9 +236,16 @@ export class FieldComponent implements OnInit, OnChanges {
   /**
    * @ignore
    */
-  constructor(private ugla: UglaService) {
+  constructor(private ugla: UglaService,
+              protected elementRef: ElementRef,
+              private renderer: Renderer2) {
     this.theme = ugla.theme;
   }
+
+  allAutocompleteOptions = new Array<CodeName>();
+  autocompleteSelectedIndex = null;
+  inputAutocompleteSelected: CodeName;
+  autocompleteRandomID: string;
 
   /**
    * Event keyup input
@@ -250,19 +281,34 @@ export class FieldComponent implements OnInit, OnChanges {
    * @param event is a Event value
    */
   focusoutHandler(event) {
-    const val = event.currentTarget.value;
+    if (event.currentTarget !== undefined) {
+      const val = event.currentTarget.value;
 
-    if (event.currentTarget.hasAttribute('required') && val === '') {
-      this._message = this.messageRequired;
+      if (event.currentTarget.hasAttribute('required') && val === '') {
+        this._message = this.messageRequired;
 
-      event.currentTarget.classList.remove('valid');
-      event.currentTarget.classList.add('invalid');
-    } else {
-      if (!this.invalid) {
-        event.currentTarget.classList.remove('invalid');
+        event.currentTarget.classList.remove('valid');
+        event.currentTarget.classList.add('invalid');
+      } else {
+        if (!this.invalid) {
+          event.currentTarget.classList.remove('invalid');
+        }
+        this._message = this.originalMessage;
       }
-      this._message = this.originalMessage;
+    } else if (!this.invalid && this.inputAutocompleteSelected) {
+      event.classList.remove('invalid');
     }
+
+  }
+
+  focusinHandler() {
+    this.allAutocompleteOptions = this.autoCompleteOptions;
+
+    this.listenClick = this.renderer.listen('window', 'click', (evt) => {
+      if (!this.elementRef.nativeElement.contains(evt.target)) {
+        this.allAutocompleteOptions = new Array<CodeName>();
+      }
+    });
   }
 
   /**
@@ -285,6 +331,7 @@ export class FieldComponent implements OnInit, OnChanges {
     this.maxLength = (this.maxLength !== undefined) ? this.maxLength : 1000;
     this.allowDecimal = (this.allowDecimal !== undefined) ? this.allowDecimal : true;
     this.classes = `${this.theme}`;
+    this.autocompleteRandomID = this.getRandomID();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -301,5 +348,110 @@ export class FieldComponent implements OnInit, OnChanges {
 
   private removeDecimal(event: any) {
     event.target.value = parseInt(event.target.value, 10) || '';
+  }
+
+  getRandomID(): string {
+    return Math.random().toString(36).substr(2, 9);
+  }
+
+  onValueChange(event, search: HTMLInputElement) {
+    if (event.keyCode !== 40 && event.keyCode !== 38) {
+      if (search.value.length === 0) {
+        this.allAutocompleteOptions = new Array<CodeName>();
+        this.onChangeValue.emit(null);
+        this.inputAutocompleteSelected = null;
+      }
+      if (search.value.length >= this.autocompleteStartDigits) {
+         this.allAutocompleteOptions = this.autoCompleteOptions.filter(e =>
+           e.name.toUpperCase().includes(search.value.toUpperCase()) ||
+           (e.name !== null && e.name.toUpperCase().includes(search.value.toUpperCase())));
+         if (this.allAutocompleteOptions.length === 0) {
+            this.onChangeValue.emit(null);
+            this.inputAutocompleteSelected = null;
+          }
+       }
+       this.focusoutHandler(event);
+    }
+   }
+
+  reset() {
+    this.allAutocompleteOptions = new Array<CodeName>();
+    this.value = null;
+    this.inputAutocompleteSelected = null;
+  }
+
+  onBlur(labelInput: HTMLInputElement, search: HTMLInputElement) {
+    if (!this.inputAutocompleteSelected && this.allAutocompleteOptions.length === 0) {
+      this.reset();
+      labelInput.className = '';
+      search.value = '';
+    }
+  }
+
+  onClick(option: CodeName, inputSearch: HTMLInputElement) {
+    this.allAutocompleteOptions = new Array<CodeName>();
+    inputSearch.value = option.name;
+    this.inputAutocompleteSelected = option;
+    this.onChangeValue.emit(option.name);
+    this.focusoutHandler(inputSearch);
+  }
+
+  onScroll(event) {
+    const items = document.getElementsByClassName('valign-wrapper');
+    if (items.length > 0) {
+      const hover = document.getElementsByClassName('valign-wrapper-hover').item(0);
+      const container = document.getElementsByClassName('autocomplete-container').item(0);
+      if (event.keyCode === 40) {
+          for (let i = 0; i < items.length; i++) {
+            if (items[i].classList.contains('selected') && items[i].nextElementSibling != null) {
+              items[i].classList.remove('valign-wrapper-hover');
+              items[i + 1].classList.add('valign-wrapper-hover');
+            }
+          }
+          if (hover && hover.getClientRects().item(0).top / 234 > 2) {
+            container.scrollTo({top: container.scrollTop + 85});
+          }
+      } else if (event.keyCode === 38) {
+        for (let i = 0; i < items.length; i++) {
+          if (items[i].classList.contains('selected') && items[i].previousElementSibling != null) {
+            items[i].classList.remove('valign-wrapper-hover');
+            items[i - 1].classList.add('valign-wrapper-hover');
+          }
+        }
+        if (hover && hover.getClientRects().item(0).top - container.getClientRects().item(0).height < 0) {
+          container.scrollTo({top: container.scrollTop - 100});
+        }
+      }
+    }
+  }
+
+
+  onArrowDown(event) {
+    if (this.autocompleteSelectedIndex === null) {
+      this.autocompleteSelectedIndex = 0;
+    } else {
+      this.autocompleteSelectedIndex = this.autocompleteSelectedIndex >= (this.allAutocompleteOptions.length - 1) ?
+      this.allAutocompleteOptions.length - 1 : this.autocompleteSelectedIndex + 1;
+    }
+    this.onScroll(event);
+  }
+
+  onArrowUp(event) {
+    if (this.autocompleteSelectedIndex === null || this.autocompleteSelectedIndex === 0) {
+      this.autocompleteSelectedIndex = 0;
+    } else {
+        this.autocompleteSelectedIndex = this.autocompleteSelectedIndex - 1;
+    }
+    this.onScroll(event);
+  }
+
+  onEnter(event) {
+    if (this.allAutocompleteOptions.length > 0) {
+      this.value = this.allAutocompleteOptions[this.autocompleteSelectedIndex].name;
+      this.onChangeValue.emit(this.value);
+      this.inputAutocompleteSelected = this.allAutocompleteOptions[this.autocompleteSelectedIndex];
+      this.autocompleteSelectedIndex = null;
+      this.allAutocompleteOptions = new Array<CodeName>();
+    }
   }
 }

@@ -24,7 +24,7 @@ jobs:
           ${{ runner.os }}-build-${{ env.cache-name }}-
           ${{ runner.os }}-build-
           ${{ runner.os }}-
-    
+
     - uses: actions/setup-node@v1
       with:
         node-version: 14
@@ -32,26 +32,27 @@ jobs:
 
     - name: Install dependencies
       run: npm i
-    
+
     - name: Generate file version
       run: node -e 'require("./version").changeConfig()';
-      
+
     - name: Build library
       run: node_modules/.bin/ng build --project=ugla
-    
+
     - name: Move sass
       run: cp -r projects/ugla/src/sass dist/ugla
-  
+
     - name: Move LICENSE
       run: cp -r LICENSE dist/ugla
-    
+
     - name: Deploy
       run: cd dist/ugla/ && npm publish
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-        - name: Read package.json
+
+    - name: Read package.json
       uses: tyankatsu0105/read-package-version-actions@v1
-      with: 
+      with:
         path: "projects/ugla/"
       id: package-version
 

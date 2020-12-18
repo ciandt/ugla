@@ -458,4 +458,50 @@ $label-animate-time: 0.2s;
       }
     }
   }
+
+  .position-relative {
+    position: relative;
+
+    .autocomplete-container {
+      max-height: calc(100vh - 425px);
+      overflow-x: hidden;
+      overflow-y: auto;
+      border-right: 1px solid color(_gray, light);
+      border-left: 1px solid color(_gray, light);
+      border-radius: 0 0 .5rem .5rem;
+      background-color: color(_others, light);
+      z-index: 999;
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 54px;
+
+      .autocomplete-card {
+        min-height: 3rem;
+        padding: 10px 0 0 10px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid color(_gray, light);
+        border-radius: .5rem .5rem 0 0;
+        cursor: pointer;
+
+        &:first-child {
+          border-radius: .5rem .5rem 0 0;
+        }
+
+        &:last-child {
+          border-bottom: 1px solid color(_gray, light);
+          border-radius: 0 0 .5rem .5rem;
+        }
+
+        &:hover {
+          background-color: color(_others, body);
+        }
+      }
+    }
+  }
+
+  .selected {
+    background-color: color(_others, body);
+  }
+
 }
