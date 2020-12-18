@@ -3,20 +3,21 @@
     <ng-content></ng-content>
   </div>
   <div class="footer" [ngClass]="{'background': footerWithBackground}">
-    <ugl-button
+    <div class="inner">
+      <ugl-button
       [type]="'button'"
       [color]="'red'"
       [style]="'border'"
       [title]="cancelText"
       (click)="onCancelClick()"
       [id]="'cancel-button'">{{ cancelText }}</ugl-button>
-    <ugl-button *ngIf="!hiddenButtonSubmit"
+      <ugl-button *ngIf="!hiddenButtonSubmit"
                 [type]="'submit'"
                 [color]="submitColor"
                 [style]="'fill'"
                 [title]="submitText"
                 [disabled]="disableSubmitButton"
-                [id]="'submit-button'"
-    >{{ submitText }}</ugl-button>
+                [id]="'submit-button'">{{ submitText }}</ugl-button>
+    </div>
   </div>
 </form>
