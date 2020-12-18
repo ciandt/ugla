@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Header, Menu, MenuItem, Options, People } from 'projects/ugla/src';
+import { ModalService } from 'projects/ugla/src/lib/components/modal/modal.service';
 
 @Component({
   selector: 'app-accessibility',
@@ -30,7 +31,7 @@ export class AccessibilityComponent implements OnInit {
     new MenuItem('Aside with Breadcrumb', '/aside-with-breadcrumb', true),
   ]);
 
-  constructor() { }
+  constructor(private modalService: ModalService) { }
 
   ngOnInit() {
     this.header.people = this.people;
@@ -41,4 +42,15 @@ export class AccessibilityComponent implements OnInit {
     this.isAutenticated = false;
   }
 
+  confirmModal() {
+    this.modalService.closeModal();
+  }
+
+  cancelModal() {
+    this.modalService.closeModal();
+  }
+
+  openModal() {
+    this.modalService.success('Teste modal', 'Texto da modal');
+  }
 }

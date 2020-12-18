@@ -12,6 +12,21 @@
       <ugl-radio [items]="radioItems" radioGroupAriaLabel="Radios"></ugl-radio>
 
       <p tabindex="0">Last Feedback January 28, 2020</p>
+
+      <div style="margin-top: 1rem;">
+        <ugl-button (action)="openModal()">Open Modal</ugl-button>
+      </div>
     </div>
   </div>
 </ugl-back-panel>
+
+<ugl-modal
+  iconText="Ícone da modal"
+  (cancelClick)="cancelModal()"
+  (confirmClick)="confirmModal()">
+
+  <p tabindex="0">teste1</p>
+  <p tabindex="0">teste2</p>
+  <p tabindex="0">teste3</p>
+
+</ugl-modal>
