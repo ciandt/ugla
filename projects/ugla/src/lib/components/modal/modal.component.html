@@ -1,12 +1,12 @@
 <div *ngIf="isOpened" class="modal-overlay" [ngClass]="{'modal--show': isOpened, 'modal--hide': isClosing}">
 
-  <div id="modal" class="modal" [ngClass]="type" aria-labelledby="modalTitle" aria-modal="true" [attr.aria-label]="'modalTitle'">
-    <div class="modal-body" tabindex="0">
-      <div class="modal-icon" *ngIf="hasIcon">
+  <div id="modal" class="modal" [ngClass]="type" aria-modal="true">
+    <div class="modal-body">
+      <div class="modal-icon" *ngIf="hasIcon" tabindex="0" [attr.aria-label]="iconText">
         <i class="material-icons" aria-hidden="true">{{ icon }}</i>
       </div>
-      <h2 id="modalTitle">{{ title }}</h2>
-      <p id="modalSubtitle" [innerHtml]="subtitle">{{ subtitle }}</p>
+      <h2 id="modalTitle" tabindex="0">{{ title }}</h2>
+      <p id="modalSubtitle" [innerHtml]="subtitle" tabindex="0">{{ subtitle }}</p>
 
       <div class="modal-content">
         <ng-content></ng-content>
