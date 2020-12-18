@@ -2,7 +2,7 @@ name: Deploy Ugla
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
