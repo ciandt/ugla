@@ -1,3 +1,8 @@
+.radio-container {
+  position: relative;
+  margin: 15px 0;
+}
+
 .radio-item {
   min-height: 2.5rem;
 
@@ -26,8 +31,10 @@
   }
 
   input[type=radio] {
-    display: none;
+    position: absolute;
     opacity: 0;
+    width: 0;
+    height: 0;
 
     + label {
       cursor: pointer;
