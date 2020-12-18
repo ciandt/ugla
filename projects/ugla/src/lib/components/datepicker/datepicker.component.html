@@ -5,7 +5,7 @@
          (invalid)="invalid"
          [attr.aria-describedby]="originalMessage"
          [attr.aria-invalid]="invalid"
-         [attr.aria-labelledby]="'pickerLabel-' + name + ' ' + 'pickerDesc-' + name"
+         [attr.aria-label]="label + ' ' + message"
          [attr.aria-readonly]="readonly"
          [disabled]="disabled"
          [id]="id"
@@ -17,6 +17,7 @@
          aria-relevant="all"
          autocomplete="off"
          placeholder=" "
+         tabindex="0"
          type="text">
   <label [id]="'pickerLabel-' + name" [for]="'datepicker-' + name">{{ label }}</label>
   <label [for]="'datepicker-' + name" class="icon" aria-hidden="true"><i class="material-icons">calendar_today</i></label>

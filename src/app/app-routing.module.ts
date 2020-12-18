@@ -10,6 +10,7 @@ import { AsidePageComponent } from './pages/aside-page/aside-page.component';
 import { AsideWithBreadcrumbPageComponent } from './pages/aside-with-breadcrumb-page/aside-with-breadcrumb-page.component';
 import { RulesPageComponent } from './pages/rules-page/rules-page.component';
 import { UploadPageComponent } from './pages/upload-page/upload-page.component';
+import { AccessibilityComponent } from './pages/accessibility/accessibility.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'rules', component: RulesPageComponent},
   {path: 'aside', component: AsidePageComponent},
   {path: 'aside-with-breadcrumb', component: AsideWithBreadcrumbPageComponent},
-  {path: 'upload', component: UploadPageComponent}
+  {path: 'upload', component: UploadPageComponent},
+  {path: 'accessibility', component: AccessibilityComponent}
 ];
 
 @NgModule({
