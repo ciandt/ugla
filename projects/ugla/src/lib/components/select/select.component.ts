@@ -34,7 +34,7 @@ import {Form} from '../../enum';
  *
  * @example
  * public select = new Select('language', [
- *  new Options('Select an option', '-1');
+ *  new Options('Select an option', '-1'),
  *  new Options('Portuguese PT-BR', 'pt_br', true, 'green'),
  *  new Options('English EN', 'en')
  * ], 'white', 'aquamarine');

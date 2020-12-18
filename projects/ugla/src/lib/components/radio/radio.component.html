@@ -1,18 +1,18 @@
-<div [attr.aria-label]="radioGroupAriaLabel" class="radio-container" role="radiogroup" tabindex="0">
+<div [attr.aria-label]="radioGroupAriaLabel" class="radio-container" role="radiogroup">
   <div #radioButton
        (keydown)="keydownEvent($event, item)"
        *ngFor="let item of items; let idx = index"
        [attr.aria-checked]="item.checked"
-       [attr.aria-labelledby]="'label-radio-' + idx"
        [id]="'row-' + idx"
        [ngClass]="theme"
        class="radio-item"
-       role="radio" tabindex="0">
+       role="radio">
     <input (click)="setChecked(item)" [checked]="item.checked" [id]="'radio-' + idx" [name]="item.groupName"
           [value]="item.checked"
           [disabled]="disabled"
+          [title]="item.description"
           type="radio">
-    <label [ngClass]="{'disabled' : disabled}" [for]="'radio-' + idx" [ngStyle]="{'color': item.color}" aria-hidden="true">{{ item.description }}</label>
-    <label [id]="'label-radio-' + idx" hidden>{{ item.description }}</label>
+    <label [ngClass]="{'disabled' : disabled}" 
+    [attr.aria-checked]="item.checked" [for]="'radio-' + idx" [ngStyle]="{'color': item.color}" tabindex="0">{{ item.description }}</label>
   </div>
 </div>

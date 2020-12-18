@@ -1,0 +1,43 @@
+<ugl-header [header]="header" (logoutAction)="logout($event)" [logoutText]="'Logout now'"></ugl-header>
+
+<ugl-back-panel [floatingButton]="true" [ngClass]="'has-header'">
+  <div class="people-detail--container">
+    <ugl-page-title firstTitle="People" secondTitle="Detail"></ugl-page-title>
+    <div>
+      <h3 class="detail-name" tabindex="0">Jack Connor Jack Connor</h3>
+      <p tabindex="0">jackconnor@ciandt.com</p>
+      <h3 class="detail-role" tabindex="0">Developer</h3>
+      <p tabindex="0">Current Evaluation: <span>(28%)</span></p>
+
+      <ugl-radio [items]="radioItems" radioGroupAriaLabel="Radios"></ugl-radio>
+
+      <p tabindex="0">Last Feedback January 28, 2020</p>
+
+      <div style="margin-top: 1rem;">
+        <ugl-button (action)="openModal()">Open Modal</ugl-button>
+        <br>
+        <ugl-button (action)="openToast()">Open Toast</ugl-button>
+        <br>
+        <ugl-datepicker name="pato" 
+                        label="Data de ínicio"
+                        message="Informe a data no formato MM/YYYY"
+                        required="true"
+                        disablet="false"
+                        invalid="false"
+                        datePattern="MM/YYYY"
+                        messageInvalidSelection="A data informada está inválida"></ugl-datepicker>
+      </div>
+    </div>
+  </div>
+</ugl-back-panel>
+
+<ugl-modal
+  iconText="Ícone da modal"
+  (cancelClick)="cancelModal()"
+  (confirmClick)="confirmModal()">
+
+  <p tabindex="0">teste1</p>
+  <p tabindex="0">teste2</p>
+  <p tabindex="0">teste3</p>
+
+</ugl-modal>

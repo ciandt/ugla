@@ -71,7 +71,7 @@ export class ToastItemComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    (this.element.nativeElement as HTMLDivElement).querySelector<HTMLBodyElement>(`#toast-close-${this.message.id}`).focus();
+    (this.element.nativeElement as HTMLDivElement).querySelector<HTMLBodyElement>(`#toastTitle`).focus();
     this.onShow.emit(this.element);
   }
 }

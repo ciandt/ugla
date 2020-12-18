@@ -37,11 +37,10 @@ export class MenuPageComponent implements OnInit {
     new MenuItem('Aside with<br/>Breadcrumb', '/aside-with-breadcrumb', true),
   ]);
 
-  select = new Select('Select', [
-    new Options('Select a item', '-1'),
-    new Options('Item 1', '1'),
-    new Options('Item 2', '2'),
-  ]);
+select = new Select('language', [
+  new Options('Select an option', '-1'),
+  new Options('Portuguese PT-BR', 'pt_br',),
+  new Options('English EN', 'en')]);
 
 radioItems = [
   new Options('Check1', '1', false, '#d71f3c', 'radios'),
