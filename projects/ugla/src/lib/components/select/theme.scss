@@ -192,7 +192,7 @@ $label-animate-time: 0.2s;
   .infos {
     display: flex;
     font-size: 0.75rem;
-    color: color(_gray, light);
+    color: color(_gray, medium);
 
     @include mobile {
       font-size: 0.857rem;

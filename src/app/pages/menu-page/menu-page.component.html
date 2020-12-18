@@ -32,8 +32,16 @@
       [invalid]="false"
       [datePattern]="'MM/YYYY'">
     </ugl-datepicker>
+    <ugl-select
+      [label]="'Language'"
+      [select]="select"
+      [message]="'Select your language'"
+      [dataTitle]="'Select an option'"
+      (selected)="selectLanguage($event)">
+      
+    </ugl-select>
 
-    <ugl-radio [items]="radioItems" [disabled]="true"></ugl-radio>
+    <ugl-radio [items]="radioItems"></ugl-radio>
   </div>
 </section>
 
