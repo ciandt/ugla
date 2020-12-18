@@ -5,7 +5,7 @@
          (invalid)="invalid"
          [attr.aria-describedby]="originalMessage"
          [attr.aria-invalid]="invalid"
-         [attr.aria-labelledby]="'pickerLabel-' + name + ' ' + 'pickerDesc-' + name"
+         [attr.aria-label]="label + ' ' + message"
          [attr.aria-readonly]="readonly"
          [disabled]="disabled"
          [id]="id"
