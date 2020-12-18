@@ -1,27 +1,28 @@
 <section class="back-panel" [ngClass]="ngClass">
   <div class="container container--central container--white">
-    <ugl-button
-      (click)="back()"
-      [color]="'gray'"
-      [id]="'back-button'"
-      [style]="'icon'"
-      [title]="backButtonLabel"
-      [wave]="true"
-      class="mobile-only">
-      <i class="material-icons" [id]="'lock'" aria-hidden="true">keyboard_arrow_left</i>
-    </ugl-button>
-    <ugl-button
-      (click)="back()"
-      [color]="'white'"
-      [id]="'back-button'"
-      [size]="'small'"
-      [style]="'border'"
-      [title]="backButtonLabel"
-      [wave]="true"
-      [floating]="floatingButton"
-      class="desktop-only">
-      <i class="material-icons" aria-hidden="true">keyboard_arrow_left</i> {{ backButtonLabel }}
-    </ugl-button>
+    <div class="panel-header">
+      <ugl-button
+        (click)="back()"
+        [color]="'gray'"
+        [id]="'back-button'"
+        [style]="'icon'"
+        [title]="backButtonLabel"
+        [wave]="true"
+        class="mobile-only">
+        <i class="material-icons" [id]="'lock'" aria-hidden="true">keyboard_arrow_left</i>
+      </ugl-button>
+      <ugl-button
+        (click)="back()"
+        [color]="'white'"
+        [id]="'back-button'"
+        [size]="'small'"
+        [style]="'border'"
+        [title]="backButtonLabel"
+        [wave]="true"
+        class="desktop-only">
+        <i class="material-icons" aria-hidden="true">keyboard_arrow_left</i> {{ backButtonLabel }}
+      </ugl-button>
+    </div>
     <div class="panel-content">
       <ng-content></ng-content>
     </div>

@@ -1,25 +1,39 @@
 @import '../../../../sass/index';
 
+.back-panel {
+  .container {
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .panel-header,
+  .panel-content {
+    @include desktop {
+      width: 400px;
+    }
+  }
+}
+
 :host /deep/ {
-  section.back-panel {
-    #back-button {
-      font-size: .875rem;
-      font-weight: 600;
-      margin: 20px;
+  #back-button {
+    font-size: .875rem;
+    font-weight: 600;
+    margin: 1rem 0;
 
-      @include desktop {
-        width: 120px;
+    @include desktop {
+      width: 120px;
 
-        i {
-          font-size: 1.5rem;
-          line-height: .83;
-          padding-left: 5px;
-        }
+      i {
+        font-size: 1.5rem;
+        line-height: .83;
       }
+    }
 
-      @include mobile {
-        margin: 10px;
-      }
+    @include mobile {
+      margin: .5 0;
     }
   }
 }
