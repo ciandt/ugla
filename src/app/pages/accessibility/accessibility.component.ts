@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Header, Menu, MenuItem, Options, People } from 'projects/ugla/src';
+import { Header, Menu, MenuItem, Options, People, ToastService } from 'projects/ugla/src';
 import { ModalService } from 'projects/ugla/src/lib/components/modal/modal.service';
 
 @Component({
@@ -31,7 +31,7 @@ export class AccessibilityComponent implements OnInit {
     new MenuItem('Aside with Breadcrumb', '/aside-with-breadcrumb', true),
   ]);
 
-  constructor(private modalService: ModalService) { }
+  constructor(private modalService: ModalService, private toastSevice: ToastService) { }
 
   ngOnInit() {
     this.header.people = this.people;
@@ -52,5 +52,9 @@ export class AccessibilityComponent implements OnInit {
 
   openModal() {
     this.modalService.success('Teste modal', 'Texto da modal');
+  }
+
+  openToast() {
+    this.toastSevice.success('Título do toast', 'texto explicativo');
   }
 }
