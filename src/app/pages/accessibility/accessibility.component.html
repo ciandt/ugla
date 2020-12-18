@@ -15,7 +15,16 @@
 
       <div style="margin-top: 1rem;">
         <ugl-button (action)="openModal()">Open Modal</ugl-button>
+        <br>
         <ugl-button (action)="openToast()">Open Toast</ugl-button>
+        <br>
+        <ugl-datepicker name="pato" 
+                        label="Data pato"
+                        message="Informe a data no formato MM/YYYY"
+                        required="true"
+                        disablet="false"
+                        invalid="false"
+                        datePattern="MM/YYYY"></ugl-datepicker>
       </div>
     </div>
   </div>
