@@ -19,6 +19,19 @@
               color: color(_others, 'light');
             }
           }
+
+          &.disabled {
+            color: color(_gray, medium) !important;
+
+            &:hover {
+              background-color: transparent;
+              color: color(_gray, medium) !important;
+
+              &::before {
+                color: color(_#{$theme}, 'medium');
+              }
+            }
+          }
         }
 
         &:checked {
@@ -32,6 +45,20 @@
             &::before {
               color: color(_others, 'light');
               background: color(_#{$theme}, 'medium');
+            }
+
+            &.disabled {
+              color: color(_others, 'light') !important;
+
+              &:hover {
+                color: color(_others, 'light');
+                background-color: color(_#{$theme}, 'medium');
+
+                &::before {
+                  color: color(_others, 'light');
+                  background: color(_#{$theme}, 'medium');
+                }
+              }
             }
           }
         }

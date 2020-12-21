@@ -9,9 +9,10 @@
        class="radio-item"
        role="radio" tabindex="0">
     <input (click)="setChecked(item)" [checked]="item.checked" [id]="'radio-' + idx" [name]="item.groupName"
-           [value]="item.checked"
-           type="radio">
-    <label [for]="'radio-' + idx" [ngStyle]="{'color': item.color}" aria-hidden="true">{{ item.description }}</label>
+          [value]="item.checked"
+          [disabled]="disabled"
+          type="radio">
+    <label [ngClass]="{'disabled' : disabled}" [for]="'radio-' + idx" [ngStyle]="{'color': item.color}" aria-hidden="true">{{ item.description }}</label>
     <label [id]="'label-radio-' + idx" hidden>{{ item.description }}</label>
   </div>
 </div>

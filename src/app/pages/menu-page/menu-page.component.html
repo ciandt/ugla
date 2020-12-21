@@ -24,6 +24,16 @@
         uglGrid [span]="'1'"
         (onClick)="selectCoachee($event)">
     </ugl-list-options>
+    <ugl-datepicker
+      [name]="'date'"
+      [label]="'Date'"
+      [message]="'Select one date'"
+      [required]="true"
+      [invalid]="false"
+      [datePattern]="'MM/YYYY'">
+    </ugl-datepicker>
+
+    <ugl-radio [items]="radioItems" [disabled]="true"></ugl-radio>
   </div>
 </section>
 

@@ -30,13 +30,14 @@ export enum KEY_CODE {
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss']
 })
-export class RadioComponent {
+export class RadioComponent implements OnInit {
 
   @Input() items: Options[];
   @Input() radioGroupAriaLabel: string;
   @Output() itemChecked = new EventEmitter<Options>();
+  @Input() disabled = false;
 
-  @ViewChild('radioButton', { static: false }) radioButton !: HTMLDivElement;
+  @ViewChild('radioButton') radioButton !: HTMLDivElement;
 
   private radioButtons: NodeListOf<HTMLElement>;
   private firstRadioButton = null;
@@ -55,7 +56,13 @@ export class RadioComponent {
     this.theme = ugla.theme;
   }
 
-  ngDoCheck = (): void => {
+  ngOnInit() {
+    if (this.disabled) {
+      this.theme = `${this.theme} disabled`;
+    }
+  }
+
+  ngDoCheck(): void {
     // get all radio buttons in radiogroup
     this.radioButtons = document.querySelectorAll('[role=radio]');
 

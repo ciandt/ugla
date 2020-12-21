@@ -1,10 +1,7 @@
 <ugl-aside [menu]="menu" [people]="people"></ugl-aside>
 <section class="has-aside has-breadcrumb">
   <ugl-breadcrumb [menu]="breadcrumb"></ugl-breadcrumb>
-  <!-- <div class="container">
-    <ugl-page-title [firstTitle]="'Ugla'" [secondTitle]="'Library'"></ugl-page-title>
-    <p>As opções de temas são: <strong>WHITE</strong>, <strong>AQUAMARINE</strong>, <strong>RED</strong>, <strong>GREEN</strong>, <strong>YELLOW</strong>, <strong>GRAY</strong> e <strong>PURPLE</strong></p>
-  </div> -->
+  
   <ugl-form
       (cancelClick)="formAction()"
       (submitClick)="formAction()"
@@ -47,7 +44,7 @@
                 #autocomplete3>
       </ugl-field>
 
-      <ugl-select *ngIf="revenueSourceSelect" [select]="revenueSourceSelect" [id]="'select-revenue-source'" [stylized]="false" width="100%" (selected)="changeSelect($event, 1)"></ugl-select>
+      <ugl-select *ngIf="revenueSourceSelect" [select]="revenueSourceSelect" [id]="'select-revenue-source'" [stylized]="false" width="100%"></ugl-select>
 
     </div>
     </ugl-form>

@@ -127,6 +127,13 @@ export class FieldComponent implements OnInit, OnChanges {
    */
   @Input() multiple: boolean;
 
+    /**
+   * Z-index of the field. Optional.
+   *
+   * Default: 3
+   */
+  @Input() zindex = 3;
+
   /**
    * Z-index of the field. Optional.
    *
@@ -372,7 +379,7 @@ export class FieldComponent implements OnInit, OnChanges {
        }
        this.focusoutHandler(event);
     }
-   }
+  }
 
   reset() {
     this.allAutocompleteOptions = new Array<CodeName>();

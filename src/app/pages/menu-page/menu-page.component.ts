@@ -24,6 +24,8 @@ export class MenuPageComponent implements OnInit {
 
   people = new People('Jack Connor', 'jack.connor@ugla.dev', './assets/imgs/people.png');
 
+  options: object;
+
   menu = new Menu([
     new MenuItem('Home', '/', true),
     new MenuItem('Login', '/login', true, true),
@@ -41,11 +43,23 @@ export class MenuPageComponent implements OnInit {
     new Options('Item 2', '2'),
   ]);
 
+radioItems = [
+  new Options('Check1', '1', false, '#d71f3c', 'radios'),
+  new Options('Check2', '2', true, '#656565', 'radios'),
+  new Options('Check3', '3', false, '#656565', 'radios'),
+  new Options('Check4', '4', false, '#656565', 'radios')
+];
+
   ngOnInit() {
     this.header.people = this.people;
     this.header.menu = this.menu;
     this.ugla.headerShadow = true;
     this.ugla.hasToolBar();
+    this.options = {
+      minDate: new Date(2020, 1, 3), //hide dates before
+      maxDate: new Date(2020, 12, 3), //hide dates after
+      position: 'tr' //position of calendar | tr = top right
+    };
   }
 
   hideMenu() {

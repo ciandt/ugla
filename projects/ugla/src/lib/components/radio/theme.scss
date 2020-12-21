@@ -57,14 +57,29 @@
           @extend %material-icons;
           content: 'radio_button_checked';
           display: inline-flex;
-          font-size: 24px;
+          width: 18px;
           height: 18px;
           margin: 11px 10px;
+          font-size: 24px;
           text-align: center;
           vertical-align: middle;
-          width: 18px;
         }
       }
     }
+
+    &:disabled {
+      + label {
+        cursor: default;
+      }
+    }
   }
+
+  &.disabled {
+    opacity: .4;
+
+    label {
+      cursor: default;
+    }
+  }
+
 }
