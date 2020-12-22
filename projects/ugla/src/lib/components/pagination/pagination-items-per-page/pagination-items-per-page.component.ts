@@ -55,7 +55,7 @@ export class PaginationItemsPerPageComponent {
   /**
    * Items per page select component.
    */
-  @ViewChild('itemsPerPageSelect', { static: false }) itemsPerPageSelect !: SelectComponent;
+  @ViewChild('itemsPerPageSelect') itemsPerPageSelect !: SelectComponent;
 
   /**
    * Emitter for change of page size.

@@ -40,9 +40,9 @@ export class LoginComponent implements OnInit {
   @Input() buttonText = 'Button';
   @Output() signIn = new EventEmitter<any>();
 
-  @ViewChild('authButton', { static: false }) loginButton !: ButtonComponent;
-  @ViewChild('authUser', { static: false }) authUser !: FieldComponent;
-  @ViewChild('authPassword', { static: false }) authPassword !: FieldComponent;
+  @ViewChild('authButton') loginButton !: ButtonComponent;
+  @ViewChild('authUser') authUser !: FieldComponent;
+  @ViewChild('authPassword') authPassword !: FieldComponent;
 
   constructor() {}
 
