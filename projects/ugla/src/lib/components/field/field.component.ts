@@ -135,13 +135,6 @@ export class FieldComponent implements OnInit, OnChanges {
   @Input() zindex = 3;
 
   /**
-   * Z-index of the field. Optional.
-   *
-   * Default: 3
-   */
-  @Input() zindex = 3;
-
-  /**
    * Number of digits for start search on list. Optional.
    *
    * Default: 1
