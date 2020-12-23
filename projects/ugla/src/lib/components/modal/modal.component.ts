@@ -52,6 +52,8 @@ export class ModalComponent implements OnInit {
    */
   @Input() hiddenCancelButton?: boolean;
 
+  @Input() iconText: string;
+
   /**
    * Event to cancel button
    */
@@ -88,7 +90,7 @@ export class ModalComponent implements OnInit {
         this.icon = this.selectIcon(this.type);
 
         setTimeout(() => {
-          const element = this.element.querySelector('.modal-body');
+          const element = this.element.querySelector('.modal-icon');
           if (modal.open && element !== undefined && element !== null) {
             element.focus();
           }
@@ -135,6 +137,7 @@ export class ModalComponent implements OnInit {
   handleKeyboardEvent(event: KeyboardEvent) {
     switch (event.key) {
       case 'Escape': {
+        this.modalService.closeModal();
         event.stopImmediatePropagation();  // prevents events being fired for multiple modals if more than 2 open
         break;
       }

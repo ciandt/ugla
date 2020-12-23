@@ -17,6 +17,7 @@ import { AsideWithBreadcrumbPageComponent } from './pages/aside-with-breadcrumb-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RulesPageComponent } from './pages/rules-page/rules-page.component';
 import { UploadPageComponent } from './pages/upload-page/upload-page.component';
+import { AccessibilityComponent } from './pages/accessibility/accessibility.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UploadPageComponent } from './pages/upload-page/upload-page.component';
     AsidePageComponent,
     AsideWithBreadcrumbPageComponent,
     UploadPageComponent,
-    RulesPageComponent
+    RulesPageComponent,
+    AccessibilityComponent
   ],
   imports: [
     BrowserModule,

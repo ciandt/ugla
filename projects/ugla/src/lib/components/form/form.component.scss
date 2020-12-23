@@ -61,10 +61,16 @@ form {
 
   .footer {
     display: flex;
-    justify-content: space-between;
     padding: 1rem;
     margin-top: 1rem !important;
+    justify-content: center;
     border-top: 1px solid color(_others, 'body');
+
+    .inner {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
 
     &.background {
       background: color(_others, 'body');
