@@ -13,7 +13,8 @@
     "build:all": "npm run build-lib:ugla && npm run build-lib:ugla-rules",
     "build-lib:ugla": "node -e 'require(\"./version\").changeConfig()' && ng-packagr -p projects/ugla/package.json && cp -r projects/ugla/src/sass/ dist/ugla/sass && cd dist/ugla && npm pack",
     "build-lib:ugla-rules": "ng-packagr -p projects/ugla-rules/package.json && cd dist/ugla-rules && npm pack",
-    "postinstall": "ngcc"
+    "postinstall": "ngcc",
+    "docs": "node_modules/typedoc/bin/typedoc --out docs projects/ugla/src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -91,7 +92,8 @@
     "tar": "^4.4.13",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
-    "tslint-angular": "^3.0.2"
+    "tslint-angular": "^3.0.2",
+    "typedoc": "^0.20.10"
   },
   "main": "dist/ugla/ugla.d.ts",
   "directories": {

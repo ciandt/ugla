@@ -3,15 +3,17 @@ import { Header } from '../../models';
 import { UglaService } from '../../ugla.service';
 
 /**
- * Header component
+ * # Header component
  *
- * @example
- * // HTML
+ * ## HTML:
+ * ```html
  * <ugl-header [header]="header" (logoutAction)="logout($event)">
  *    <another-component></another-component>
  * </ugl-header>
- *
- * // Typescript
+ * ```
+ * 
+ * ## Typescript
+ * ```typescript
  * import { Header, People, Menu, MenuItem, Select, Options } from 'ugla-ugla';
  *
  * public header = new Header('Ugla', './assets/imgs/logo.png', 'home', true);
@@ -28,6 +30,7 @@ import { UglaService } from '../../ugla.service';
  *    this.header.menu = this.menu;
  *    this.contentType = ContentTypes.FLUID;
  * }
+ * ```
  */
 @Component({
   selector: 'ugl-header',
