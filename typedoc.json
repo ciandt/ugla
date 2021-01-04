@@ -1,5 +1,15 @@
 {
   "entryPoints": ["projects/ugla/src/index.ts"],
   "out": "docs",
-  "theme": "node_modules/typedoc-clarity-theme/bin/"
+  "theme": "node_modules/typedoc-loopingz-theme/bin/default/",
+  "excludeReferences": true,
+  "links": [
+    {
+      "label": "Repository",
+      "url": "https://github.com/ciandt/ugla"
+    }, {
+      "label": "Issues",
+      "url": "https://github.com/ciandt/ugla/issues"
+    }
+  ]
 }

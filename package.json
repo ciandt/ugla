@@ -14,7 +14,7 @@
     "build-lib:ugla": "node -e 'require(\"./version\").changeConfig()' && ng-packagr -p projects/ugla/package.json && cp -r projects/ugla/src/sass/ dist/ugla/sass && cd dist/ugla && npm pack",
     "build-lib:ugla-rules": "ng-packagr -p projects/ugla-rules/package.json && cd dist/ugla-rules && npm pack",
     "postinstall": "ngcc",
-    "docs": "node_modules/typedoc/bin/typedoc"
+    "docs": "node_modules/typedoc/bin/typedoc --plugin typedoc-loopingz-theme"
   },
   "repository": {
     "type": "git",
@@ -94,7 +94,9 @@
     "tslint": "~6.1.0",
     "tslint-angular": "^3.0.2",
     "typedoc": "^0.20.10",
-    "typedoc-clarity-theme": "^1.1.0"
+    "typedoc-clarity-theme": "^1.1.0",
+    "typedoc-dark-theme": "0.0.11",
+    "typedoc-loopingz-theme": "^1.1.0"
   },
   "main": "dist/ugla/ugla.d.ts",
   "directories": {
