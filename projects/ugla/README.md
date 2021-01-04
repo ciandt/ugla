@@ -18,8 +18,15 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
 ## Install
+
 Run
-`npm install js-datepicker ngx-filepond filepond-plugin-file-validate-type filepond-plugin-file-validate-size filepond-plugin-image-crop filepond-plugin-image-resize filepond-plugin-image-transform filepond-plugin-image-preview filepond-plugin-image-exif-orientation moment --save` for install all dependencies.
+
+```bash
+npm install js-datepicker ngx-filepond filepond-plugin-file-validate-type filepond-plugin-file-validate-size filepond-plugin-image-crop filepond-plugin-image-resize filepond-plugin-image-transform filepond-plugin-image-preview filepond-plugin-image-exif-orientation moment --save
+```
+for install all dependencies.
+
+
 
 Run `npm install ugla` for install Ugla.
 

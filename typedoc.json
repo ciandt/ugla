@@ -1,0 +1,5 @@
+{
+  "entryPoints": ["projects/ugla/src/index.ts"],
+  "out": "docs",
+  "theme": "node_modules/typedoc-clarity-theme/bin/"
+}
