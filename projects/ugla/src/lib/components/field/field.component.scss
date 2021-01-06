@@ -122,10 +122,6 @@ $label-animate-time: 0.2s;
           width: 100%;
         }
 
-        &textarea {
-          width: calc(100% - 1.5rem);
-        }
-
         + label {
           position: absolute;
           font-size: 1rem;
@@ -190,6 +186,10 @@ $label-animate-time: 0.2s;
             background-color: color(_others, light);
           }
         }
+      }
+
+      textarea {
+        width: calc(100% - 1.5rem);
       }
 
       &.two-fields {
