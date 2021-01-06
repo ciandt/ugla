@@ -391,6 +391,7 @@ export class FieldComponent implements OnInit, OnChanges {
   onClick(option: CodeName, inputSearch: HTMLInputElement) {
     this.allAutocompleteOptions = new Array<CodeName>();
     inputSearch.value = option.name;
+    this.value = option.name;
     this.inputAutocompleteSelected = option;
     this.onChangeValue.emit(option.name);
     this.focusoutHandler(inputSearch);
