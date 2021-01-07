@@ -1,4 +1,4 @@
-<ugl-header [header]="header" (logoutAction)="logout($event)" [logoutText]="'Logout now'"></ugl-header>
+<ugl-header [header]="header" (logoutAction)="logout()" [logoutText]="'Logout now'"></ugl-header>
 
 <ugl-back-panel [floatingButton]="true" [ngClass]="'has-header'">
   <div class="people-detail--container">
@@ -18,7 +18,7 @@
         <br>
         <ugl-button (action)="openToast()">Open Toast</ugl-button>
         <br>
-        <ugl-datepicker name="pato" 
+        <ugl-datepicker name="pato"
                         label="Data de ínicio"
                         message="Informe a data no formato MM/YYYY"
                         required="true"

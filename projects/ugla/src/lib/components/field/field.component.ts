@@ -378,6 +378,11 @@ export class FieldComponent implements OnInit, OnChanges {
     this.allAutocompleteOptions = new Array<CodeName>();
     this.value = null;
     this.inputAutocompleteSelected = null;
+    const items = document.querySelectorAll('[id*="-' + this.name + '"]');
+    items.forEach(i => {
+      i.className = '';
+    });
+    this._message = this.originalMessage;
   }
 
   onBlur(labelInput: HTMLInputElement, search: HTMLInputElement) {

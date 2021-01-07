@@ -1,7 +1,7 @@
 <ugl-aside [menu]="menu" [people]="people"></ugl-aside>
 <section class="has-aside has-breadcrumb">
   <ugl-breadcrumb [menu]="breadcrumb"></ugl-breadcrumb>
-  
+
   <ugl-form
       (cancelClick)="formAction()"
       (submitClick)="formAction()"
@@ -11,7 +11,7 @@
 
       <ugl-page-title [firstTitle]="'Teste do'" [secondTitle]="'Formulário'"></ugl-page-title>
 
-      <div uglGrid [grid]="true" col="3">
+      <div uglGrid [grid]="true" col="4">
 
         <ugl-field [label]="'Revenue Company Account'"
                 [name]="'revenueAccount2'"
@@ -43,6 +43,15 @@
                 [autoCompleteOptions]="autoCompleteOptions"
                 #autocomplete3>
       </ugl-field>
+
+      <ugl-button
+      [type]="'button'"
+      [color]="'red'"
+      [style]="'border'"
+      [title]="'Button'"
+      [id]="'cancel-button'"
+      (click)="clearFields()">
+    </ugl-button>
 
       <ugl-select *ngIf="revenueSourceSelect" [select]="revenueSourceSelect" [id]="'select-revenue-source'" [stylized]="false" width="100%"></ugl-select>
 

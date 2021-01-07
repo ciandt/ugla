@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { UglaService, Header, People, AsideItem, Menu, MenuItem, Select, Options } from 'projects/ugla/src';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { UglaService, Header, People, AsideItem, Menu, MenuItem, Select, Options, FieldComponent } from 'projects/ugla/src';
 import { CodeName } from 'projects/ugla/src/lib/models/code-name';
 
 
@@ -53,11 +53,18 @@ export class AsideWithBreadcrumbPageComponent implements OnInit {
     new MenuItem('Breadcrumb', '/aside-with-breadcrumb', true, true)
   ]);
 
+  @ViewChild('autocomplete') fieldAuto: FieldComponent;
+  @ViewChild('autocomplete3') fieldAuto3: FieldComponent;
   ngOnInit() {
     this.header.people = this.people;
     this.ugla.headerShadow = true;
     this.ugla.hasToolBar();
 
+  }
+
+  clearFields() {
+    this.fieldAuto.reset();
+    this.fieldAuto3.reset();
   }
 
   hideMenu() {
