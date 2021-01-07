@@ -3,12 +3,14 @@ import { Options } from '../../models/options';
 import { UglaService } from '../../ugla.service';
 
 export enum KEY_CODE {
-  RETURN = 13,
-  SPACE = 32,
-  LEFT = 37,
-  UP = 38,
-  RIGHT = 39,
-  DOWN = 40
+  RETURN = 'ENTER',
+  SPACE = 'SPACE',
+  LEFT = 'ARROWLEFT',
+  UP = 'ARROWUP',
+  RIGHT = 'ARROWRIGHT',
+  DOWN = 'ARROWDOWN',
+  TAB = 'TAB',
+  SHIFT = 'SHIFT'
 }
 
 /**
@@ -95,7 +97,7 @@ export class RadioComponent implements OnInit {
 
   keydownEvent(event: KeyboardEvent, item: Options) {
     const current = event.currentTarget;
-    const keyCode = event.keyCode;
+    const keyCode = event.code.toUpperCase();
     let flag = false;
 
     if (keyCode === KEY_CODE.SPACE || keyCode === KEY_CODE.RETURN) {
@@ -103,7 +105,7 @@ export class RadioComponent implements OnInit {
     } else if (keyCode === KEY_CODE.UP) {
       this.setFocusToPreviousItem(current);
       flag = true;
-    } else if (keyCode === KEY_CODE.DOWN) {
+    } else if (keyCode === KEY_CODE.DOWN || keyCode == KEY_CODE.TAB) {
       this.setFocusToNextItem(current);
       flag = true;
     } else if (keyCode === KEY_CODE.LEFT) {
@@ -135,6 +137,7 @@ export class RadioComponent implements OnInit {
     let index: number;
     if (current === this.firstRadioButton) {
       this.setFocus(this.lastRadioButton);
+      return;
     } else {
       const radioButtonsArray = Array.prototype.slice.call(this.radioButtons);
       index = radioButtonsArray.indexOf(current);
@@ -144,7 +147,8 @@ export class RadioComponent implements OnInit {
   private setFocusToNextItem(current: any) {
     let index: number;
     if (current === this.lastRadioButton) {
-      this.setFocus(this.firstRadioButton);
+      const radio = document.querySelector('.radio-container').parentElement;
+      (radio.nextElementSibling as HTMLDivElement).focus()
     } else {
       const radioButtonsArray = Array.prototype.slice.call(this.radioButtons);
       index = radioButtonsArray.indexOf(current);

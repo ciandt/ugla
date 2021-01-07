@@ -15,7 +15,7 @@ export class AccessibilityComponent implements OnInit {
 
   radioItems = [
     new Options('Check1', '1', false, '#656565', 'radios'),
-    new Options('Check2', '2', true, '#656565', 'radios'),
+    new Options('Check2', '2', true, '#333', 'radios'),
     new Options('Check3', '3', false, '#656565', 'radios'),
     new Options('Check4', '4', false, '#656565', 'radios')
   ];

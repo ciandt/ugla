@@ -11,8 +11,13 @@
           [value]="item.checked"
           [disabled]="disabled"
           [title]="item.description"
+          [attr.aria-checked]="item.checked"
+          tabindex="0"
           type="radio">
-    <label [ngClass]="{'disabled' : disabled}" 
-    [attr.aria-checked]="item.checked" [for]="'radio-' + idx" [ngStyle]="{'color': item.color}" tabindex="0">{{ item.description }}</label>
+    <label [ngClass]="{'disabled' : disabled}"
+      [attr.aria-checked]="item.checked"
+      [for]="'radio-' + idx"
+      aria-hidden="true"
+      [ngStyle]="{'color': item.color}">{{ item.description }}</label>
   </div>
 </div>
