@@ -38,6 +38,7 @@ export class RadioComponent implements OnInit {
   @Input() radioGroupAriaLabel: string;
   @Output() itemChecked = new EventEmitter<Options>();
   @Input() disabled = false;
+  @Input() nextFocus = "";
 
   @ViewChild('radioButton') radioButton !: HTMLDivElement;
 
@@ -148,7 +149,13 @@ export class RadioComponent implements OnInit {
     let index: number;
     if (current === this.lastRadioButton) {
       const radio = document.querySelector('.radio-container').parentElement;
-      (radio.nextElementSibling as HTMLDivElement).focus()
+      const nextFocus = document.querySelector(this.nextFocus);
+
+      if (radio.nextElementSibling !== null) {
+        (radio.nextElementSibling as HTMLDivElement).focus()
+      } else {
+        (nextFocus as HTMLDivElement).focus()
+      }
     } else {
       const radioButtonsArray = Array.prototype.slice.call(this.radioButtons);
       index = radioButtonsArray.indexOf(current);

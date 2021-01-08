@@ -57,4 +57,12 @@ export class AccessibilityComponent implements OnInit {
   openToast() {
     this.toastSevice.success('Título do toast', 'texto explicativo');
   }
+
+  cancel() {
+    this.modalService.error('Cancel', 'Cancel form', true);
+  }
+
+  submit() {
+    this.modalService.success('Cancel', 'Cancel form', true);
+  }
 }
