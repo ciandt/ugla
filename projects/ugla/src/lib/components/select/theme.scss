@@ -39,7 +39,8 @@ $label-animate-time: 0.2s;
       @include font(1rem, semi-bold);
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       box-shadow: 0 2.5px 8px color(_others, 'shadow');
 
       @include mobile() {
@@ -306,7 +307,8 @@ $label-animate-time: 0.2s;
             }
           }
 
-          &:hover {
+          &:hover,
+          &:focus {
             border: 1px solid color(_gray, medium);
           }
         }
@@ -436,7 +438,8 @@ $label-animate-time: 0.2s;
             min-height: 3rem;
             border-bottom: 1px solid color(_gray, light);
 
-            &:hover {
+            &:hover,
+            &:focus {
               background-color: rgba(color(_gray, extra-light), 0.2);
             }
 

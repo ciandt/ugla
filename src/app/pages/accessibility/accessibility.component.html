@@ -12,13 +12,11 @@
       <h3 class="detail-name" tabindex="0">Jack Connor Jack Connor</h3>
       <p tabindex="0">jackconnor@ciandt.com</p>
       <h3 class="detail-role" tabindex="0">Developer</h3>
-
       
-      <ugl-select [select]="selectOthers"></ugl-select>
-
+      <ugl-select [select]="selectOthers" nextFocus="#current-evaluation"></ugl-select>
 
       <!-- <ugl-radio [items]="radioItems" radioGroupAriaLabel="Radios" nextFocus="#submit-button"></ugl-radio> -->
-      <p tabindex="0">Current Evaluation: <span>(28%)</span></p>
+      <p tabindex="0" id="current-evaluation">Current Evaluation: <span>(28%)</span></p>
 
     </div>
   </div>

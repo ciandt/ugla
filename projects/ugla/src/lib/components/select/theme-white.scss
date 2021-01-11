@@ -23,7 +23,8 @@
             border-bottom: 1px solid color(_others, 'body');
             border-bottom: 1px solid color(_others, 'shadow');
 
-            &:hover {
+            &:hover,
+            &:focus {
               color: color(_others, 'dark');
               background-color: color(_aquamarine, 'light');
             }
@@ -66,7 +67,8 @@
           li {
             [type='radio'] {
               + label {
-                &:hover {
+                &:hover,
+                &:focus {
                   color: color(_aquamarine, medium);
                 }
               }

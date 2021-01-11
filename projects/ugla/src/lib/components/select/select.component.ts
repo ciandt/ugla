@@ -12,7 +12,7 @@ import { Component,
         SimpleChanges } from '@angular/core';
 import {Options, Select} from '../../models';
 import {UglaService} from '../../ugla.service';
-import {Form} from '../../enum';
+import {Form, KeyCode} from '../../enum';
 
 /**
  * Select
@@ -161,6 +161,8 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges {
 
   @Input() width: string;
 
+  @Input() nextFocus = "";
+
   /**
    * Original message
    */
@@ -177,6 +179,11 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges {
   public classes = '';
 
   private _open = false;
+
+
+  private itemsList: NodeListOf<HTMLElement>;
+  private firstItem = null;
+  private lastItem = null;
 
   /**
    * Receives the component's name
@@ -226,6 +233,15 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges {
     this.classes = `${this.theme} ${this.select.labelColor ? 'no-margin' : ''} ${this.readonly ? 'readonly' : ''}`;
   }
 
+  ngDoCheck(): void {
+    this.itemsList = document.querySelectorAll('[role=option]');
+    
+    if (this.itemsList.length > 0) {
+      this.firstItem = this.itemsList[0];
+      this.lastItem = this.itemsList[this.itemsList.length - 1];
+    }
+  }
+
   ngOnChanges(changes: SimpleChanges) {
     const SELECT = 'select';
 
@@ -267,6 +283,7 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges {
     });
 
     this._open = true;
+
     if (!this.disabled) {
       if (this.zindex === 5) {
         this.zindex = this.originalZindex;
@@ -274,7 +291,11 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges {
         this.zindex = 5;
       }
     }
-    setTimeout(() => this.checkbox.nativeElement.checked = true, 0);
+
+    setTimeout(() => {
+      this.checkbox.nativeElement.checked = true;
+      this.setFocus(this.firstItem.querySelector('label'));
+    }, 0);
   }
 
   close() {
@@ -395,22 +416,65 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges {
 
   isOpened = () => this._open;
 
+  setFocus(current: any) {
+    if (current === null) {
+      return;
+    }
+    (current as HTMLDivElement).focus();
+  }
+
+  keydownEvent(event: KeyboardEvent, index: number) {
+    const current = this.itemsList[index];
+    const keyCode = event.code.toUpperCase();
+
+    if (keyCode === KeyCode.UP) {
+      this.setFocusToPreviousItem(current, index);
+    } else if (keyCode === KeyCode.DOWN) {
+      this.setFocusToNextItem(current, index);
+    } else if (keyCode === KeyCode.TAB) {
+      const nextFocus = document.querySelector(this.nextFocus);
+      (nextFocus as HTMLDivElement).focus()
+      this.close();
+    }
+  }
+
+  private setFocusToPreviousItem(current: any, index: number) {
+    if (current === this.firstItem) {
+      this.setFocus(this.lastItem.querySelector('label'))
+    } else {
+      this.setFocus(this.itemsList[index - 1].querySelector('label'));
+    }
+  }
+
+  private setFocusToNextItem(current: any, index: number) {
+    if (current === this.lastItem) {
+      this.setFocus(this.firstItem.querySelector('label'))
+    } else {
+      this.setFocus(this.itemsList[index + 1].querySelector('label'));
+    }
+  }
+
   /**
    * Handles `Escape` key closing the dropdown, and arrow up/down focus to/from the dropdown list.
    */
   @HostListener('keydown', ['$event'])
   hostkeys(ev: KeyboardEvent) {
-    if (ev.key === 'Escape') {
+    const key = ev.code.toUpperCase();
+
+    if (key === KeyCode.ESC) {
       this.close();
     } else if (this.elementRef && this.elementRef.nativeElement.contains(ev.target)) {
       ev.stopPropagation();
-      if (ev.key === 'ArrowDown' || ev.key === 'Down') {
+      if (key === KeyCode.DOWN || ev.key === 'Down') {
         if (!this.readonly) {
           this.open();
         }
       } else {
         this.toggleCombobox(ev);
       }
+    } else if (key === KeyCode.TAB) {
+      const nextFocus = document.querySelector(this.nextFocus);
+      (nextFocus as HTMLDivElement).focus()
     }
   }
 }

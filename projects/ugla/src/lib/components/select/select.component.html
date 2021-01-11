@@ -33,8 +33,11 @@
     <li *ngFor="let option of select.options; let i = index" role="option" [attr.aria-selected]="option.checked">
       <input type="radio" [name]="'options-' + select.name" [id]="'option-' + select.name + '-' + i"
              (change)="selectedItem( i, $event )" [value]="option.value" [checked]="option.checked">
-      <label [for]="'option-' + select.name + '-' + i" (keypress)="selectedItem( i, $event )"
-             tabindex="0">{{ option.description }}</label>
+      <label [for]="'option-' + select.name + '-' + i" 
+              (keypress)="selectedItem( i, $event )"
+              (keydown)="keydownEvent($event, i)"
+              [attr.aria-checked]="option.checked"
+              tabindex="0">{{ option.description }}</label>
     </li>
   </ul>
 </div>

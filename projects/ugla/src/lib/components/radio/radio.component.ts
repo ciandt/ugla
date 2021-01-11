@@ -1,17 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output, ViewChild } from '@angular/core';
+import { KeyCode } from '../../enum';
 import { Options } from '../../models/options';
 import { UglaService } from '../../ugla.service';
-
-export enum KEY_CODE {
-  RETURN = 'ENTER',
-  SPACE = 'SPACE',
-  LEFT = 'ARROWLEFT',
-  UP = 'ARROWUP',
-  RIGHT = 'ARROWRIGHT',
-  DOWN = 'ARROWDOWN',
-  TAB = 'TAB',
-  SHIFT = 'SHIFT'
-}
 
 /**
  * Radio
@@ -101,18 +91,18 @@ export class RadioComponent implements OnInit {
     const keyCode = event.code.toUpperCase();
     let flag = false;
 
-    if (keyCode === KEY_CODE.SPACE || keyCode === KEY_CODE.RETURN) {
+    if (keyCode === KeyCode.SPACE || keyCode === KeyCode.RETURN) {
       this.onSelectItem(event, item);
-    } else if (keyCode === KEY_CODE.UP) {
+    } else if (keyCode === KeyCode.UP) {
       this.setFocusToPreviousItem(current);
       flag = true;
-    } else if (keyCode === KEY_CODE.DOWN || keyCode == KEY_CODE.TAB) {
+    } else if (keyCode === KeyCode.DOWN || keyCode == KeyCode.TAB) {
       this.setFocusToNextItem(current);
       flag = true;
-    } else if (keyCode === KEY_CODE.LEFT) {
+    } else if (keyCode === KeyCode.LEFT) {
       this.setFocusToPreviousItem(current);
       flag = true;
-    } else if (keyCode === KEY_CODE.RIGHT) {
+    } else if (keyCode === KeyCode.RIGHT) {
       this.setFocusToNextItem(current);
       flag = true;
     }
@@ -145,6 +135,7 @@ export class RadioComponent implements OnInit {
       this.setFocus(radioButtonsArray[index - 1]);
     }
   }
+
   private setFocusToNextItem(current: any) {
     let index: number;
     if (current === this.lastRadioButton) {
