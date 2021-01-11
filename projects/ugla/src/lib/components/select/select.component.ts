@@ -78,7 +78,7 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges {
    *
    * Default value: false
    */
-  @Input() stylized: boolean;
+  @Input() stylized: boolean = false;
 
   /**
    * If is stylized, set a defined type
@@ -94,7 +94,7 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges {
    *
    * Default value: false
    */
-  @Input() disabled: boolean;
+  @Input() disabled: boolean = false;
 
   /**
    * Set data-title attribute
@@ -220,8 +220,6 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges {
 
     this.setLabelColor();
 
-    this.stylized = (this.stylized !== undefined) ? this.stylized : false;
-    this.disabled = (this.disabled !== undefined) ? this.disabled : false;
     this.originalMessage = this.message;
     this.messageRequired = (this.messageRequired !== undefined) ? this.messageRequired : Form.REQUIRED;
     this.originalZindex = this.zindex;

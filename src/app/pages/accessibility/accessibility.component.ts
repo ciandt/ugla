@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Header, Menu, MenuItem, Options, People, ToastService } from 'projects/ugla/src';
+import { Header, Menu, MenuItem, Options, People, Select, ToastService } from 'projects/ugla/src';
 import { ModalService } from 'projects/ugla/src/lib/components/modal/modal.service';
 
 @Component({
@@ -32,6 +32,13 @@ export class AccessibilityComponent implements OnInit {
   ]);
 
   constructor(private modalService: ModalService, private toastSevice: ToastService) { }
+
+  selectOthers = new Select('others', [
+    new Options('Selectione', '-1', false),
+    new Options('Amanda', 'A', false),
+    new Options('Joab', 'SON-DAUGHTER', false),
+    new Options('Diogo', 'FATHER-MOTHER', false)
+  ]);
 
   ngOnInit() {
     this.header.people = this.people;

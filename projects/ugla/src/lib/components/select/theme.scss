@@ -109,7 +109,10 @@ $label-animate-time: 0.2s;
   }
 
   [type='checkbox'] {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
 
     ~ .select_list {
       height: 0;
@@ -303,12 +306,10 @@ $label-animate-time: 0.2s;
             }
           }
 
-
           &:hover {
             border: 1px solid color(_gray, medium);
           }
         }
-
 
         &::before {
           content: attr(data-label);
@@ -366,8 +367,8 @@ $label-animate-time: 0.2s;
       &:checked {
         + label {
           &.combo-selected {
-            background-color: white;
-            color: black;
+            background-color: color(_others, light);
+            color: color(_others, black);
             border: 1px solid color(_gray, light);
           }
         }
