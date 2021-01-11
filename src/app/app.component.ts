@@ -22,8 +22,8 @@ export class AppComponent implements OnInit {
   people = new People('Jack Connor', 'jack.connor@ugla.dev', './assets/imgs/people.png');
 
   menu = new Menu([
-    new MenuItem('Home', '/', true),
-    new MenuItem('Login', '/login'),
+    new MenuItem('Home', null, true),
+    new MenuItem('Login', '/login', true, false, null, ),
     new MenuItem('E2E', '/e2e', true),
     new MenuItem('Test page', '/dev', true),
   ]);

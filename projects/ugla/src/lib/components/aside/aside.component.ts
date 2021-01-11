@@ -25,6 +25,7 @@ export class AsideComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     const path = location.pathname;
     this.menu.forEach((item, index) => {
+      item.visible = (item.submenu && item.submenu.length > 0) || item.url != null;
       if (item.submenu) {
         item.submenu.forEach(subitem => {
           if (subitem.url === path) {
@@ -50,6 +51,11 @@ export class AsideComponent implements OnInit, AfterViewInit {
   getIcon(index: string, subindex?: string) {
     let hasSubmenu = this.menu[index].submenu !== null;
 
+    let noSubmenuHasUrl = false;
+    if (!hasSubmenu) {
+      noSubmenuHasUrl = this.menu[index].url !== null;
+    }
+
     if (subindex !== undefined) {
       hasSubmenu = this.menu[index].submenu[subindex].submenu !== null;
     }
@@ -63,7 +69,7 @@ export class AsideComponent implements OnInit, AfterViewInit {
       open = this.menu[index].open;
     }
 
-    if (!hasSubmenu) {
+    if (!hasSubmenu || noSubmenuHasUrl) {
       return this.iconLinks[0];
     } else if (!open) {
       return this.iconLinks[1];

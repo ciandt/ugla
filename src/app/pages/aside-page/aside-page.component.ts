@@ -18,7 +18,7 @@ export class AsidePageComponent implements OnInit {
   people = new People('Jack Connor', 'jack.connor@ugla.dev', './assets/imgs/people.png');
 
   menu = [
-    new AsideItem('Home', '/', true),
+    new AsideItem('Home', null, true),
     new AsideItem('Login', '/login', true),
     new AsideItem('E2E', '/e2e', true),
     new AsideItem('Menu', '/menu', true),
