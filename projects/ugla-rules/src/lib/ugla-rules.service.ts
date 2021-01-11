@@ -19,7 +19,7 @@ export class UglaRulesService {
   constructor(@Optional() config: RulesConfig) {
     this.applicationAcronym = config.acronym;
     if (!config.acronym) {
-      console.error('Was need include an Application`s acronym!');
+      return;
     }
   }
 
@@ -104,7 +104,7 @@ export class UglaRulesService {
     let operations = this.operations;
 
     if (!this.operations && feature === undefined) {
-      console.error('VIEW operation:', 'You need inform a FEATURE\'s acronym');
+      return false;
     }
 
     if (feature !== undefined) {
@@ -123,7 +123,7 @@ export class UglaRulesService {
     let operations = this.operations;
 
     if (!this.operations && feature === undefined) {
-      console.error('EDIT operation:', 'You need inform a FEATURE\'s acronym');
+      return false;
     }
 
     if (feature !== undefined) {
@@ -142,7 +142,7 @@ export class UglaRulesService {
     let operations = this.operations;
 
     if (!this.operations && feature === undefined) {
-      console.error('CREATE operation:', 'You need inform a FEATURE\'s acronym');
+      return false;
     }
 
     if (feature !== undefined) {
@@ -161,7 +161,7 @@ export class UglaRulesService {
     let operations = this.operations;
 
     if (!this.operations && feature === undefined) {
-      console.error('DELETE operation:', 'You need inform a FEATURE\'s acronym');
+      return false;
     }
 
     if (feature !== undefined) {

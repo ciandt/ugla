@@ -379,9 +379,7 @@ export class FieldComponent implements OnInit, OnChanges {
     this.value = null;
     this.inputAutocompleteSelected = null;
     const items = document.querySelectorAll('[id*="-' + this.name + '"]');
-    items.forEach(i => {
-      i.className = '';
-    });
+    items.forEach(i => i.className = '');
     this._message = this.originalMessage;
   }
 
