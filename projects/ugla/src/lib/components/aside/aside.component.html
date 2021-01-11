@@ -11,7 +11,7 @@
   </header>
   <ul tabindex='0'>
     <li *ngFor="let item of menu; let idx = index">
-      <a [routerLink]="item.url"
+      <a [routerLink]="item.url" *ngIf="item.visible"
           [routerLinkActive]="item.url ? 'active' : ''"
           [routerLinkActiveOptions]="{exact: true}"
           class="gtm-menu-item"
@@ -20,7 +20,7 @@
           [id]="'aside-menu-' + idx">{{ item.description }}<span class="material-icons">{{ item.icon || getIcon(idx) }}</span></a>
       <ul *ngIf="item.submenu && item.open !== undefined && item.open">
         <li *ngFor="let subitem of item.submenu; let jx = index">
-          <a [routerLink]="subitem.url"
+          <a [routerLink]="subitem.url" *ngIf="subitem.visible"
               [routerLinkActive]="'active'"
               [routerLinkActiveOptions]="{exact: true}"
               class="gtm-menu-subitem"
