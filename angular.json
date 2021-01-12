@@ -35,7 +35,7 @@
             "scripts": [],
             "allowedCommonJsDependencies": [
               "lodash"
-           ]
+            ]
           },
           "configurations": {
             "production": {
@@ -47,7 +47,6 @@
                   "with": "src/environments/environment.prd.ts"
                 }
               ],
-              
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": true,
@@ -149,14 +148,20 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ugla/tsconfig.lib.json",
-              "projects/ugla/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/ugla/**/*.ts",
+              "projects/ugla/**/*.html"
+            ]
+          }
+        },
+        "eslint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.component.html"
             ]
           }
         }
