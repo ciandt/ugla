@@ -7,8 +7,8 @@
       <ng-content></ng-content>
     </div>
     <div class="page--footer">
-      <ugl-button [color]="'red'" [id]="'float-btn-cancel'" [style]="'border'" (action)="cancel()">{{ cancelText }}</ugl-button>
-      <ugl-button [color]="color" [id]="'float-btn-confirm'" [disabled]="confirmDisabled" (action)="confirm()">{{ confirmText }}</ugl-button>
+      <ugl-button [color]="'red'" [id]="'float-btn-cancel'" [title]="cancelText" [style]="'border'" (action)="cancel()">{{ cancelText }}</ugl-button>
+      <ugl-button [color]="color" [id]="'float-btn-confirm'" [title]="confirmText" [disabled]="confirmDisabled" (action)="confirm()">{{ confirmText }}</ugl-button>
     </div>
   </div>
 </div>
