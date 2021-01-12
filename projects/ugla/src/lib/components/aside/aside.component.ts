@@ -51,6 +51,10 @@ export class AsideComponent implements OnInit, AfterViewInit {
   getIcon(index: string, subindex?: string) {
     let hasSubmenu = this.menu[index].submenu !== null;
 
+    if (this.menu[index].submenu !== null) {
+      hasSubmenu = this.menu[index].submenu.find(s => s.visible) !== null;
+    }
+
     let noSubmenuHasUrl = false;
     if (!hasSubmenu) {
       noSubmenuHasUrl = this.menu[index].url !== null;
