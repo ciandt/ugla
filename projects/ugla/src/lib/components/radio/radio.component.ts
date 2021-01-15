@@ -28,7 +28,6 @@ export class RadioComponent implements OnInit {
   @Input() radioGroupAriaLabel: string;
   @Output() itemChecked = new EventEmitter<Options>();
   @Input() disabled = false;
-  @Input() nextFocus = "";
 
   @ViewChild('radioButton') radioButton !: HTMLDivElement;
 
@@ -96,7 +95,7 @@ export class RadioComponent implements OnInit {
     } else if (keyCode === KeyCode.UP) {
       this.setFocusToPreviousItem(current);
       flag = true;
-    } else if (keyCode === KeyCode.DOWN || keyCode == KeyCode.TAB) {
+    } else if (keyCode === KeyCode.DOWN) {
       this.setFocusToNextItem(current);
       flag = true;
     } else if (keyCode === KeyCode.LEFT) {
@@ -139,14 +138,7 @@ export class RadioComponent implements OnInit {
   private setFocusToNextItem(current: any) {
     let index: number;
     if (current === this.lastRadioButton) {
-      const radio = document.querySelector('.radio-container').parentElement;
-      const nextFocus = document.querySelector(this.nextFocus);
-
-      if (radio.nextElementSibling !== null) {
-        (radio.nextElementSibling as HTMLDivElement).focus()
-      } else {
-        (nextFocus as HTMLDivElement).focus()
-      }
+      this.setFocus(this.firstRadioButton);
     } else {
       const radioButtonsArray = Array.prototype.slice.call(this.radioButtons);
       index = radioButtonsArray.indexOf(current);

@@ -18,6 +18,8 @@
       [attr.aria-checked]="item.checked"
       [for]="'radio-' + idx"
       aria-hidden="true"
+      [title]="item.description"
       [ngStyle]="{'color': item.color}">{{ item.description }}</label>
   </div>
 </div>
+]
