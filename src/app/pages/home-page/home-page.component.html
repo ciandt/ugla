@@ -13,50 +13,26 @@
 </ugl-header>
 
 <section class="has-header">
-  <div class="container container--central">
-    <div class="list" uglGrid [grid]="true" [col]="6">
-      <ugl-card-info-photo [photo]="'https://lh3.googleusercontent.com/a-/AOh14GhcJQjeII0Z44AvD0U5ZoCRB6B0s38bcAtcHCdVsQ=s96-c'"
-                           [title]="'Regivaldo Silva'"
-                           [clicked]="true"
-                           [infos]="['regivaldo@ciandt.com', 'Developer', 'IT Team', 'Campinas / 23A']"></ugl-card-info-photo>
-      <ugl-card-info-photo [photo]="'https://lh3.googleusercontent.com/a-/AOh14GhcJQjeII0Z44AvD0U5ZoCRB6B0s38bcAtcHCdVsQ=s96-c'"
-                          [title]="'Regivaldo Silva'"
-                          [infos]="['regivaldo@ciandt.com', 'Developer', 'IT Team', 'Campinas / 23A']"></ugl-card-info-photo>
-      <ugl-card-info-photo [photo]="'https://lh3.googleusercontent.com/a-/AOh14GhcJQjeII0Z44AvD0U5ZoCRB6B0s38bcAtcHCdVsQ=s96-c'"
-                           [title]="'Regivaldo Silva'"
-                           [infos]="['regivaldo@ciandt.com', 'Developer', 'IT Team', 'Campinas / 23A']"></ugl-card-info-photo>
-
-    </div>
-  </div>
-</section>
-
-<section class="has-header" *ngIf="false">
   <div class="container container--central container--white">
     <ugl-page-title [firstTitle]="'Ugla'" [secondTitle]="'Library'"></ugl-page-title>
-    <div uglGrid [grid]="true" [col]="2" [colSm]="1" [gap]="1">
-      <div>
-        <p class="align-justify">O projeto <strong>Ugla</strong> foi desenvolvido com o objetivo de minimizar esforços no desenvolvimento FrontEnd de sistemas, trazendo consistencia e segurança para projetos que necessitam conversar entre si ou, que sejam totalmente independentes, mantendo uma identidade única e de fácil entendimento.</p>
-        <p class="align-justify">Todos os componentes desenvolvidos possuem sua base construtiva em 3 grandes pilares:</p>
-        <h2>Acessibilidade</h2>
-        <p class="align-justify">Queremos que abranger o maior número de usuários possível, sem limitar ninguém. Por isso cada componente possuem em seu desenvolvimento a preocupação com a implementação correta da semântica e de recursos de acessibilidade.</p>
-        <h2>Consistência: </h2>
-        <p class="align-justify">O sistema precisa ser simples, objetivo e claro. Por isso usamos um padrão de ícones e formatos de texto, assim como componentes bem especificados para que não gere confusão nem desentendimento por parte do usuário. Queremos simplificar e agilizar.</p>
-        <h2>Independente:</h2>
-        <p class="align-justify">Apesar de construido como uma biblioteca <a href="https:angular.io" target="_blank">Angular</a>, procuramos usar o máximo de recursos próprios, não misturando tecnologias que não são de fato cruciais. Assim, esse é um projeto que tenta ao máximo utilizar 100% dos recursos oferecidos pelo Angular.</p>
-      </div>
-      <div>
-        <p class="align-justify">O <strong>Ugla</strong> oferece diversos componentes, diretivas e serviços para o desenvolvimento de sistemas. No menu superior criamos sessões para melhor organizar e categorizar cada elemento disponibilizado.</p>
-        <h2>Temas</h2>
-        <p class="align-justify">O <strong>Ugla</strong> trabalha com uma paleta de temas, o que premite mudar facilmente a cor base do sistema. Essa cor é definida no momento em que importa o Ugla para o seu projeto com o comando a seguir: <span class="code">UglaModule.forRoot(&#123;themeName: Themes.YELLOW&#125;)</span></p>
-        <h2>Inslando e configurando</h2>
-        <p class="align-justify">A instalação é um processo bem simples, conheça mais detalhes no <a href="https://github.com/ciandt/ugla" target="blank">Github</a> do projeto.</p>
-        <h3>Instação no package.json</h3>
-        <p><span class="code">npm i ugla</span></p>
-        <h3>Configurando</h3>
-        <p>No <span class="code">app.module.js</span> importe o u UglaModule da seguinte maneira:</p>
-        <p><span class="code">UglaModule.forRoot(&#123;themeName: Themes.YELLOW&#125;)</span></p>
-        <p>As opções de temas são: <strong>WHITE</strong>, <strong>AQUAMARINE</strong>, <strong>RED</strong>, <strong>GREEN</strong>, <strong>YELLOW</strong>, <strong>GRAY</strong> e <strong>PURPLE</strong></p>
-      </div>
-    </div>
+    <p>O projeto Ugla foi desenvolvido com o objetivo de minimizar esforços no desenvolvimento FrontEnd de sistemas, trazendo consistencia e segurança para projetos que necessitam conversar entre si ou, que sejam totalmente independentes, mantendo uma identidade única e de fácil entendimento</p>
+    
+    <h2>O que é Ugla?</h2>
+    <p>Ugla é na realidade um projeto que visa unir em seu nome tudo aquilo que se faz necessário para o desenvolvimento de um sistema.</p>
+    
+    <h2>Protótipo</h2>
+    <p>Todos seus componentes são planejados separadamente e adicionados a uma biblioteca de protótipo. Seus componentes são desenvolvidos no Sketch.</p>
+    
+    <h2>Angular</h2>
+    <p>Cada componente do protótipo é desenvolvido dentro de uma biblioteca Angular que, considerando cada possibilidade, implementa de forma prática o que foi previsto no protótipo.</p>
+    
+    <h2>SCSS</h2>
+    <p>Junto a biblioteca Angular, o projeto possuí uma estrutura SCSS que contém classes que auxiliam no desenvolvimento das aplicações.</p>
+    
+    <h2>Dependências</h2>
+    <p>Tentamos desenvolver o Ugla com código 100% limpo, sem usar bibliotecas que não são de fato úteis e indispensáveis. Porém, não conseguimos uma pureza em 100% e por isso temos algumas bibliotecas inclusas.</p>
+    
+    <h2>Ícones</h2>
+    <p>Os ícones presentes no Ugla fazem parte do pacote de ícones do Material.</p>
   </div>
 </section>
