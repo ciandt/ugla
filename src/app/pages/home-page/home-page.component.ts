@@ -18,14 +18,7 @@ export class HomePageComponent implements OnInit {
   people = new People('Jack Connor', 'jack.connor@ugla.dev', './assets/imgs/people.png');
 
   menu = new Menu([
-    new MenuItem('Home', '/', true),
-    new MenuItem('Login', '/login', true),
-    new MenuItem('E2E', '/e2e', true),
-    new MenuItem('Menu', '/menu', true),
-    new MenuItem('Menu with Toolbar', '/menu-with-toolbar', true),
-    new MenuItem('Aside', '/aside', true),
-    new MenuItem('Rules', '/rules', true),
-    new MenuItem('Aside with Breadcrumb', '/aside-with-breadcrumb', true),
+    new MenuItem('Home', '/', true)
   ]);
 
   ngOnInit() {
