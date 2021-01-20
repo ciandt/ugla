@@ -311,7 +311,7 @@ export class FieldComponent implements OnInit, OnChanges {
         currentTarget.classList.add('invalid');
         this._invalid = true;
       } else {
-        if (this.autoCompleteOptions.length > 0 && this.inputAutocompleteSelected == undefined) {
+        if (this.autoCompleteOptions.length > 0 && this.inputAutocompleteSelected === undefined) {
           const hasSelected = this.autoCompleteOptions.filter(f => f.name === currentTarget.value);
           if (hasSelected.length === 0) {
             this._invalid = true;
@@ -322,13 +322,11 @@ export class FieldComponent implements OnInit, OnChanges {
           }
         } else if (this._invalid && currentTarget.classList.contains('invalid')) {
           currentTarget.classList.remove('invalid');
-          currentTarget.classList.add('valid');
           this._invalid = false;
         }
 
         if (!this._invalid && currentTarget.classList.contains('invalid')) {
           currentTarget.classList.remove('invalid');
-          currentTarget.classList.add('valid');
           this._invalid = false;
         }
         this._message = this.originalMessage;
