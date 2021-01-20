@@ -301,7 +301,39 @@ export class FieldComponent implements OnInit, OnChanges {
       event.classList.remove('invalid');
       this._invalid = false;
     }
+  }
 
+  validateField(currentTarget: HTMLInputElement) {
+    if (currentTarget !== undefined) {
+      if (currentTarget.hasAttribute('required') && currentTarget.value === '') {
+        this._message = this.messageRequired;
+        currentTarget.classList.remove('valid');
+        currentTarget.classList.add('invalid');
+        this._invalid = true;
+      } else {
+        if (this.autoCompleteOptions.length > 0 && this.inputAutocompleteSelected == undefined) {
+          const hasSelected = this.autoCompleteOptions.filter(f => f.name === currentTarget.value);
+          if (hasSelected.length === 0) {
+            this._invalid = true;
+            currentTarget.classList.add('invalid');
+          } else {
+            this._invalid = false;
+            currentTarget.classList.remove('invalid');
+          }
+        } else if (this._invalid && currentTarget.classList.contains('invalid')) {
+          currentTarget.classList.remove('invalid');
+          currentTarget.classList.add('valid');
+          this._invalid = false;
+        }
+
+        if (!this._invalid && currentTarget.classList.contains('invalid')) {
+          currentTarget.classList.remove('invalid');
+          currentTarget.classList.add('valid');
+          this._invalid = false;
+        }
+        this._message = this.originalMessage;
+      }
+    }
   }
 
   focusinHandler() {
@@ -363,6 +395,7 @@ export class FieldComponent implements OnInit, OnChanges {
         this.allAutocompleteOptions = new Array<CodeName>();
         this.onChangeValue.emit(null);
         this.inputAutocompleteSelected = null;
+        this.value = null;
       }
       if (search.value.length >= this.autocompleteStartDigits) {
          this.allAutocompleteOptions = this.autoCompleteOptions.filter(e =>
@@ -373,7 +406,7 @@ export class FieldComponent implements OnInit, OnChanges {
             this.inputAutocompleteSelected = null;
           }
        }
-       this.focusoutHandler(event);
+       this.validateField(search);
     }
   }
 
@@ -401,7 +434,7 @@ export class FieldComponent implements OnInit, OnChanges {
     this.inputAutocompleteSelected = option;
     this._message = this.originalMessage;
     this.onChangeValue.emit(option.name);
-    this.focusoutHandler(inputSearch);
+    this.validateField(inputSearch);
   }
 
   onScroll(event) {

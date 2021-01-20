@@ -69,7 +69,7 @@
         (keyup.ArrowUp)="onArrowUp($event)"
         (keyup.enter)="onEnter($event)"
         [required]="required"
-        (focusout)="focusoutHandler($event)"
+        (focusout)="validateField($event.currentTarget)"
         (focusin)="focusinHandler()"
         [disabled]="disabled"
         [ngClass]="{ 'disabled' : disabled }"
