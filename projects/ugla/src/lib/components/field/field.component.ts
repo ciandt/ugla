@@ -289,14 +289,17 @@ export class FieldComponent implements OnInit, OnChanges {
 
         event.currentTarget.classList.remove('valid');
         event.currentTarget.classList.add('invalid');
+        this._invalid = true;
       } else {
         if (!this.invalid) {
           event.currentTarget.classList.remove('invalid');
+          this._invalid = false;
         }
         this._message = this.originalMessage;
       }
     } else if (!this.invalid && this.inputAutocompleteSelected) {
       event.classList.remove('invalid');
+      this._invalid = false;
     }
 
   }
