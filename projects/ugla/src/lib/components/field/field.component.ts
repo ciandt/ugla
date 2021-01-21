@@ -311,7 +311,7 @@ export class FieldComponent implements OnInit, OnChanges {
         currentTarget.classList.add('invalid');
         this._invalid = true;
       } else {
-        if (this.autoCompleteOptions.length > 0 && this.inputAutocompleteSelected === undefined) {
+        if (this.autoCompleteOptions.length > 0 && this.inputAutocompleteSelected === null) {
           const hasSelected = this.autoCompleteOptions.filter(f => f.name === currentTarget.value);
           if (hasSelected.length === 0) {
             this._invalid = true;
