@@ -271,9 +271,7 @@ export class FieldComponent implements OnInit, OnChanges {
    * @param event is a Event value
    */
   changeHandler(event) {
-    this.value = event.currentTarget.value;
     this.focusoutHandler(event);
-    this.onChangeValue.emit(event.currentTarget.value);
   }
 
   /**
@@ -281,6 +279,7 @@ export class FieldComponent implements OnInit, OnChanges {
    * @param event is a Event value
    */
   focusoutHandler(event) {
+    this.value = event.currentTarget.value;
     if (event.currentTarget !== undefined) {
       const val = event.currentTarget.value;
 
@@ -301,6 +300,7 @@ export class FieldComponent implements OnInit, OnChanges {
       event.classList.remove('invalid');
       this._invalid = false;
     }
+    this.onChangeValue.emit(this.value);
   }
 
   validateField(currentTarget: HTMLInputElement) {
