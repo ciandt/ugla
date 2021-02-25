@@ -2,7 +2,7 @@ name: Deploy Ugla Rules
 
 on:
   push:
-    branches: [ main ]
+    branches: [ another-branch ]
 
 jobs:
   build:

@@ -2,7 +2,7 @@ name: Deploy Ugla
 
 on:
   push:
-    branches: [ main ]
+    branches: [ jasmine ]
 
 jobs:
   build:
@@ -36,31 +36,14 @@ jobs:
     - name: Generate file version
       run: node -e 'require("./version").changeConfig()';
       
+    - name: Build Teste Jasmine
+      run: node_modules/.bin/ng test --project=ugla --prod
+    
     - name: Build library
       run: node_modules/.bin/ng build --project=ugla --prod
-    
+      
     - name: Move sass
       run: cp -r projects/ugla/src/sass dist/ugla
   
     - name: Move LICENSE
       run: cp -r LICENSE dist/ugla
-    
-    - name: Deploy
-      run: cd dist/ugla/ && npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-    
-    - name: Read package.json
-      uses: tyankatsu0105/read-package-version-actions@v1
-      with: 
-        path: "projects/ugla/"
-      id: package-version
-
-    - name: Send message Telegram
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: |
-          Ugla was deployed on npmjs by {{ repo.namespace }}
-          New version is ${{ steps.package-version.outputs.version }}
