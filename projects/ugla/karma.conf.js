@@ -31,7 +31,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox', '--headless', '--disable-gpu']
       }
     },
-    singleRun: false,
+    singleRun: true,
     restartOnFileChange: true
   });
 };
