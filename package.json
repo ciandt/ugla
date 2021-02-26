@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test --project=ugla",
+    "test": "ng test --project=ugla -- --no-watch --no-progress",
     "sass-lint": "node_modules/sass-lint/bin/sass-lint.js -c .scss-lint.yml -v -q",
     "lint": "npx ng run ugla:eslint && npm run sass-lint",
     "e2e": "ng e2e",

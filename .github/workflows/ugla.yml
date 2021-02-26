@@ -36,8 +36,8 @@ jobs:
     - name: Generate file version
       run: node -e 'require("./version").changeConfig()';
       
-    - name: Build Teste Jasmine
-      run: node_modules/.bin/ng test --project=ugla
+    - name: Build Test Jasmine
+      run: node_modules/.bin/ng test --project=ugla -- --no-watch --no-progress
     
     - name: Build library
       run: node_modules/.bin/ng build --project=ugla --prod
