@@ -334,6 +334,18 @@ export class FieldComponent implements OnInit, OnChanges {
     }
   }
 
+  validateFieldComponent(currentTarget: FieldComponent) {
+    if (currentTarget !== undefined) {
+        if (currentTarget.required && currentTarget.value === '') {
+          this._message = this.messageRequired;
+          this._invalid = true;
+        } else {
+          this._invalid = false;
+          this._message = this.originalMessage;
+        }
+      }
+    }
+
   focusinHandler() {
     this.allAutocompleteOptions = this.autoCompleteOptions;
 
