@@ -340,9 +340,11 @@ export class FieldComponent implements OnInit, OnChanges {
         if (currentTarget.required && currentTarget.value === '') {
           this._message = this.messageRequired;
           this._invalid = true;
+          currentTarget.elementRef.nativeElement.classList.add('invalid');
         } else {
           this._invalid = false;
           this._message = this.originalMessage;
+          currentTarget.elementRef.nativeElement.classList.add('valid');
         }
       }
     }
