@@ -85,13 +85,13 @@ export class FormComponent implements OnInit, OnChanges {
     if (this.disableSubmitButton) {
       return false;
     }
-    if (this.disableSubmitEnter && event.keyCode === 13) {
-      return false;
-    }
     this.submitClick.emit(event);
   }
 
   onEnter(event, form) {
+    if (event.keyCode !== 13) {
+      return false;
+    }
     if (this.disableSubmitEnter && event.keyCode === 13) {
       return false;
     }
