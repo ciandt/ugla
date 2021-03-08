@@ -42,6 +42,12 @@ export class FormComponent implements OnInit, OnChanges {
   @Input() submitColor: string;
 
   /**
+   * Set to disable submit event on Enter
+   * Default is false
+   */
+  @Input() disableSubmitEnter = false;
+
+  /**
    * Event to cancel button
    */
   @Output() cancelClick = new EventEmitter<any>();
@@ -79,7 +85,17 @@ export class FormComponent implements OnInit, OnChanges {
     if (this.disableSubmitButton) {
       return false;
     }
+    if (this.disableSubmitEnter && event.keyCode === 13) {
+      return false;
+    }
     this.submitClick.emit(event);
+  }
+
+  onEnter(event, form) {
+    if (this.disableSubmitEnter && event.keyCode === 13) {
+      return false;
+    }
+    this.submitClick.emit(form);
   }
 
   /**
