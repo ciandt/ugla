@@ -7,11 +7,11 @@ assignees: ''
 
 ---
 
-h1. Bug/Melhoria
+# Bug/Melhoria
 Descrever a alteração que foi realizada no protótipo
 
-h2. Detalhes
+## Detalhes
 Descreva, se tiver, as regras de negócio
 
-h2. Protótipo
+## Protótipo
 Figma: https://figma.com
