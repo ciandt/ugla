@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, OnChanges, SimpleChanges, HostListener } from '@angular/core';
 import { Form } from '../../enum';
 import { UglaService } from '../../ugla.service';
 import { NgClass } from '@angular/common';
@@ -42,12 +42,6 @@ export class FormComponent implements OnInit, OnChanges {
   @Input() submitColor: string;
 
   /**
-   * Set to disable submit event on Enter
-   * Default is false
-   */
-  @Input() disableSubmitEnter = false;
-
-  /**
    * Event to cancel button
    */
   @Output() cancelClick = new EventEmitter<any>();
@@ -88,9 +82,14 @@ export class FormComponent implements OnInit, OnChanges {
     this.submitClick.emit(event);
   }
 
-  onEnter(event, form) {
-    if (!this.disableSubmitEnter && event.keyCode === 13) {
-      this.submitClick.emit(form);
+  @HostListener('keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    switch (event.key) {
+      case 'Enter': {
+        event.stopPropagation();
+        event.preventDefault(); // prevents events being fired for multiple modals if more than 2 open
+        break;
+      }
     }
   }
 
