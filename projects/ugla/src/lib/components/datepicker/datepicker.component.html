@@ -22,7 +22,10 @@
   <label [id]="'pickerLabel-' + name" [for]="'datepicker-' + name">{{ label }}</label>
   <label [for]="'datepicker-' + name" class="icon" aria-hidden="true"><i class="material-icons">calendar_today</i></label>
   <div class="infos">
-    <span [id]="'pickerDesc-' + name" [attr.aria-details]="message" class="infos__message"
-          [attr.data-original]="originalMessage" aria-live="polite">{{ message }}</span>
+    <span [id]="'pickerDesc-' + name"
+          [attr.aria-details]="message"
+          class="infos__message"
+          [attr.data-original]="originalMessage"
+          aria-live="polite">{{ message }}</span>
   </div>
 </div>
