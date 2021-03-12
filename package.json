@@ -57,7 +57,7 @@
     "filepond-plugin-image-resize": "^2.0.2",
     "filepond-plugin-image-transform": "^3.7.1",
     "filepond-plugin-image-validate-size": "^1.2.4",
-    "js-datepicker": "^4.6.6",
+    "js-datepicker": "^5.11.0",
     "moment": "^2.24.0",
     "ngx-filepond": "^5.0.1",
     "react-navigation-stack": "^2.1.1",

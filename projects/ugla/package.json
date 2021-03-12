@@ -1,6 +1,6 @@
 {
   "name": "ugla",
-  "version": "2.0.17",
+  "version": "2.1.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:ciandt/ugla.git"
@@ -30,7 +30,7 @@
     "filepond-plugin-image-resize": "^2.0.2",
     "filepond-plugin-image-transform": "^3.7.1",
     "filepond-plugin-image-validate-size": "^1.2.4",
-    "js-datepicker": "^4.6.6",
+    "js-datepicker": "^5.11.0",
     "ngx-filepond": "^5.0.1",
     "moment": "^2.24.0",
     "lodash": "^4.17.11",
