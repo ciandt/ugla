@@ -257,7 +257,7 @@ export class DatepickerComponent implements OnInit, AfterViewInit {
     this.invalidFormat = (this.invalidFormat !== undefined) ? this.invalidFormat : false;
     this.options = (this.options !== undefined) ? this.options : this.defaultInitDatepicker();
     this.classes = `${this.theme}`;
-    this.datePattern = !!this.datePattern ? this.datePattern : this.language === 'br' ? 'DD/MM/YYYY' : 'MM/DD/YYYY';
+    this.datePattern = !!this.datePattern ? this.datePattern : this.language.indexOf('br') > -1 ? 'DD/MM/YYYY' : 'MM/DD/YYYY';
 
     this.options.onHide = (instance) => {
       this.onFocusOut(instance);
