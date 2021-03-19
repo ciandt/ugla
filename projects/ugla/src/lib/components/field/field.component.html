@@ -16,7 +16,7 @@
     (keyup)="keyupHandler($event)"
     [disabled]="disabled"
     [readOnly]="readonly"
-    [ngClass]="{'invalid': invalid}">
+    [ngClass]="{'invalid': invalid, 'valid': !invalid}">
   <label [for]="'field-' + name">{{ label }}</label>
   <label [for]="'field-' + name" class="icon" *ngIf="type === 'time'"><i
     class="material-icons">query_builder</i></label>

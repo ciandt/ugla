@@ -285,18 +285,21 @@ export class FieldComponent implements OnInit, OnChanges {
       const val = event.currentTarget.value;
 
       if (event.currentTarget.hasAttribute('required') && val === '') {
-        this._message = this.messageRequired;
-
         event.currentTarget.classList.remove('valid');
         event.currentTarget.classList.add('invalid');
         this._invalid = true;
-      } else {
-        if (this.invalid) {
-          event.currentTarget.classList.remove('invalid');
-          event.currentTarget.classList.add('valid');
-          this._invalid = false;
-          this._message = this.originalMessage;
-        }
+        this._message = this.messageRequired;
+      } else if (event.currentTarget.hasAttribute('required') && val !== ''
+      && this.invalid && this.type === 'text') {
+        event.currentTarget.classList.remove('invalid');
+        event.currentTarget.classList.add('valid');
+        this._invalid = false;
+        this._message = this.originalMessage;
+      } else if (!event.currentTarget.hasAttribute('required') && val === '') {
+        event.currentTarget.classList.remove('invalid');
+        event.currentTarget.classList.add('valid');
+        this._invalid = false;
+        this._message = this.originalMessage;
       }
     } else if (!this.invalid && this.inputAutocompleteSelected) {
       event.classList.remove('invalid');
@@ -337,17 +340,17 @@ export class FieldComponent implements OnInit, OnChanges {
 
   validateFieldComponent(currentTarget: FieldComponent) {
     if (currentTarget !== undefined) {
-        if (currentTarget.required && currentTarget.value === '') {
-          this._message = this.messageRequired;
-          this._invalid = true;
-          currentTarget.elementRef.nativeElement.classList.add('invalid');
-        } else {
-          this._invalid = false;
-          this._message = this.originalMessage;
-          currentTarget.elementRef.nativeElement.classList.add('valid');
-        }
+      if (currentTarget.required && currentTarget.value === '') {
+        this._message = this.messageRequired;
+        this._invalid = true;
+        currentTarget.elementRef.nativeElement.classList.add('invalid');
+      } else {
+        this._invalid = false;
+        this._message = this.originalMessage;
+        currentTarget.elementRef.nativeElement.classList.add('valid');
       }
     }
+  }
 
   focusinHandler() {
     this.allAutocompleteOptions = this.autoCompleteOptions;
@@ -392,6 +395,13 @@ export class FieldComponent implements OnInit, OnChanges {
     if (this.type === 'number' && !this.allowDecimal) {
       this.removeDecimal(event);
     }
+    if (this.type === 'url') {
+      this._invalid = !this.validateUrl(event.target.value);
+    }
+  }
+
+  validateUrl(value) {
+    return /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(value);
   }
 
   private removeDecimal(event: any) {
