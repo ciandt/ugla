@@ -11,6 +11,7 @@ export class CardComponent implements OnInit, OnChanges {
   @Input() three: string;
   @Input() icon: string;
   @Input() colorIcon: string;
+  @Input() iconTitle: string;
   @Output() actionCard = new EventEmitter<any>();
   @Output() actionIcon = new EventEmitter<any>();
 
@@ -25,6 +26,7 @@ export class CardComponent implements OnInit, OnChanges {
     this.three = (changes.three) ? changes.three.currentValue : this.three;
     this.icon = (changes.icon) ? changes.icon.currentValue : this.icon;
     this.colorIcon = (changes.colorIcon) ? changes.colorIcon.currentValue : this.colorIcon;
+    this.iconTitle = (changes.iconTitle) ? changes.iconTitle.currentValue : this.iconTitle;
   }
 
   handlerCard(event: any) {

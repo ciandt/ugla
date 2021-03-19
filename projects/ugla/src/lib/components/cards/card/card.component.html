@@ -4,5 +4,8 @@
     <p class="line two truncate" *ngIf="two">{{ two }}</p>
     <p class="line three truncate" *ngIf="three">{{ three }}</p>
   </div>
-  <span class="material-icons" [ngClass]="'color-' + colorIcon" (click)="handlerIcon($event)">{{ icon }}</span>
+  <span class="material-icons"
+    [title]="iconTitle"
+    [ngClass]="'color-' + colorIcon"
+    (click)="handlerIcon($event)">{{ icon }}</span>
 </div>
