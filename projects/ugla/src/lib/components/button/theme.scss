@@ -41,6 +41,18 @@ button,
         font-size: 1rem;
       }
     }
+
+    &.min-small {
+      height: 25px;
+      font-size: 0.875rem;
+      border-radius: 5px !important;
+      min-width: 85px !important;
+      font-weight: 600;
+
+      i {
+        font-size: 1rem;
+      }
+    }
   }
 
   @each $theme in $themes {

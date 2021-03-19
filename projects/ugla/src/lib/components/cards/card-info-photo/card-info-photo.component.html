@@ -1,7 +1,15 @@
-<div class="card" (click)="handler()" [ngClass]="{'clicked': clicked}">
+<div class="card" (click)="handler()" [ngClass]="{'clicked': clicked, 'small-card': smallCard}">
   <img [src]="photo" [alt]="title">
   <div class="infos">
     <h3>{{title}}</h3>
     <p *ngFor="let info of infos">{{ info }}</p>
+  </div>
+  <div class="button-container">
+    <div *ngIf="buttonLabel && buttonClicked.observers.length">
+      <ugl-button [title]="buttonLabel"
+                  [size]="'min-small'"
+                  [style]="'fill'"
+                  (click)="buttonClicked.emit()">{{buttonLabel}}</ugl-button>
+    </div>
   </div>
 </div>

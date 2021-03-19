@@ -18,11 +18,11 @@
   .infos {
     padding: 5px 10px 10px;
   }
-  
+
   img {
     width: 100%;
   }
-  
+
   h3 {
     margin: 0;
     font-size: 1rem;
@@ -33,5 +33,23 @@
   p {
     font-size: 1rem;
     text-align: center;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+.small-card {
+  max-height: 206;
+  max-width: 268px;
+  box-shadow: 2px 2px 4px color(_others, shadow);
+
+  h3 {
+    font-size: 1.2rem !important;
+    color: #5F5F5F !important;
   }
 }

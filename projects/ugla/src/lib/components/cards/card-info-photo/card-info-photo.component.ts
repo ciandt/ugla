@@ -13,6 +13,11 @@ export class CardInfoPhotoComponent implements OnInit {
   @Input() clicked: boolean;
   @Output() action = new EventEmitter<any>();
 
+  @Input() buttonLabel: string;
+  @Output() buttonClicked = new EventEmitter<any>();
+
+  @Input() smallCard: boolean;
+
   constructor() { }
 
   ngOnInit() {

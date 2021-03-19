@@ -27,7 +27,7 @@ export class ButtonComponent implements OnInit, OnChanges {
   @Input() id: string;
 
   /**
-   * Set size: large, medium, small
+   * Set size: large, medium, small, min-small
    *
    * Default: ''
    */
