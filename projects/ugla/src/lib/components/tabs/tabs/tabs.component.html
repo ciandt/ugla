@@ -1,7 +1,7 @@
 <ul [ngClass]="groupClass" class="topnav" #tabsListElement>
   <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active"
       [ngStyle]="{'width': tab === 0 || tab === tabs.length + 1 ? tabWidth : edgeTabWidth}">
-    <a href="#">{{tab.title}}</a>
+    <a>{{tab.title}}</a>
   </li>
 </ul>
 <ng-content></ng-content>
