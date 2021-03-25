@@ -56,6 +56,8 @@ import { PageFloatComponent } from './components/page-float/page-float.component
 import { CardComponent } from './components/cards/card/card.component';
 import { LabelSpanComponent } from './components/label-span/label-span.component';
 import { CardInfoPhotoComponent } from './components/cards/card-info-photo/card-info-photo.component';
+import { TabComponent } from './components/tabs/tab/tab.component';
+import { TabsComponent } from './components/tabs/tabs/tabs.component';
 
 registerPlugin(FilePondPluginFileValidateType,
   FilePondPluginFileValidateSize,
@@ -116,7 +118,9 @@ registerPlugin(FilePondPluginFileValidateType,
     PageFloatComponent,
     CardComponent,
     LabelSpanComponent,
-    CardInfoPhotoComponent
+    CardInfoPhotoComponent,
+    TabComponent,
+    TabsComponent
   ],
   exports: [
     UglaComponent,
@@ -161,7 +165,9 @@ registerPlugin(FilePondPluginFileValidateType,
     PageFloatComponent,
     CardComponent,
     LabelSpanComponent,
-    CardInfoPhotoComponent
+    CardInfoPhotoComponent,
+    TabComponent,
+    TabsComponent
   ],
   providers: [UglaService]
 })

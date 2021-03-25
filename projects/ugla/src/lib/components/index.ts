@@ -39,3 +39,5 @@ export { BannerComponent } from './banner/banner.component';
 export { QuoteComponent } from './quote/quote.component';
 export { LightboxService } from './lightbox/lightbox.service';
 export { CardInfoPhotoComponent } from './cards/card-info-photo/card-info-photo.component';
+export { TabComponent } from './tabs/tab/tab.component';
+export { TabsComponent } from './tabs/tabs/tabs.component';
