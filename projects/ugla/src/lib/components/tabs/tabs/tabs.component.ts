@@ -4,7 +4,8 @@ import { TabComponent } from '../tab/tab.component';
 @Component({
   selector: 'ugl-tabs',
   templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.scss']
+  styleUrls: ['./tabs.component.scss'],
+  host: {'(window:resize)' : 'onResize($event)'}
 })
 export class TabsComponent implements OnInit, AfterContentInit  {
 
@@ -65,6 +66,12 @@ export class TabsComponent implements OnInit, AfterContentInit  {
         this.tabWidth = `${minWidth}px`;
         this.edgeTabWidth = `${minWidth}px`;
       }
+    }
+  }
+
+  onResize(event) {
+    if (this.tabClientWidth !== this.tabsListElement.nativeElement.clientWidth) {
+      this.calculateWidths();
     }
   }
 }
