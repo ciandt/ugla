@@ -3,22 +3,24 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #20BEC6;
+  background-color: hsl(183, 72%, 45%);
+  text-align: center;
 
   &.border {
     border-radius: 50px !important;
     padding-top: 10px;
-    padding-left: 11px;
     padding-bottom: 10px;
   }
 }
 
 ul.topnav li {
-  float: left;
+  display: inline-block;
+  margin: 0px 4px
 }
 
 ul.topnav.border li {
-  float: center;
+  display: inline-block;
+  margin: 0px 4px
 }
 
 ul.topnav li a {
@@ -34,13 +36,11 @@ li:not(.active) {
   border-width: thin;
   border-color: whitesmoke;
   border-radius: 8rem;
-  margin-left: 4px;
 }
 
 ul.topnav li.active {
   background-color: #1DACB4;
   border-radius: 8rem;
-  margin-left: 4px;
 }
 
 ul.topnav li:hover:not(.active) {background-color: #20BEC6;}

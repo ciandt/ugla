@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef, AfterViewInit } from '@angular/core';
 import { People } from './../../models/people';
 import { AsideItem } from './../../models/aside-item';
+import { AsideService } from './aside.service';
 
 @Component({
   selector: 'ugl-aside',
@@ -17,11 +18,10 @@ export class AsideComponent implements OnInit, AfterViewInit {
   @Input() altPhoto = 'foto';
 
   @Output() logoutAction = new EventEmitter<any>();
-  @Output() closedToggleEvent = new EventEmitter<boolean>();
 
   toggleMenu = true;
 
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef, private asideService: AsideService) { }
 
   ngOnInit() {
     const path = location.pathname;
@@ -86,7 +86,7 @@ export class AsideComponent implements OnInit, AfterViewInit {
   toggle() {
     this.toggleMenu = !this.toggleMenu;
     this.resizeContent();
-    this.closedToggleEvent.emit(!this.toggleMenu);
+    this.asideService.toggled();
   }
 
   resizeContent() {

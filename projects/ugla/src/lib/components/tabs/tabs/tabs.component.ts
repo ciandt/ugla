@@ -1,4 +1,6 @@
-import { Component, OnInit, ContentChildren, QueryList, AfterContentInit, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, ContentChildren, QueryList, AfterContentInit, ElementRef, Input, ViewChild, OnChanges } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AsideService } from '../../aside/aside.service';
 import { TabComponent } from '../tab/tab.component';
 
 @Component({
@@ -35,12 +37,13 @@ export class TabsComponent implements OnInit, AfterContentInit  {
     tab.active = true;
   }
 
-  constructor() { }
+  constructor(private asideService: AsideService) { }
 
   ngOnInit() {
     this.style = this.style;
     this.groupClass = `${this.style}`;
     setTimeout(()=> this.calculateWidths());
+    this.asideService.toggledSubject.asObservable().subscribe(() => this.calculateWidths());
   }
 
   public calculateWidths(){
@@ -49,7 +52,7 @@ export class TabsComponent implements OnInit, AfterContentInit  {
     const defaultMinTabSize = window.innerWidth < defaultMaxWidth ? 550 : 80;
     const minWidth = this.tabMinWidth || defaultMinTabSize;
     this.tabClientWidth = this.tabsListElement.nativeElement.clientWidth;
-    const availableWidth = this.tabClientWidth - 35;
+    const availableWidth = this.tabClientWidth - 45;
 
     if (window.innerWidth >= defaultMaxWidth){
       if (qty * minWidth > availableWidth){
