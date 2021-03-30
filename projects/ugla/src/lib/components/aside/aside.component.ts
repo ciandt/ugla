@@ -17,6 +17,7 @@ export class AsideComponent implements OnInit, AfterViewInit {
   @Input() altPhoto = 'foto';
 
   @Output() logoutAction = new EventEmitter<any>();
+  @Output() closedToggleEvent = new EventEmitter<boolean>();
 
   toggleMenu = true;
 
@@ -85,6 +86,7 @@ export class AsideComponent implements OnInit, AfterViewInit {
   toggle() {
     this.toggleMenu = !this.toggleMenu;
     this.resizeContent();
+    this.closedToggleEvent.emit(!this.toggleMenu);
   }
 
   resizeContent() {

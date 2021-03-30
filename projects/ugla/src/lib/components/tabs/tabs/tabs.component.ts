@@ -43,7 +43,7 @@ export class TabsComponent implements OnInit, AfterContentInit  {
     setTimeout(()=> this.calculateWidths());
   }
 
-  calculateWidths(){
+  public calculateWidths(){
     const qty = this.tabs.length;
     const defaultMaxWidth = 700;
     const defaultMinTabSize = window.innerWidth < defaultMaxWidth ? 550 : 80;
