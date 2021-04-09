@@ -36,6 +36,11 @@ export class LoadingComponent implements OnInit, OnDestroy {
   @Input() fullScreen = true;
 
   /**
+   * Message to be shwon in the title for accessibility purposes
+   */
+  @Input() message = '';
+
+  /**
    * Loading component name.
    *
    * Default: loadingComponent
@@ -50,13 +55,14 @@ export class LoadingComponent implements OnInit, OnDestroy {
   public theme: string;
 
 
-  constructor(private service: LoadingService, private ugla: UglaService) {
+  constructor(private service: LoadingService, private ugla: UglaService, private element: ElementRef) {
     this.theme = ugla.theme;
   }
 
   ngOnInit() {
     if (this.loadingName) {
       this.service.registerInstance(this.loadingName, this);
+      this.element.nativeElement.querySelector('.loading').focus();
     }
   }
 
@@ -76,6 +82,11 @@ export class LoadingComponent implements OnInit, OnDestroy {
     if (this.show) {
       this.show = !this.show;
       document.body.classList.remove('no-scroll');
+      if (this.element.nativeElement.querySelector('.page-title')) {
+        this.element.nativeElement.querySelector('.page-title').focus();
+      } else {
+        this.element.nativeElement.querySelector('.brand').focus();
+      }
     }
   }
 }
