@@ -234,7 +234,7 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngDoCheck(): void {
-    this.itemsList = document.querySelectorAll('[role=option]');
+    this.itemsList = document.querySelectorAll(`#form-select-${this.select.name} [role=option]`);
     
     if (this.itemsList.length > 0) {
       this.firstItem = this.itemsList[0];
