@@ -70,4 +70,16 @@ export class ListOptionsComponent implements OnChanges {
       this.items = changes.items.currentValue;
     }
   }
+
+  keypressEvent(index, event) {
+    if (event.keyCode === 13 || event.keyCode === 32 || event.keyCode === undefined) {
+      if (this.names !== undefined) {
+        this.selectName(index);
+      }
+      if (this.items !== undefined) {
+        this.selectItem(index);
+      }
+    }
+  }
+
 }
