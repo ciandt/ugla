@@ -62,7 +62,10 @@ export class LoadingComponent implements OnInit, OnDestroy {
   ngOnInit() {
     if (this.loadingName) {
       this.service.registerInstance(this.loadingName, this);
-      this.element.nativeElement.querySelector('.loading').focus();
+      const loading = this.element.nativeElement.querySelector('.loading');
+      if (loading) {
+        loading.focus();
+      }
     }
   }
 
