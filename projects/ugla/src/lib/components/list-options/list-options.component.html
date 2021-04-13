@@ -1,11 +1,11 @@
 <ul class="list" [ngClass]="theme" [id]="id" *ngIf="names != undefined">
-  <li *ngFor="let element of names; let i = index" [id]="id + '-item-' + i" tabindex="0" (keypress)="keypressEvent(i, $event)">
-    <a (click)="selectName(i)" (keypress)="keypressEvent(i, $event)">{{ element }}<i class="material-icons" aria-hidden="true">keyboard_arrow_right</i></a>
+  <li *ngFor="let element of names; let i = index" [id]="id + '-item-' + i" >
+    <a (click)="selectName(i)" tabindex="0" (keydown)="keydownEvent(i, $event)">{{ element }}<i class="material-icons" aria-hidden="true">keyboard_arrow_right</i></a>
   </li>
 </ul>
 
 <ul class="list" [ngClass]="theme" [id]="id" *ngIf="items !== undefined">
-  <li *ngFor="let element of items; let i = index" [id]="id + '-item-' + i" tabindex="0" (keypress)="keypressEvent(i, $event)">
-    <a (click)="selectItem(i)" (keypress)="keypressEvent(i, $event)" [ngClass]="{'no-active': !element.active}">{{ element.name }}<i class="material-icons" aria-hidden="true" *ngIf="element.active">keyboard_arrow_right</i></a>
+  <li *ngFor="let element of items; let i = index" [id]="id + '-item-' + i">
+    <a (click)="selectItem(i)" [ngClass]="{'no-active': !element.active}" tabindex="0" (keydown)="keydownEvent(i, $event)">{{ element.name }}<i class="material-icons" aria-hidden="true" *ngIf="element.active">keyboard_arrow_right</i></a>
   </li>
 </ul>

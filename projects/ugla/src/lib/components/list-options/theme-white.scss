@@ -9,7 +9,7 @@
           color: color(_aquamarine, 'medium');
         }
 
-        &:hover {
+        &:hover, &:focus {
           &:not(.no-active) {
             background: color(_aquamarine, 'medium');
             color: color(_others, 'light');

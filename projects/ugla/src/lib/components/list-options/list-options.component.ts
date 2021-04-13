@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { KeyCode } from '../../enum';
 import { ListOptionsItem } from '../../models';
 import { UglaService } from '../../ugla.service';
 
@@ -71,8 +72,9 @@ export class ListOptionsComponent implements OnChanges {
     }
   }
 
-  keypressEvent(index, event) {
-    if (event.keyCode === 13 || event.keyCode === 32 || event.keyCode === undefined) {
+  keydownEvent(index, event) {
+    const keyCode = event.code.toUpperCase();
+    if (keyCode === KeyCode.SPACE || keyCode === KeyCode.RETURN || keyCode === KeyCode.NUMPADENTER) {
       if (this.names !== undefined) {
         this.selectName(index);
       }

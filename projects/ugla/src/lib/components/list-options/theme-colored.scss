@@ -10,7 +10,7 @@
             color: color(_#{$theme}, 'medium');
           }
 
-          &:hover {
+          &:hover, &:focus {
             &:not(.no-active) {
               background: color(_#{$theme}, 'medium');
               color: color(_others, 'light');

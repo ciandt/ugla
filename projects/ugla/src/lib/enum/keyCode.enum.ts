@@ -1,5 +1,6 @@
 export enum KeyCode {
   RETURN = 'ENTER',
+  NUMPADENTER = 'NUMPADENTER',
   SPACE = 'SPACE',
   LEFT = 'ARROWLEFT',
   UP = 'ARROWUP',
