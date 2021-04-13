@@ -87,7 +87,7 @@ export class LoadingComponent implements OnInit, OnDestroy {
       document.body.classList.remove('no-scroll');
       if (this.element.nativeElement.querySelector('.page-title')) {
         this.element.nativeElement.querySelector('.page-title').focus();
-      } else {
+      } else if (this.element.nativeElement.querySelector('.brand')) {
         this.element.nativeElement.querySelector('.brand').focus();
       }
     }
