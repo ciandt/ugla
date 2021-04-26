@@ -1,4 +1,9 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import {
+	ModuleWithProviders,
+	NgModule,
+	Optional,
+	SkipSelf
+} from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -59,14 +64,16 @@ import { CardInfoPhotoComponent } from './components/cards/card-info-photo/card-
 import { TabComponent } from './components/tabs/tab/tab.component';
 import { TabsComponent } from './components/tabs/tabs/tabs.component';
 
-registerPlugin(FilePondPluginFileValidateType,
-  FilePondPluginFileValidateSize,
-  FilePondPluginImageCrop,
-  FilePondPluginImageResize,
-  FilePondPluginImageTransform,
-  FilePondPluginImageExifOrientation,
-  FilePondPluginImagePreview,
-  FilePondPluginImageValidateSize);
+registerPlugin(
+	FilePondPluginFileValidateType,
+	FilePondPluginFileValidateSize,
+	FilePondPluginImageCrop,
+	FilePondPluginImageResize,
+	FilePondPluginImageTransform,
+	FilePondPluginImageExifOrientation,
+	FilePondPluginImagePreview,
+	FilePondPluginImageValidateSize
+);
 
 /**
  * Imports: Common and Router
@@ -74,133 +81,130 @@ registerPlugin(FilePondPluginFileValidateType,
  * Provider: Ugla Lib Service
  */
 @NgModule({
-  imports: [CommonModule, RouterModule, FilePondModule],
-  declarations: [
-    UglaComponent,
-    BrandComponent,
-    ButtonComponent,
-    CheckboxComponent,
-    DatepickerComponent,
-    FieldComponent,
-    FileUploadComponent,
-    FormComponent,
-    HeaderComponent,
-    PageTitleComponent,
-    PeopleCardComponent,
-    SelectComponent,
-    ToolbarComponent,
-    ReversePipe,
-    ToastComponent,
-    ToastItemComponent,
-    GridDirective,
-    ClickOutsideDirective,
-    LightboxDirective,
-    ListOptionsComponent,
-    LoginComponent,
-    LoadingComponent,
-    SwitchComponent,
-    ListLinksComponent,
-    FilterComponent,
-    CardTimelineComponent,
-    SimpleTableComponent,
-    CheckboxColumnDirective,
-    PaginationComponent,
-    PaginationItemsPerPageComponent,
-    ModalComponent,
-    TooltipDirective,
-    HyperLinkComponent,
-    BackPanelComponent,
-    RadioComponent,
-    BannerComponent,
-    QuoteComponent,
-    AsideComponent,
-    BreadcrumbComponent,
-    PageFloatComponent,
-    CardComponent,
-    LabelSpanComponent,
-    CardInfoPhotoComponent,
-    TabComponent,
-    TabsComponent
-  ],
-  exports: [
-    UglaComponent,
-    BrandComponent,
-    ButtonComponent,
-    CheckboxComponent,
-    DatepickerComponent,
-    FieldComponent,
-    FileUploadComponent,
-    FormComponent,
-    HeaderComponent,
-    PageTitleComponent,
-    PeopleCardComponent,
-    SelectComponent,
-    ToolbarComponent,
-    ReversePipe,
-    ToastComponent,
-    ToastItemComponent,
-    GridDirective,
-    ClickOutsideDirective,
-    LightboxDirective,
-    ListOptionsComponent,
-    LoginComponent,
-    LoadingComponent,
-    SwitchComponent,
-    ListLinksComponent,
-    FilterComponent,
-    CardTimelineComponent,
-    SimpleTableComponent,
-    CheckboxColumnDirective,
-    PaginationComponent,
-    PaginationItemsPerPageComponent,
-    ModalComponent,
-    TooltipDirective,
-    HyperLinkComponent,
-    BackPanelComponent,
-    RadioComponent,
-    BannerComponent,
-    QuoteComponent,
-    AsideComponent,
-    BreadcrumbComponent,
-    PageFloatComponent,
-    CardComponent,
-    LabelSpanComponent,
-    CardInfoPhotoComponent,
-    TabComponent,
-    TabsComponent
-  ],
-  providers: [UglaService]
+	imports: [CommonModule, RouterModule, FilePondModule],
+	declarations: [
+		UglaComponent,
+		BrandComponent,
+		ButtonComponent,
+		CheckboxComponent,
+		DatepickerComponent,
+		FieldComponent,
+		FileUploadComponent,
+		FormComponent,
+		HeaderComponent,
+		PageTitleComponent,
+		PeopleCardComponent,
+		SelectComponent,
+		ToolbarComponent,
+		ReversePipe,
+		ToastComponent,
+		ToastItemComponent,
+		GridDirective,
+		ClickOutsideDirective,
+		LightboxDirective,
+		ListOptionsComponent,
+		LoginComponent,
+		LoadingComponent,
+		SwitchComponent,
+		ListLinksComponent,
+		FilterComponent,
+		CardTimelineComponent,
+		SimpleTableComponent,
+		CheckboxColumnDirective,
+		PaginationComponent,
+		PaginationItemsPerPageComponent,
+		ModalComponent,
+		TooltipDirective,
+		HyperLinkComponent,
+		BackPanelComponent,
+		RadioComponent,
+		BannerComponent,
+		QuoteComponent,
+		AsideComponent,
+		BreadcrumbComponent,
+		PageFloatComponent,
+		CardComponent,
+		LabelSpanComponent,
+		CardInfoPhotoComponent,
+		TabComponent,
+		TabsComponent
+	],
+	exports: [
+		UglaComponent,
+		BrandComponent,
+		ButtonComponent,
+		CheckboxComponent,
+		DatepickerComponent,
+		FieldComponent,
+		FileUploadComponent,
+		FormComponent,
+		HeaderComponent,
+		PageTitleComponent,
+		PeopleCardComponent,
+		SelectComponent,
+		ToolbarComponent,
+		ReversePipe,
+		ToastComponent,
+		ToastItemComponent,
+		GridDirective,
+		ClickOutsideDirective,
+		LightboxDirective,
+		ListOptionsComponent,
+		LoginComponent,
+		LoadingComponent,
+		SwitchComponent,
+		ListLinksComponent,
+		FilterComponent,
+		CardTimelineComponent,
+		SimpleTableComponent,
+		CheckboxColumnDirective,
+		PaginationComponent,
+		PaginationItemsPerPageComponent,
+		ModalComponent,
+		TooltipDirective,
+		HyperLinkComponent,
+		BackPanelComponent,
+		RadioComponent,
+		BannerComponent,
+		QuoteComponent,
+		AsideComponent,
+		BreadcrumbComponent,
+		PageFloatComponent,
+		CardComponent,
+		LabelSpanComponent,
+		CardInfoPhotoComponent,
+		TabComponent,
+		TabsComponent
+	],
+	providers: [UglaService]
 })
 export class UglaModule {
+	/**
+	 * Constructor UglaModule
+	 *
+	 * @param parentModule: UglaModule
+	 */
+	constructor(@Optional() @SkipSelf() parentModule: UglaModule) {}
 
-  /**
-   * Constructor UglaModule
-   *
-   * @param parentModule: UglaModule
-   */
-  constructor(@Optional() @SkipSelf() parentModule: UglaModule) {}
+	/**
+	 * Initialize Ugla with theme configurations.
+	 * @param config typeof ThemeConfig
+	 * @returns typeof ModuleWithProviders
+	 */
+	static forRoot(config: ThemeConfig): ModuleWithProviders<UglaModule> {
+		return {
+			ngModule: UglaModule,
+			providers: [{ provide: ThemeConfig, useValue: config }]
+		};
+	}
 
-  /**
-   * Initialize Ugla with theme configurations.
-   * @param config typeof ThemeConfig
-   * @returns typeof ModuleWithProviders
-   */
-  static forRoot(config: ThemeConfig): ModuleWithProviders<UglaModule> {
-    return {
-      ngModule: UglaModule,
-      providers: [
-        { provide: ThemeConfig, useValue: config }
-      ]
-    };
-  }
-
-  /**
-   * Use when import on Lazy Loading module
-   */
-  static forChild(): ModuleWithProviders<UglaModule> {
-    return {
-      ngModule: UglaModule,
-      providers: []
-    };
-  }
+	/**
+	 * Use when import on Lazy Loading module
+	 */
+	static forChild(): ModuleWithProviders<UglaModule> {
+		return {
+			ngModule: UglaModule,
+			providers: []
+		};
+	}
 }

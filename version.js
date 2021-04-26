@@ -1,8 +1,8 @@
 'use strict';
 
-const fs = require('fs-extra');
-const packageProject = require('./projects/ugla/package.json');
-const packageWorkspace = require('./package.json');
+var fs = require('fs-extra');
+var packageProject = require('./projects/ugla/package.json');
+var packageWorkspace = require('./package.json');
 
 /**
  * Set config file
