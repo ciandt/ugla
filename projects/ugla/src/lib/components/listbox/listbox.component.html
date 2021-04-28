@@ -1,0 +1,20 @@
+<div class="listbox" [ngClass]="theme">
+  <label [for]="select.id" [ngClass]="{'required': required, 'invalid': invalid}">{{ label }}</label>
+  <i class="material-icons" aria-hidden="true" [ngClass]="{'readonly': readonly}">keyboard_arrow_down</i>
+
+  <select [name]="select.name"
+          [id]="select.id"
+          [required]="required"
+          [ngClass]="{'readonly': readonly, 'invalid': invalid }"
+          (change)="validate($event)">
+
+          <option *ngFor="let op of select.options"
+                  [value]="op.value"
+                  [disabled]="op.disabled"
+                  [selected]="op.checked">{{ op.description }}</option>
+  </select>
+
+  <div class="infos">
+    <span class="message">{{ message }}</span>
+  </div>
+</div>

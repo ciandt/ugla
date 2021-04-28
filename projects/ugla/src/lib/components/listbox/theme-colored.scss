@@ -1,0 +1,14 @@
+.listbox {
+  position: relative;
+  margin-bottom: 1rem;
+
+  @each $theme in $themes {
+    &.theme-colored-#{$theme} {
+      select {
+        &:hover {
+          border-color: color(_#{$theme}, 'medium');
+        }
+      }
+    }
+  }
+}

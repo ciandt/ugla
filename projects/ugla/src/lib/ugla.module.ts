@@ -63,6 +63,7 @@ import { LabelSpanComponent } from './components/label-span/label-span.component
 import { CardInfoPhotoComponent } from './components/cards/card-info-photo/card-info-photo.component';
 import { TabComponent } from './components/tabs/tab/tab.component';
 import { TabsComponent } from './components/tabs/tabs/tabs.component';
+import { ListboxComponent } from './components/listbox/listbox.component';
 
 registerPlugin(
 	FilePondPluginFileValidateType,
@@ -127,7 +128,8 @@ registerPlugin(
 		LabelSpanComponent,
 		CardInfoPhotoComponent,
 		TabComponent,
-		TabsComponent
+		TabsComponent,
+		ListboxComponent
 	],
 	exports: [
 		UglaComponent,
@@ -174,7 +176,8 @@ registerPlugin(
 		LabelSpanComponent,
 		CardInfoPhotoComponent,
 		TabComponent,
-		TabsComponent
+		TabsComponent,
+		ListboxComponent
 	],
 	providers: [UglaService]
 })

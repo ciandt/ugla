@@ -10,21 +10,20 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomePageComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    UglaModule.forRoot({themeName: Themes.AQUAMARINE}),
-    UglaRulesModule.forRoot({ acronym: 'AUTH'}),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
-  exports: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [AppComponent, HomePageComponent],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		AppRoutingModule,
+		UglaModule.forRoot({ themeName: Themes.AQUAMARINE }),
+		UglaRulesModule.forRoot({ acronym: 'AUTH' }),
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: environment.production
+		})
+	],
+	exports: [],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA],
+	providers: [],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
