@@ -5,13 +5,13 @@
   <select [name]="select.name"
           [id]="select.id"
           [required]="required"
+          [(ngModel)]="current"
           [ngClass]="{'readonly': readonly, 'invalid': invalid }"
           (change)="validate($event)">
 
-          <option *ngFor="let op of select.options"
+          <option *ngFor="let op of select.options; let i = index"
                   [value]="op.value"
-                  [disabled]="op.disabled"
-                  [selected]="op.checked">{{ op.description }}</option>
+                  [disabled]="op.disabled">{{ op.description }}</option>
   </select>
 
   <div class="infos">

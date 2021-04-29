@@ -20,6 +20,7 @@ export class ListboxComponent implements OnInit {
 	invalid = false;
 	originalMessage: string;
 	theme: string;
+	current: string;
 
 	constructor(ugla: UglaService) {
 		this.theme = ugla.theme;
@@ -27,6 +28,14 @@ export class ListboxComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.originalMessage = this.message;
+		const selectedObject = this.select.options.filter(
+			(item) => item.checked
+		);
+
+		this.current =
+			selectedObject.length > 0
+				? selectedObject[0].value
+				: this.select.options[0].value;
 	}
 
 	validate(selected: Event): void {
@@ -45,5 +54,9 @@ export class ListboxComponent implements OnInit {
 
 			this.selected.emit(filter[0]);
 		}
+	}
+
+	setSelect(value: string): void {
+		this.current = value;
 	}
 }

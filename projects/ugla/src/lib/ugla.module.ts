@@ -64,6 +64,7 @@ import { CardInfoPhotoComponent } from './components/cards/card-info-photo/card-
 import { TabComponent } from './components/tabs/tab/tab.component';
 import { TabsComponent } from './components/tabs/tabs/tabs.component';
 import { ListboxComponent } from './components/listbox/listbox.component';
+import { FormsModule } from '@angular/forms';
 
 registerPlugin(
 	FilePondPluginFileValidateType,
@@ -82,7 +83,7 @@ registerPlugin(
  * Provider: Ugla Lib Service
  */
 @NgModule({
-	imports: [CommonModule, RouterModule, FilePondModule],
+	imports: [CommonModule, RouterModule, FilePondModule, FormsModule],
 	declarations: [
 		UglaComponent,
 		BrandComponent,
