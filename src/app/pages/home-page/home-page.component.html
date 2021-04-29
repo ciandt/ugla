@@ -13,26 +13,14 @@
 </ugl-header>
 
 <section class="has-header">
-  <div class="container container--central container--white">
+  <ugl-form [ngClass]="'has-header central white'" (cancelClick)="cancel()" (submitClick)="submit($event)">
+    <button (click)="changeType()">Reset</button>
+
     <ugl-page-title [firstTitle]="'Ugla'" [secondTitle]="'Library'"></ugl-page-title>
-    <p>O projeto Ugla foi desenvolvido com o objetivo de minimizar esforços no desenvolvimento FrontEnd de sistemas, trazendo consistencia e segurança para projetos que necessitam conversar entre si ou, que sejam totalmente independentes, mantendo uma identidade única e de fácil entendimento</p>
-    
-    <h2>O que é Ugla?</h2>
-    <p>Ugla é na realidade um projeto que visa unir em seu nome tudo aquilo que se faz necessário para o desenvolvimento de um sistema.</p>
-    
-    <h2>Protótipo</h2>
-    <p>Todos seus componentes são planejados separadamente e adicionados a uma biblioteca de protótipo. Seus componentes são desenvolvidos no Sketch.</p>
-    
-    <h2>Angular</h2>
-    <p>Cada componente do protótipo é desenvolvido dentro de uma biblioteca Angular que, considerando cada possibilidade, implementa de forma prática o que foi previsto no protótipo.</p>
-    
-    <h2>SCSS</h2>
-    <p>Junto a biblioteca Angular, o projeto possuí uma estrutura SCSS que contém classes que auxiliam no desenvolvimento das aplicações.</p>
-    
-    <h2>Dependências</h2>
-    <p>Tentamos desenvolver o Ugla com código 100% limpo, sem usar bibliotecas que não são de fato úteis e indispensáveis. Porém, não conseguimos uma pureza em 100% e por isso temos algumas bibliotecas inclusas.</p>
-    
-    <h2>Ícones</h2>
-    <p>Os ícones presentes no Ugla fazem parte do pacote de ícones do Material.</p>
-  </div>
+
+    <ugl-select label="Tipo" [select]="select" [required]="true" (selected)="selectItem($event)"></ugl-select>
+    <ugl-select label="Tipo" [select]="select" [required]="true" (selected)="selectItem($event)" [readonly]="true"></ugl-select>
+
+    <ugl-listbox label="Tipo" [select]="select" [message]="'Campo obrigatório'" #selectField (selected)="selectItem($event)" [required]="true"></ugl-listbox>
+  </ugl-form>
 </section>

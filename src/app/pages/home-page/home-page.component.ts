@@ -1,42 +1,80 @@
+import { ListboxComponent } from './../../../../projects/ugla/src/lib/components/listbox/listbox.component';
 import { UglaRulesService } from './../../../../projects/ugla-rules/src/lib/ugla-rules.service';
-import { Component, OnInit } from '@angular/core';
-import { UglaService, Menu, MenuItem, Header, People } from 'projects/ugla/src';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+	UglaService,
+	Menu,
+	MenuItem,
+	Header,
+	People,
+	Options,
+	Select
+} from 'projects/ugla/src';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+	selector: 'app-home-page',
+	templateUrl: './home-page.component.html',
+	styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+	constructor(private ugla: UglaService) {}
 
-  constructor(private ugla: UglaService) {}
+	@ViewChild('selectField') selectField: ListboxComponent;
 
-  isAutenticated = true;
+	isAutenticated = true;
 
-  header = new Header('Ugla', './assets/imgs/logo.png', 'home', true);
+	header = new Header('Ugla', './assets/imgs/logo.png', 'home', true);
 
-  people = new People('Jack Connor', 'jack.connor@ugla.dev', './assets/imgs/people.png');
+	people = new People(
+		'Jack Connor',
+		'jack.connor@ugla.dev',
+		'./assets/imgs/people.png'
+	);
 
-  menu = new Menu([
-    new MenuItem('Home', '/', true)
-  ]);
+	options = [
+		new Options('Tipo', '-1', false),
+		new Options('Audiência', 'item-0'),
+		new Options('Doação de sangue', 'item-1', true),
+		new Options('Exames médicos', 'item-2', false, null, 'Item numero 1'),
+		new Options('Serviço militar', 'item-3'),
+		new Options('Outros', 'item-4')
+	];
 
-  ngOnInit() {
-    this.header.people = this.people;
-    this.header.menu = this.menu;
-    this.ugla.headerShadow = true;
-    this.ugla.hasToolBar();
-  }
+	select = new Select('select-1', this.options);
+	menu = new Menu([new MenuItem('Home', '/', true)]);
 
-  hideMenu() {
-    this.isAutenticated = false;
-  }
+	ngOnInit(): void {
+		this.header.people = this.people;
+		this.header.menu = this.menu;
+		this.ugla.headerShadow = true;
+		this.ugla.hasToolBar();
+	}
 
-  logout() {
-    this.isAutenticated = false;
-  }
+	changeType(): boolean {
+		this.selectField.setSelect('-1');
+		return false;
+	}
 
-  selectLanguage(language) {
-    console.log(`Language selected is ${language.description} and the code is ${language.value}`);
-  }
+	hideMenu(): void {
+		this.isAutenticated = false;
+	}
+
+	logout(): void {
+		this.isAutenticated = false;
+	}
+
+	selectItem(item: Options): void {
+		console.log(
+			`Item selected is ${item.description} and the code is ${item.value}`
+		);
+	}
+
+	cancel(): void {
+		console.log('Cancel');
+	}
+
+	submit(event: EventTarget): boolean {
+		console.log('Submit');
+		return false;
+	}
 }

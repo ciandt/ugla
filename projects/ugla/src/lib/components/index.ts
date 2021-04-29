@@ -41,4 +41,4 @@ export { LightboxService } from './lightbox/lightbox.service';
 export { CardInfoPhotoComponent } from './cards/card-info-photo/card-info-photo.component';
 export { TabComponent } from './tabs/tab/tab.component';
 export { TabsComponent } from './tabs/tabs/tabs.component';
-import { ListboxComponent } from './listbox/listbox.component';
+export { ListboxComponent } from './listbox/listbox.component';
