@@ -1,4 +1,3 @@
-
 section {
   @include mobile() {
     padding: 0;
@@ -62,6 +61,30 @@ section {
 
     .container {
       min-height: calc(100vh - 34px);
+    }
+  }
+}
+
+.box-border {
+  position: relative;
+  padding: 24px 16px;
+  margin-top: 26px;
+  border: 2px solid color('_aquamarine', 'dark');
+  border-radius: 10px;
+  background-color: color('_others', 'body');
+
+  .box-header {
+    position: absolute;
+    top: -16px;
+    left: 14px;
+
+    h3 {
+      margin: 0;
+      padding: 5px 20px;
+      font-size: 14px;
+      color: color('_aquamarine', 'dark');
+      border-radius: 8px;
+      background: color('_others', 'light');
     }
   }
 }

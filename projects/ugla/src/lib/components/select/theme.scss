@@ -201,6 +201,10 @@ $label-animate-time: 0.2s;
           padding: 4px 30px 4px 10px;
         }
       }
+
+      &.bottom {
+        top: 2rem;
+      }
     }
   }
 }

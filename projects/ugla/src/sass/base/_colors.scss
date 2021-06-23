@@ -3,55 +3,56 @@ $colors: (
     extra-light: #9ed6e5,
     light: #7fced6,
     medium: #20bec6,
-    dark: #20acb4
+    dark: #20acb4,
   ),
   _red: (
     extra-light: #e09ec6,
     light: #e27887,
     medium: #d71f3c,
-    dark: #9f0e0e
+    dark: #9f0e0e,
   ),
   _purple: (
-    extra-light: #D4B2D5,
+    extra-light: #d4b2d5,
     light: #823193,
     medium: #641e75,
-    dark: #491f53
+    dark: #491f53,
   ),
   _yellow: (
     extra-light: #fbe96a,
     light: #fbd068,
     medium: #f2b838,
     dark: #f39200,
-    light-alpha: rgba(#fbd068, .5)
+    light-alpha: rgba(#fbd068, 0.5),
   ),
   _green: (
     extra-light: #9ee5d1,
     light: #7fd6b3,
     medium: #20c67b,
-    dark: #20b472
+    dark: #20b472,
   ),
   _gray: (
     extra-light: #d9d9d9,
     light: #999,
     medium: #444,
-    medium-alpha: rgba(68, 68, 68, .8),
+    medium-alpha: rgba(68, 68, 68, 0.8),
     dark: #222,
-    dark-alpha: rgba(34, 34, 34, .7)
+    dark-alpha: rgba(34, 34, 34, 0.7),
   ),
   _others: (
     light: #fff,
     dark: #444,
     black: #000,
-    dark-alpha: rgba(68, 68, 68, .67),
+    dark-alpha: rgba(68, 68, 68, 0.67),
     shadow: #b6b6b6,
     text-shadow: #999,
     body: #f2f0f0,
-    body-alpha: rgba(242, 240, 240, .9),
-    light-alpha: rgba(255, 255, 255, 0)
+    body-alpha: rgba(242, 240, 240, 0.9),
+    light-alpha: rgba(255, 255, 255, 0),
+    border: #1dacb4,
   ),
   _code: (
-    background: #23241f
-  )
+    background: #23241f,
+  ),
 );
 
 @function color($map, $key) {
