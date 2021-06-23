@@ -7,24 +7,14 @@
 
 <section class="has-header">
   <ugl-form [ngClass]="'has-header central white'" (cancelClick)="cancel()" (submitClick)="submit($event)">
-    <button (click)="changeType()">Reset</button>
+    <span class="radio">
+      <input type="radio" name="" id="radio1">
+      <label for="radio1"></label>
+    </span>
 
-    <ugl-page-title [firstTitle]="'Ugla'" [secondTitle]="'Library'"></ugl-page-title>
-
-    <ugl-select label="Tipo" [select]="select" [required]="true" (selected)="selectItem($event)" stylized="true"
-      stylizedType="small">
-    </ugl-select>
-    <!--
-    <ugl-select label="Tipo" [select]="select" [required]="true" (selected)="selectItem($event)" [readonly]="true">
-    </ugl-select> -->
-
-    <!-- <ugl-listbox label="Tipo" [select]="select" [message]="'Campo obrigatório'" #selectField
-      (selected)="selectItem($event)" [required]="true"></ugl-listbox> -->
-
-    <div class="box-border">
-      <div class="box-header">
-        <h3>Titulo da box</h3>
-      </div>
-    </div>
+    <span class="checkbox">
+      <input type="checkbox" name="" id="checkbox1">
+      <label for="checkbox1"></label>
+    </span>
   </ugl-form>
 </section>
