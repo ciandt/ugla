@@ -86,7 +86,7 @@ export class SelectComponent implements OnInit, OnDestroy, OnChanges, DoCheck {
 	/**
 	 * If is stylized, set a defined type
 	 *
-	 * Stylized type options: header or pagination
+	 * Stylized type options: header or pagination or small
 	 *
 	 * Default value: header
 	 */

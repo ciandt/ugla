@@ -1,58 +1,47 @@
 <!--Stylized  -->
-<div *ngIf="stylized"
-      class="select"
-      [attr.aria-expanded]="isOpened()"
-      [attr.aria-label]="label"
-      [ngClass]="getTheme()"
-      [id]="'form-select-' + select.name"
-      [attr.aria-readonly]="readonly"
-      [ngStyle]="{'width': width}">
-  <input type="checkbox" [ngClass]="{'required' : this.required}" [name]="select.name" [id]="select.id" #checkbox [readOnly]="readonly">
-  <label class="selected" [for]="select.id" [attr.data-label]="label" tabindex="0" (click)="toggleCombobox($event)">{{ current.description }}</label>
+<div *ngIf="stylized" class="select" [attr.aria-expanded]="isOpened()" [attr.aria-label]="label" [ngClass]="getTheme()"
+  [id]="'form-select-' + select.name" [attr.aria-readonly]="readonly" [ngStyle]="{'width': width}">
+  <input type="checkbox" [ngClass]="{'required' : this.required}" [name]="select.name" [id]="select.id" #checkbox
+    [readOnly]="readonly">
+  <label class="selected" [for]="select.id" [attr.data-label]="label" tabindex="0" (click)="toggleCombobox($event)">{{
+    current.description }}</label>
   <i class="material-icons" aria-hidden="true" (click)="toggleCombobox($event)">keyboard_arrow_down</i>
 
-  <ul class="select_list"
-      [ngClass]="direction"
-      [attr.data-title]="dataTitle"
-      role="listbox"
-      [attr.aria-activedescendant]="'select-list-' + select.name">
-    <li *ngFor="let option of select.options; let i = index" role="option" [attr.aria-selected]="option.checked" [id]="'select-list-' + select.name">
-      <input type="radio" [name]="'options-' + select.name" [id]="'option-' + select.name + '-' + i" (change)="selectedItem( i, $event )" [value]="option.value">
-      <label [for]="'option-' + select.name + '-' + i"
-              (keypress)="selectedItem( i, $event )"
-              (keydown)="keydownEvent($event, i)"
-              [attr.aria-checked]="option.checked"
-              tabindex="0">{{ option.description }}</label>
+  <ul class="select_list" [ngClass]="direction" [attr.data-title]="dataTitle" role="listbox"
+    [attr.aria-activedescendant]="'select-list-' + select.name">
+    <li *ngFor="let option of select.options; let i = index" role="option" [attr.aria-selected]="option.checked"
+      [id]="'select-list-' + select.name">
+      <input type="radio" [name]="'options-' + select.name" [id]="'option-' + select.name + '-' + i"
+        (change)="selectedItem( i, $event )" [value]="option.value">
+      <label [for]="'option-' + select.name + '-' + i" (keypress)="selectedItem( i, $event )"
+        (keydown)="keydownEvent($event, i)" [attr.aria-checked]="option.checked" tabindex="0">{{ option.description
+        }}</label>
     </li>
   </ul>
 </div>
 
 <!-- Not stylized  -->
-<div *ngIf="!stylized"
-     [attr.aria-expanded]="isOpened()"
-     [attr.aria-label]="label"
-     [attr.aria-readonly]="readonly" [id]="'form-select-' + select.name"
-     [ngClass]="classes"
-     [ngStyle]="{'z-index': zindex }"
-     class="field combo" role="listbox">
+<div *ngIf="!stylized" [attr.aria-expanded]="isOpened()" [attr.aria-label]="label" [attr.aria-readonly]="readonly"
+  [id]="'form-select-' + select.name" [ngClass]="classes" [ngStyle]="{'z-index': zindex }" class="field combo"
+  role="listbox">
   <input type="checkbox" [ngClass]="{'required' : this.required}" [disabled]="disabled" [name]="select.name"
-         [id]="select.id" #checkbox [readOnly]="readonly">
+    [id]="select.id" #checkbox [readOnly]="readonly">
   <label class="selected" [ngClass]="setClass(select.labelColor, select.labelBackgroundColor)" [for]="select.id"
-         [attr.data-label]="label" tabindex="0" (click)="toggleCombobox($event)">{{ current.description }}</label>
+    [attr.data-label]="label" tabindex="0" (click)="toggleCombobox($event)">{{ current.description }}</label>
   <i class="material-icons" aria-hidden="true" (click)="toggleCombobox($event)">keyboard_arrow_down</i>
 
   <div class="infos">
     <span class="infos__message">{{ message }}</span>
   </div>
-  <ul id="combo-list" class="combo-list" [ngClass]="direction" role="listbox" [attr.aria-activedescendant]="'select-list-' + select.name">
-    <li *ngFor="let option of select.options; let i = index" role="option" [attr.aria-selected]="option.checked" [id]="'select-list-' + select.name">
+  <ul id="combo-list" class="combo-list" [ngClass]="direction" role="listbox"
+    [attr.aria-activedescendant]="'select-list-' + select.name">
+    <li *ngFor="let option of select.options; let i = index" role="option" [attr.aria-selected]="option.checked"
+      [id]="'select-list-' + select.name">
       <input type="radio" [name]="'options-' + select.name" [id]="'option-' + select.name + '-' + i"
-             (change)="selectedItem( i, $event )" [value]="option.value" [checked]="option.checked">
-      <label [for]="'option-' + select.name + '-' + i"
-              (keypress)="selectedItem( i, $event )"
-              (keydown)="keydownEvent($event, i)"
-              [attr.aria-checked]="option.checked"
-              tabindex="0">{{ option.description }}</label>
+        (change)="selectedItem( i, $event )" [value]="option.value" [checked]="option.checked">
+      <label [for]="'option-' + select.name + '-' + i" (keypress)="selectedItem( i, $event )"
+        (keydown)="keydownEvent($event, i)" [attr.aria-checked]="option.checked" tabindex="0">{{ option.description
+        }}</label>
     </li>
   </ul>
 </div>

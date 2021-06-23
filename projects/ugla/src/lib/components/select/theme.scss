@@ -179,6 +179,30 @@ $label-animate-time: 0.2s;
       max-height: 38px;
     }
   }
+
+  &.small {
+    > label {
+      min-width: 130px;
+      max-height: 30px;
+      padding: 4px 30px 4px 10px;
+      font-weight: normal;
+
+      + i {
+        right: 4px;
+        top: 4px;
+      }
+    }
+
+    .select_list {
+      li {
+        label {
+          font-size: 14px;
+          font-weight: normal;
+          padding: 4px 30px 4px 10px;
+        }
+      }
+    }
+  }
 }
 
 // Combo
@@ -226,7 +250,7 @@ $label-animate-time: 0.2s;
       cursor: pointer;
       font-size: 1.5rem;
       position: absolute;
-      right: .5rem;
+      right: 0.5rem;
       top: 1rem;
       z-index: 2;
     }
