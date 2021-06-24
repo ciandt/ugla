@@ -7,14 +7,9 @@
 
 <section class="has-header">
   <ugl-form [ngClass]="'has-header central white'" (cancelClick)="cancel()" (submitClick)="submit($event)">
-    <span class="radio">
-      <input type="radio" name="" id="radio1">
-      <label for="radio1"></label>
-    </span>
+    <ugl-select [select]="select" stylized="true" (selected)="selectItem($event)" [theme]="'theme-colored-aquamarine'"
+      stylizedType="small"></ugl-select>
 
-    <span class="checkbox">
-      <input type="checkbox" name="" id="checkbox1">
-      <label for="checkbox1"></label>
-    </span>
+    <ugl-listbox [select]="select" [label]="'Teste'" [stylized]="true"></ugl-listbox>
   </ugl-form>
 </section>

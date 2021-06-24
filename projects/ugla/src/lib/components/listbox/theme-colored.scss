@@ -9,6 +9,27 @@
           border-color: color(_#{$theme}, 'medium');
         }
       }
+
+      &.stylized {
+        select {
+          border-color: color(_#{$theme}, 'medium');
+          color: color(_#{$theme}, 'medium');
+
+          &:hover {
+            border-color: color(_#{$theme}, 'dark');
+          }
+
+          > option {
+            &:checked {
+              color: color(_#{$theme}, 'medium');
+            }
+          }
+        }
+
+        i {
+          color: color(_#{$theme}, 'medium');
+        }
+      }
     }
   }
 }

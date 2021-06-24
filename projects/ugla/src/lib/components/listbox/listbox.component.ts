@@ -14,6 +14,7 @@ export class ListboxComponent implements OnInit {
 	@Input() readonly = false;
 	@Input() message: string;
 	@Input() select: Select;
+  @Input() stylized = false;
 
 	@Output() selected = new EventEmitter<Options>();
 

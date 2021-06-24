@@ -62,7 +62,7 @@
     }
 
     &:active {
-      border-radius: .5rem 0.5rem 0 0;
+      border-radius: 0.5rem 0.5rem 0 0;
     }
 
     &::-ms-expand {
@@ -107,6 +107,29 @@
 
     &.message {
       width: 90%;
+    }
+  }
+}
+
+.listbox {
+  &.stylized {
+    select {
+      padding: 4px 30px 4px 10px;
+      border: 2px solid color('_others', 'dark');
+      border-radius: 16px;
+      font-size: 14px;
+
+      > option {
+        color: color('_others', 'dark');
+      }
+    }
+
+    label {
+      display: none;
+    }
+
+    i {
+      top: 3px;
     }
   }
 }
