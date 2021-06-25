@@ -1,15 +1,48 @@
-<ugl-header [header]="header" (logoutAction)="logout($event)" [logoutText]="'Logout now'" *ngIf="isAutenticated">
-  <div uglGrid [grid]="true" [col]="2">
-    <ugl-button [id]="'test'" [size]="'small'" [color]="'purple'" [style]="'fill'" [wave]="true"
-      [title]="'Ocultar Menu'" [type]="'button'" (action)="hideMenu()">Ocultar Menu</ugl-button>
-  </div>
+<ugl-header
+	[header]="header"
+	(logoutAction)="logout($event)"
+	[logoutText]="'Logout now'"
+	*ngIf="isAutenticated"
+>
+	<div uglGrid [grid]="true" [col]="2">
+		<ugl-button
+			[id]="'test'"
+			[size]="'small'"
+			[color]="'purple'"
+			[style]="'fill'"
+			[wave]="true"
+			[title]="'Ocultar Menu'"
+			[type]="'button'"
+			(action)="hideMenu()"
+			>Ocultar Menu</ugl-button
+		>
+	</div>
 </ugl-header>
 
 <section class="has-header">
-  <ugl-form [ngClass]="'has-header central white'" (cancelClick)="cancel()" (submitClick)="submit($event)">
-    <ugl-select [select]="select" stylized="true" (selected)="selectItem($event)" [theme]="'theme-colored-aquamarine'"
-      stylizedType="small"></ugl-select>
-
-    <ugl-listbox [select]="select" [label]="'Teste'" [stylized]="true"></ugl-listbox>
-  </ugl-form>
+	<ugl-form
+		[ngClass]="'has-header central white'"
+		(cancelClick)="cancel()"
+		(submitClick)="submit($event)"
+	>
+		*
+		<ugl-pagination
+			[totalPages]="100"
+			[selectedPage]="2"
+			[select]="select"
+			[limitInterval]="5"
+			[visiblePages]="10"
+			[itemsPerPage]="10"
+			[itemsPerPageRange]="select"
+			[itemsPerPageBeforeText]="'Show'"
+			[itemsPerPageAfterText]="'Items per page'"
+			[firstPageButtonTitle]="'First Page'"
+			[previousPageButtonTitle]="'Previous Page'"
+			[nextPageButtonTitle]="'Next Page'"
+			[lastPageButtonTitle]="'Last Page'"
+			[labelPage]="'Page'"
+			[id]="'pagination'"
+		>
+		</ugl-pagination>
+	</ugl-form>
 </section>

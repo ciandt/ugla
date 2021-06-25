@@ -1,63 +1,40 @@
 <div class="pagination" [id]="id" [ngClass]="theme">
   <ul>
     <li>
-      <a href=""
-        [ngClass]="{'disabled': isFirstPage()}"
-        (click)="fireFirstPageEvent()"
-        [title]="firstPageButtonTitle"
-        [attr.aria-label]="firstPageButtonTitle"
-        tabindex="0">
+      <a href="" [ngClass]="{ disabled: isFirstPage() }" (click)="fireFirstPageEvent()" [title]="firstPageButtonTitle"
+        [attr.aria-label]="firstPageButtonTitle" [uglTooltip]="{ placement: 'left' }" tabindex="0">
         <i class="material-icons" aria-hidden="true">first_page</i>
       </a>
     </li>
     <li>
-      <a href=""
-        [ngClass]="{'disabled': isFirstPage()}"
-        (click)="firePreviousPageEvent()"
-        [title]="previousPageButtonTitle"
-        [attr.aria-label]="previousPageButtonTitle"
-        tabindex="0">
+      <a href="" [ngClass]="{ disabled: isFirstPage() }" (click)="firePreviousPageEvent()"
+        [title]="previousPageButtonTitle" [attr.aria-label]="previousPageButtonTitle"
+        [uglTooltip]="{ placement: 'top' }" tabindex="0">
         <i class="material-icons" aria-hidden="true">keyboard_arrow_left</i>
       </a>
     </li>
     <li *ngFor="let page of pages">
-      <a href=""
-        [ngClass]="{'active': isCurrentPage(page)}"
-        (click)="fireNavigatePageEvent(page)"
-        [title]="labelPage + ' ' + page"
-        [attr.aria-label]="labelPage+page"
+      <a href="" [ngClass]="{ active: isCurrentPage(page) }" (click)="fireNavigatePageEvent(page)"
+        [title]="labelPage + ' ' + page" [attr.aria-label]="labelPage + page" [uglTooltip]="{ placement: 'top' }"
         tabindex="0">{{ page }}
       </a>
     </li>
     <li>
-      <a href=""
-        [ngClass]="{'disabled': isLastPage()}"
-        (click)="fireNextPageEvent()"
-        [title]="nextPageButtonTitle"
-        [attr.aria-label]="nextPageButtonTitle"
-        tabindex="0">
+      <a href="" [ngClass]="{ disabled: isLastPage() }" (click)="fireNextPageEvent()" [title]="nextPageButtonTitle"
+        [attr.aria-label]="nextPageButtonTitle" [uglTooltip]="{ placement: 'top' }" tabindex="0">
         <i class="material-icons" aria-hidden="true">keyboard_arrow_right</i>
       </a>
     </li>
     <li>
-      <a href=""
-        [ngClass]="{'disabled': isLastPage()}"
-        (click)="fireLastPageEvent()"
-        [title]="lastPageButtonTitle"
-        [attr.aria-label]="lastPageButtonTitle"
-        tabindex="0">
+      <a href="" [ngClass]="{ disabled: isLastPage() }" (click)="fireLastPageEvent()" [title]="lastPageButtonTitle"
+        [attr.aria-label]="lastPageButtonTitle" [uglTooltip]="{ placement: 'right' }" tabindex="0">
         <i class="material-icons" aria-hidden="true">last_page</i>
       </a>
     </li>
   </ul>
-  <ugl-pagination-items-per-page class="pagination-items-per-page"
-                        *ngIf="itemsPerPageRange"
-                        [range]="itemsPerPageRange"
-                        (changeItemsPerPagePageSize)="changePaginationPageSize.emit($event)"
-                        [id]="'pagination-items-per-page'"
-                        [beforeText]="itemsPerPageBeforeText"
-                        [afterText]="itemsPerPageAfterText"
-                        [title]="itemsPerPageTitle"
-                        #itemsPerPageComponent>
+  <ugl-pagination-items-per-page class="pagination-items-per-page" *ngIf="itemsPerPageRange" [range]="itemsPerPageRange"
+    (changeItemsPerPagePageSize)="changePaginationPageSize.emit($event)" [id]="'pagination-items-per-page'"
+    [beforeText]="itemsPerPageBeforeText" [afterText]="itemsPerPageAfterText" [title]="itemsPerPageTitle"
+    #itemsPerPageComponent>
   </ugl-pagination-items-per-page>
 </div>

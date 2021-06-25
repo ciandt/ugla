@@ -1,15 +1,17 @@
-<div class="pagination-items-per-page" style="display: grid; ">
-    <div tabindex="0">{{ beforeText }}</div>
-    <div>
-        <ugl-select *ngIf="hasPageRange()"
-          [select]="range"
-          (selected)="fireChangePage($event)"
-          [stylized]="true"
-          [stylizedType]="'pagination'"
-          [dataTitle]="title"
-          [direction]="'top'"
-          #itemsPerPageSelect>
-        </ugl-select>
-    </div>
-    <div tabindex="0">{{ afterText }}</div>
+<div class="pagination-items-per-page" style="display: grid">
+	<div tabindex="0">{{ beforeText }}</div>
+	<div>
+		<ugl-select
+			*ngIf="hasPageRange()"
+			[select]="range"
+			(selected)="fireChangePage($event)"
+			[stylized]="true"
+			[stylizedType]="'pagination'"
+			[dataTitle]="title"
+			[direction]="'top'"
+			#itemsPerPageSelect
+		>
+		</ugl-select>
+	</div>
+	<div tabindex="0">{{ afterText }}</div>
 </div>
