@@ -81,7 +81,6 @@ ul {
   position: relative;
   height: calc(100vh - 102px);
   margin: 0;
-  padding: 10px;
   overflow-y: auto;
   list-style: none;
 
@@ -90,16 +89,51 @@ ul {
   }
 
   li {
+    padding: 10px;
+
     > ul {
+      position: relative;
       height: auto;
-      padding: 0;
-      margin-left: 10px;
+      margin-top: 5px;
+      padding-top: 5px;
+      padding-left: 18px;
+      border-top: 1px solid color('_others', 'light');
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: calc(100% - 8px);
+        top: 8px;
+        left: 8px;
+        margin-right: 8px;
+        border-left: 1px dashed color('_gray', 'medium');
+      }
+
+      > li {
+        margin: 0;
+        padding: 4px 0;
+        background-color: transparent;
+
+        a {
+          flex: 1;
+        }
+      }
+    }
+
+    &:nth-child(odd) {
+      background-color: color('_others', 'body');
+    }
+
+    &:nth-child(even) {
+       > ul {
+        border-top: 1px solid color('_others', 'body');
+      }
     }
   }
 
   a {
     display: flex;
-    margin: 10px 0;
     font-size: 14px;
     font-weight: 400;
     color: color(_gray, dark);
@@ -122,10 +156,22 @@ ul {
     &:hover,
     &.active {
       color: color(_aquamarine, medium);
+
+      .material-icons {
+        background-color: color(_aquamarine, medium);
+      }
     }
 
     .material-icons {
+      display: flex;
+      width: 16px;
+      height: 16px;
       font-size: 14px;
+      justify-content: center;
+      align-items: center;
+      color: color('_others', 'light');
+      border-radius: 14px;
+      background-color: color('_gray', 'medium');
 
       @include mobile() {
         font-size: 16px;

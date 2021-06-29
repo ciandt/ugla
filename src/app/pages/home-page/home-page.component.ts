@@ -1,3 +1,4 @@
+import { AsideItem } from './../../../../projects/ugla/src/lib/models/aside-item';
 import { ListboxComponent } from './../../../../projects/ugla/src/lib/components/listbox/listbox.component';
 import { UglaRulesService } from './../../../../projects/ugla-rules/src/lib/ugla-rules.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -42,6 +43,12 @@ export class HomePageComponent implements OnInit {
 
 	select = new Select('select-1', this.options);
 	menu = new Menu([new MenuItem('Home', '/', true)]);
+  aside = [
+    new AsideItem('Item 1', '/teste', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 2', '/teste2', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 4', '/teste4', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')])
+  ];
 
 	ngOnInit(): void {
 		this.header.people = this.people;
