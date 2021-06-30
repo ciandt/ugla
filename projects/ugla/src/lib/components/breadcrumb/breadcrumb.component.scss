@@ -4,11 +4,31 @@
   position: fixed;
   display: flex;
   width: 100%;
-  padding: 8px 1rem;
+  padding: 10px 14px;
   top: 0;
-  background-color: color(_others, body);
+  background-color: color('_aquamarine', 'medium');
   z-index: map-get($z-index, 'toolbar');
   align-items: center;
+
+  .title {
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid color('_others', 'light');
+
+    h2 {
+      color: color('_others', 'light');
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    img {
+      width: auto;
+      max-height: 24px;
+      margin-right: 4px;
+      object-fit: unset;
+    }
+  }
+
 
   &.aside-small {
     margin-left: 32px;
@@ -26,7 +46,7 @@
   a {
     height: 20px;
     font-size: 1rem;
-    color: color(_aquamarine, medium);
+    color: color('_others', 'light');
     align-items: center;
 
     &.no-link {
@@ -45,7 +65,7 @@
 
       > .material-icons {
         font-size: 18px;
-        color: color(_aquamarine, medium);
+        color: color('_others', 'light');
       }
     }
   }
@@ -53,5 +73,5 @@
 
 .material-icons {
   font-size: 14px;
-  color: color(_gray, medium);
+  color: color('_others', 'light');
 }

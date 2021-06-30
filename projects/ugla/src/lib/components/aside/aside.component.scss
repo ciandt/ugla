@@ -2,18 +2,21 @@
 
 aside {
   position: fixed;
+  display: grid;
+  grid-template-rows: max-content auto 40px;
   width: 200px;
   height: 100vh;
   top: 0;
   left: 0;
   background-color: color(_others, light);
   box-shadow: 0 2px 4px 0 color(_others, dark-alpha);
+  overflow: hidden;
   z-index: map-get($z-index, 'menu');
 
   &.closed {
     display: flex;
     width: 34px;
-    height: 34px;
+    height: 45px;
     align-items: center;
     justify-content: center;
     box-shadow: none;
@@ -32,7 +35,7 @@ header {
 
   .closed & {
     width: 34px;
-    height: 34px;
+    height: 45px;
   }
 
   img {
@@ -79,7 +82,6 @@ header {
 
 ul {
   position: relative;
-  height: calc(100vh - 102px);
   margin: 0;
   overflow-y: auto;
   list-style: none;
@@ -220,5 +222,15 @@ ul {
   > .material-icons {
     font-size: 1.5rem;
     color: color(_others, light);
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+
+  &-thumb {
+    border-radius: 5px;
+    background-color: color('_aquamarine', 'medium');
   }
 }

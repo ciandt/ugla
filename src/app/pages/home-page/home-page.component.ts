@@ -27,7 +27,7 @@ export class HomePageComponent implements OnInit {
 	header = new Header('Ugla', './assets/imgs/logo.png', 'home', true);
 
 	people = new People(
-		'Jack Connor',
+		'REGIVALDO FERNANDES DA SILVA',
 		'jack.connor@ugla.dev',
 		'./assets/imgs/people.png'
 	);
@@ -47,8 +47,34 @@ export class HomePageComponent implements OnInit {
     new AsideItem('Item 1', '/teste', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
     new AsideItem('Item 2', '/teste2', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
     new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
     new AsideItem('Item 4', '/teste4', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')])
   ];
+
+  breadcrumb = new Menu([
+    new MenuItem('Revenue Assurance', '/revenue-assurance'),
+    new MenuItem('Associates', '/revenue-assurance/link'),
+  ]);
 
 	ngOnInit(): void {
 		this.header.people = this.people;

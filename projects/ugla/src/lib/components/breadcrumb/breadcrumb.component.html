@@ -1,4 +1,8 @@
 <nav class="breadcrumb">
+  <div class="title" *ngIf="logo || title">
+    <img *ngIf="logo" [src]="logo" [alt]="title">
+    <h2 *ngIf="title">{{ title }}</h2>
+  </div>
   <a href="/dev" class="dashboard"><span class="material-icons">dashboard</span></a>
   <span class="material-icons">chevron_right</span>
   <div *ngFor="let item of menu?.items; let idx = index; let last = last">

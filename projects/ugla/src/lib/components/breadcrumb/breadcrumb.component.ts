@@ -9,6 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BreadcrumbComponent implements OnInit {
 
   @Input() menu: Menu;
+  @Input() title: string;
+  @Input() logo: string;
 
   constructor() { }
 
