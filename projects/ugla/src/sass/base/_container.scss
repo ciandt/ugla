@@ -57,10 +57,10 @@ section {
   }
 
   &.has-breadcrumb {
-    margin-top: 34px; //transformar em variável
+    margin-top: 45px; //transformar em variável
 
     .container {
-      min-height: calc(100vh - 34px);
+      min-height: calc(100vh - 45px);
     }
   }
 }
