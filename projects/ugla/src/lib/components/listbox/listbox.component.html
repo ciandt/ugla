@@ -3,7 +3,7 @@
   <i class="material-icons" aria-hidden="true" [ngClass]="{'readonly': readonly}">keyboard_arrow_down</i>
 
   <select [name]="select.name" [id]="select.id" [required]="required" [(ngModel)]="current"
-    [ngClass]="{'readonly': readonly, 'invalid': invalid }" (change)="validate($event)">
+    [ngClass]="{'readonly': readonly, 'invalid': invalid }" (change)="validate($event)" [disabled]="disabled">
 
     <option *ngFor="let op of select.options; let i = index" [value]="op.value" [disabled]="op.disabled">{{
       op.description }}</option>

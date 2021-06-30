@@ -8,6 +8,12 @@
         &:hover {
           border-color: color(_#{$theme}, 'medium');
         }
+
+        &:disabled {
+          &:hover {
+            border-color: inherit;
+          }
+        }
       }
 
       &.stylized {

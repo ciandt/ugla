@@ -69,6 +69,10 @@
       display: none;
     }
 
+    &:disabled {
+      cursor: default;
+    }
+
     option {
       &[value='-1'],
       &:disabled {
@@ -118,6 +122,10 @@
       border: 2px solid color('_others', 'dark');
       border-radius: 16px;
       font-size: 14px;
+
+      &:disabled {
+        cursor: default;
+      }
 
       > option {
         color: color('_others', 'dark');

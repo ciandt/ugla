@@ -1,4 +1,4 @@
-<!-- <ugl-header
+<ugl-header
 	[header]="header"
 	(logoutAction)="logout($event)"
 	[logoutText]="'Logout now'"
@@ -25,31 +25,16 @@
 		(cancelClick)="cancel()"
 		(submitClick)="submit($event)"
 	>
-		*
-		<ugl-pagination
-			[totalPages]="100"
-			[selectedPage]="2"
-			[select]="select"
-			[limitInterval]="5"
-			[visiblePages]="10"
-			[itemsPerPage]="10"
-			[itemsPerPageRange]="select"
-			[itemsPerPageBeforeText]="'Show'"
-			[itemsPerPageAfterText]="'Items per page'"
-			[firstPageButtonTitle]="'First Page'"
-			[previousPageButtonTitle]="'Previous Page'"
-			[nextPageButtonTitle]="'Next Page'"
-			[lastPageButtonTitle]="'Last Page'"
-			[labelPage]="'Page'"
-			[id]="'pagination'"
-		>
-		</ugl-pagination>
-	</ugl-form>
-</section> -->
+		<ugl-listbox [select]="select" [stylized]="true" [disabled]="true"></ugl-listbox>
 
+		<ugl-listbox [select]="select" [disabled]="true"></ugl-listbox>
+
+	</ugl-form>
+</section>
+<!--
 <ugl-aside [people]="people" [menu]="aside"></ugl-aside>
 <section class="has-aside has-breadcrumb">
   <ugl-breadcrumb [menu]="breadcrumb" [title]="'Revenue Assurance'" [logo]="'https://ciandt.com/themes/custom/ciandt_theme/images/logo_blank.svg'"></ugl-breadcrumb>
 
   <h1>teste</h1>
-</section>
+</section> -->
