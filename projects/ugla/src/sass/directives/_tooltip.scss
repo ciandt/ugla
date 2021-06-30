@@ -8,6 +8,7 @@
   color: color(_others, 'light');
   border-radius: 5px;
   background-color: color(_others, 'dark-alpha');
+  z-index: 9;
 
   @include mobile() {
     font-size: 0.714rem;
