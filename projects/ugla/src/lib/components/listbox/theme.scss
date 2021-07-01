@@ -11,6 +11,7 @@
     padding: 0 0.2rem;
     color: color('_others', 'dark');
     background-color: color('_others', 'light');
+    z-index: 2;
 
     &.readonly {
       pointer-events: none;
@@ -22,6 +23,10 @@
 
     &.invalid {
       color: color(_red, medium);
+    }
+
+    &.disabled {
+      color: color('_others', 'disabled');
     }
   }
 
@@ -37,6 +42,10 @@
 
     &.invalid {
       color: color(_red, medium);
+    }
+
+    &.disabled {
+      color: color('_others', 'disabled');
     }
   }
 
@@ -63,6 +72,10 @@
 
     &:active {
       border-radius: 0.5rem 0.5rem 0 0;
+
+      &:disabled {
+        border-radius: 0.5rem;
+      }
     }
 
     &::-ms-expand {
@@ -71,6 +84,7 @@
 
     &:disabled {
       cursor: default;
+      opacity: 1;
     }
 
     option {
@@ -125,6 +139,11 @@
 
       &:disabled {
         cursor: default;
+        border-radius: 16px;
+
+        &:active {
+          border-radius: 16px;
+        }
       }
 
       > option {

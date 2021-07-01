@@ -1,6 +1,6 @@
 <div class="listbox" [ngClass]="stylized ? 'stylized ' + theme : theme">
-  <label [for]="select.id" [ngClass]="{'required': required, 'invalid': invalid}">{{ label }}</label>
-  <i class="material-icons" aria-hidden="true" [ngClass]="{'readonly': readonly}">keyboard_arrow_down</i>
+  <label [for]="select.id" [ngClass]="{'required': required, 'invalid': invalid, 'disabled': disabled}">{{ label }}</label>
+  <i class="material-icons" aria-hidden="true" [ngClass]="{'readonly': readonly, 'disabled': disabled}">keyboard_arrow_down</i>
 
   <select [name]="select.name" [id]="select.id" [required]="required" [(ngModel)]="current"
     [ngClass]="{'readonly': readonly, 'invalid': invalid }" (change)="validate($event)" [disabled]="disabled">

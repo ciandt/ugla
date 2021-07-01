@@ -10,6 +10,8 @@
         }
 
         &:disabled {
+          color: color('_others', 'disabled');
+          border-color: color('_others', 'disabled');
           &:hover {
             border-color: color('_others', 'disabled');
           }
@@ -30,10 +32,23 @@
               color: color(_#{$theme}, 'medium');
             }
           }
+
+          &:disabled {
+            color: color('_others', 'disabled');
+            border-color: color('_others', 'disabled');
+
+            &:hover {
+              border-color: color('_others', 'disabled');
+            }
+          }
         }
 
         i {
           color: color(_#{$theme}, 'medium');
+
+          &.disabled {
+            color: color('_others', 'disabled');
+          }
         }
       }
     }
