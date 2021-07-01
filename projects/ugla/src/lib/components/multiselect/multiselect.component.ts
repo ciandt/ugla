@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter, HostListener, ElementRef, ChangeDetectorRef, OnChanges, SimpleChanges, Optional } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
 import { Form } from '../../enum';
 import { Select, Options } from '../../models';
 import { UglaService } from '../../ugla.service';
@@ -8,7 +8,7 @@ import { UglaService } from '../../ugla.service';
   templateUrl: './multiselect.component.html',
   styleUrls: ['./multiselect.component.scss']
 })
-export class MultiselectComponent implements OnInit, OnChanges {
+export class MultiselectComponent implements OnInit {
 
   @Input() label: string;
 	@Input() required = false;
