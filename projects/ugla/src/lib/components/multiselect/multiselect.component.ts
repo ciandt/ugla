@@ -35,18 +35,17 @@ export class MultiselectComponent implements OnInit {
 
   @HostListener('document:click', ['$event', '$event.target'])
   public clickOut(event: MouseEvent, targetElement: HTMLElement): void {
-    if (!targetElement) {
-      return;
-    }
-
-    const clickedInside = this.elementRef.nativeElement.contains(targetElement);
-    if (!clickedInside) {
-      if (this.opened) {
-        this.selected.emit(this.select.options);
+    if (this.opened) {
+      if (!targetElement) {
+        return;
       }
 
-      this.opened = false;
-      event.preventDefault();
+      const clickedInside = this.elementRef.nativeElement.contains(targetElement);
+      if (!clickedInside) {
+        this.selected.emit(this.select.options);
+        this.opened = false;
+        event.preventDefault();
+      }
     }
   }
 
