@@ -1,0 +1,10 @@
+.listbox {
+  position: relative;
+  margin-bottom: 1rem;
+
+  .select {
+    &:hover {
+      border-color: color('_aquamarine', 'medium');
+    }
+  }
+}

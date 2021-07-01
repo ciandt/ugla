@@ -1,0 +1,65 @@
+.listbox {
+  position: relative;
+  margin-bottom: 1rem;
+
+  @each $theme in $themes {
+    &.theme-colored-#{$theme} {
+      .select {
+        &:hover {
+          border-color: color(_#{$theme}, 'medium');
+        }
+
+        &.disabled {
+          color: color('_gray', 'light');
+          border-color: color('_gray', 'light');
+
+          &:hover {
+            border-color: inherit;
+          }
+        }
+      }
+
+      i {
+        &.disabled {
+          color: color('_gray', 'light');
+        }
+      }
+
+      label.disabled {
+        color: color('_gray', 'light');
+      }
+
+      &.stylized {
+        .select {
+          border-color: color(_#{$theme}, 'medium');
+          color: color(_#{$theme}, 'medium');
+
+          &:hover {
+            border-color: color(_#{$theme}, 'dark');
+          }
+
+          &.disabled {
+            color: color('_gray', 'light');
+            border-color: color('_gray', 'light');
+          }
+        }
+
+        ul {
+          border-color: color(_#{$theme}, 'medium');
+
+          label:hover:not(.disabled) {
+            color: color(_#{$theme}, 'medium');
+          }
+        }
+
+        i {
+          color: color(_#{$theme}, 'medium');
+
+          &.disabled {
+            color: color('_gray', 'light');
+          }
+        }
+      }
+    }
+  }
+}

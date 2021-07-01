@@ -42,3 +42,4 @@ export { CardInfoPhotoComponent } from './cards/card-info-photo/card-info-photo.
 export { TabComponent } from './tabs/tab/tab.component';
 export { TabsComponent } from './tabs/tabs/tabs.component';
 export { ListboxComponent } from './listbox/listbox.component';
+export { MultiselectComponent } from './multiselect/multiselect.component';

@@ -65,6 +65,7 @@ import { TabComponent } from './components/tabs/tab/tab.component';
 import { TabsComponent } from './components/tabs/tabs/tabs.component';
 import { ListboxComponent } from './components/listbox/listbox.component';
 import { FormsModule } from '@angular/forms';
+import { MultiselectComponent } from './components/multiselect/multiselect.component';
 
 registerPlugin(
 	FilePondPluginFileValidateType,
@@ -130,7 +131,8 @@ registerPlugin(
 		CardInfoPhotoComponent,
 		TabComponent,
 		TabsComponent,
-		ListboxComponent
+		ListboxComponent,
+		MultiselectComponent
 	],
 	exports: [
 		UglaComponent,
@@ -178,7 +180,8 @@ registerPlugin(
 		CardInfoPhotoComponent,
 		TabComponent,
 		TabsComponent,
-		ListboxComponent
+		ListboxComponent,
+    MultiselectComponent
 	],
 	providers: [UglaService]
 })

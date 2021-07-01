@@ -36,12 +36,13 @@ export class HomePageComponent implements OnInit {
 		new Options('Tipo', '-1', false),
 		new Options('Audiência', 'item-0'),
 		new Options('Doação de sangue', 'item-1', true),
-		new Options('Exames médicos', 'item-2', false, null, 'Item numero 1'),
+		new Options('Exames médicos', 'item-2', false, null, 'Item numero 1', true),
 		new Options('Serviço militar', 'item-3'),
 		new Options('Outros', 'item-4')
 	];
 
-	select = new Select('select-1', this.options);
+  select = new Select('select-1', this.options);
+
 	menu = new Menu([new MenuItem('Home', '/', true)]);
   aside = [
     new AsideItem('Item 1', '/teste', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
@@ -96,10 +97,8 @@ export class HomePageComponent implements OnInit {
 		this.isAutenticated = false;
 	}
 
-	selectItem(item: Options): void {
-		console.log(
-			`Item selected is ${item.description} and the code is ${item.value}`
-		);
+  selectItem(items: Options[]): void {
+    console.log(this.select.options);
 	}
 
 	cancel(): void {

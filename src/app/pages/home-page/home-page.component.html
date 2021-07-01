@@ -20,16 +20,11 @@
 </ugl-header>
 
 <section class="has-header">
-	<ugl-form
-		[ngClass]="'has-header central white'"
-		(cancelClick)="cancel()"
-		(submitClick)="submit($event)"
-	>
-		<ugl-listbox [select]="select" [stylized]="true" [disabled]="true"></ugl-listbox>
-
-		<ugl-listbox [select]="select" [disabled]="true"></ugl-listbox>
-
-	</ugl-form>
+  <div class="container container--central container--white">
+    <div style="width: 100px">
+      <ugl-multiselect [select]="select" [stylized]="true" label="Teste" (selected)="selectItem($event)"></ugl-multiselect>
+    </div>
+  </div>
 </section>
 <!--
 <ugl-aside [people]="people" [menu]="aside"></ugl-aside>
