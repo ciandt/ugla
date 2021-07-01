@@ -1,5 +1,5 @@
 <div class="switch">
-  <span class="label off">{{ labelOff }}</span>
+  <span class="label off" [ngClass]="{'disabled': disabled}">{{ labelOff }}</span>
   <input
     tabindex="0"
     type="checkbox"
@@ -9,5 +9,5 @@
     [checked]="checked"
     (change)="onChange($event)">
   <label [for]="'switch-' + name"></label>
-  <span class="label on">{{ labelOn }}</span>
+  <span class="label on" [ngClass]="{'disabled': disabled}">{{ labelOn }}</span>
 </div>

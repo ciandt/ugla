@@ -11,7 +11,7 @@
 
         &:disabled {
           &:hover {
-            border-color: inherit;
+            border-color: color('_others', 'disabled');
           }
         }
       }

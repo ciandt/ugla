@@ -43,13 +43,18 @@
           transition: .5s all;
         }
       }
+
+      &:disabled {
+        +label {
+          background-color: color('_others', 'disabled');
+          cursor: default;
+        }
+      }
     }
-
-
 
     &:disabled {
       +label {
-        opacity: .6;
+        background-color: color('_others', 'disabled');
         cursor: default;
       }
     }
@@ -70,6 +75,10 @@
 
     &.on {
       padding-left: 15px;
+    }
+
+    &.disabled {
+      color: color('_others', 'disabled');
     }
   }
 }

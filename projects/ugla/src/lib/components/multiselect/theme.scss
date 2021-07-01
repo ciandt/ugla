@@ -102,7 +102,7 @@
       cursor: pointer;
 
       &.disabled {
-        color: color('_gray', 'light');
+        color: color('_others', 'disabled');
         cursor: default;
       }
     }
@@ -155,7 +155,7 @@
         cursor: pointer;
 
         &.disabled {
-          color: color('_gray', 'light');
+          color: color('_others', 'disabled');
           cursor: default;
         }
       }

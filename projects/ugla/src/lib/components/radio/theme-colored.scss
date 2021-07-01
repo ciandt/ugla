@@ -1,7 +1,7 @@
 .radio-item {
   @each $theme in $themes {
     &.theme-colored-#{$theme} {
-      background-color: color(_others, body);
+      background-color: color('_others', 'body');
 
       input[type=radio] {
         + label {
@@ -21,14 +21,20 @@
           }
 
           &.disabled {
-            color: color(_gray, medium) !important;
+            color: color('_gray', 'light') !important;
+
+            &::before {
+              background-color: transparent;
+              color: color('_others', 'disabled') !important;
+            }
 
             &:hover {
+              color: color('_gray', 'light') !important;
               background-color: transparent;
-              color: color(_gray, medium) !important;
 
               &::before {
-                color: color(_#{$theme}, 'medium');
+                background-color: transparent;
+                color: color('_others', 'disabled') !important;
               }
             }
           }
@@ -48,15 +54,20 @@
             }
 
             &.disabled {
-              color: color(_others, 'light') !important;
+              color: color('_gray', 'light') !important;
+              background-color: color('_others', 'disabled');
+
+              &::before {
+                background-color: transparent;
+                color: color('_gray', 'light') !important;
+              }
 
               &:hover {
-                color: color(_others, 'light');
-                background-color: color(_#{$theme}, 'medium');
+                color: color('_gray', 'light') !important;
 
                 &::before {
-                  color: color(_others, 'light');
-                  background: color(_#{$theme}, 'medium');
+                  color: color('_gray', 'light') !important;
+                  background-color: color('_others', 'disabled');
                 }
               }
             }

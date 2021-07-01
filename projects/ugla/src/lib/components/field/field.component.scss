@@ -113,8 +113,8 @@ $label-animate-time: 0.2s;
 
         &[disabled],
         &[readonly] {
-          color: color(_gray, dark-alpha);
-          border: 1px solid color(_gray, extra-light);
+          color: color('_others', 'disabled');
+          border: 1px solid color('_others', 'disabled');
           background: transparent;
         }
 
@@ -132,15 +132,15 @@ $label-animate-time: 0.2s;
         &[disabled],
         &[readonly] {
           + label {
-            color: color(_gray, dark-alpha);
+            color: color('_others', 'disabled');
           }
 
           ~ .icon {
-            background-color: color(_gray, extra-light);
+            background-color: color('_others', 'disabled');
             cursor: default;
 
             &:hover {
-              background-color: color(_gray, extra-light);
+              background-color: color('_others', 'disabled');
             }
           }
         }

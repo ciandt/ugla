@@ -362,8 +362,8 @@ $label-animate-time: 0.2s;
 
       &[disabled] {
         + label {
-          color: color(_gray, extra-light);
-          border: 1px solid color(_gray, extra-light);
+          color: color('_others', 'disabled');
+          border: 1px solid color('_others', 'disabled');
 
           &.custom {
             border: 1px solid transparent;
@@ -371,7 +371,7 @@ $label-animate-time: 0.2s;
           }
 
           + i {
-            color: color(_gray, extra-light);
+            color: color('_others', 'disabled');
           }
         }
       }

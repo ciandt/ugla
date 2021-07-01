@@ -31,12 +31,11 @@
         }
 
         &.disabled {
-          color: color(_others, dark);
-          opacity: 0.5;
+          color: color('_others', 'disabled');
           cursor: default;
 
           i {
-              color: color(_others, dark);
+              color: color('_others', 'disabled');
           }
         }
       }

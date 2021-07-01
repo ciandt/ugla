@@ -26,6 +26,8 @@ export class HomePageComponent implements OnInit {
 
 	header = new Header('Ugla', './assets/imgs/logo.png', 'home', true);
 
+  names = ['1', '2'];
+
 	people = new People(
 		'REGIVALDO FERNANDES DA SILVA',
 		'jack.connor@ugla.dev',

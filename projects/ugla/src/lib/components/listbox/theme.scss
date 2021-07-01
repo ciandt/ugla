@@ -76,7 +76,7 @@
     option {
       &[value='-1'],
       &:disabled {
-        color: color('_gray', 'light');
+        color: color('_others', 'disabled');
       }
     }
 
@@ -89,7 +89,7 @@
 
         &[value='-1'],
         &:disabled {
-          color: color('_gray', 'light');
+          color: color('_others', 'disabled');
         }
       }
 

@@ -21,9 +21,24 @@
 
 <section class="has-header">
   <div class="container container--central container--white">
-    <div style="width: 100px">
-      <input type="radio" name="" id="">
-      <ugl-multiselect [select]="select" [stylized]="true" label="Teste" (selected)="selectItem($event)"></ugl-multiselect>
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr);">
+      <ugl-button [style]="'fill'" [disabled]="true">
+        <span class="material-icons">save</span>
+        <span class="inner">Save</span>
+      </ugl-button>
+
+      <ugl-button [style]="'border'" [disabled]="true">
+        <span class="material-icons">save</span>
+        <span class="inner">Save</span>
+      </ugl-button>
+
+
+      <ugl-list-options
+      [names]="names"
+      uglGrid [span]="'2'"
+      [id]="'11'"
+      (onClick)="selectItem($event)">
+    </ugl-list-options>
     </div>
   </div>
 </section>
