@@ -152,7 +152,13 @@
     }
 
     label {
-      display: none;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      top: 0;
+      left: 10px;
+      font-size: 14px;
+      background: transparent;
     }
 
     i {

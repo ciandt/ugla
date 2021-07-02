@@ -29,15 +29,18 @@ export class ListboxComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.originalMessage = this.message;
-		const selectedObject = this.select.options.filter(
-			(item) => item.checked
-		);
+    this.originalMessage = this.message;
 
-		this.current =
-			selectedObject.length > 0
-				? selectedObject[0].value
-				: this.select.options[0].value;
+    if (this.select.options) {
+      const selectedObject = this.select.options.filter(
+        (item) => item.checked
+      );
+
+      this.current =
+        selectedObject.length > 0
+          ? selectedObject[0].value
+          : this.select.options[0].value;
+    }
 	}
 
 	validate(selected: Event): void {
