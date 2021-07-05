@@ -83,16 +83,20 @@
   }
 
   ul {
-    display: block;
-    height: calc(65vh - 100px);
-    overflow-x: hidden;
+    position: absolute;
+    width: 100%;
     margin: 0;
     padding: 4px 10px;
+    max-height:160px;
+    overflow-y:auto;
+    overflow-x:hidden;
     list-style: none;
     border-right: 1px solid color('_others', 'dark');
     border-bottom: 1px solid color('_others', 'dark');
     border-left: 1px solid color('_others', 'dark');
     border-radius: 0 0 5px 5px;
+    z-index: 9999;
+    background-color: color('_others', 'light');
 
     label {
       display: flex;
