@@ -83,17 +83,16 @@
   }
 
   ul {
-    position: absolute;
-    width: 100%;
+    display: block;
+    height: calc(65vh - 100px);
+    overflow-x: hidden;
     margin: 0;
     padding: 4px 10px;
     list-style: none;
     border-right: 1px solid color('_others', 'dark');
     border-bottom: 1px solid color('_others', 'dark');
     border-left: 1px solid color('_others', 'dark');
-    border-radius: 0 0 16px 16px;
-    z-index: 9;
-    background-color: color('_others', 'light');
+    border-radius: 0 0 5px 5px;
 
     label {
       display: flex;
@@ -145,7 +144,7 @@
       border-right: 2px solid color('_others', 'dark');
       border-bottom: 2px solid color('_others', 'dark');
       border-left: 2px solid color('_others', 'dark');
-      border-radius: 0 0 16px 16px;
+      border-radius: 0 0 5px 5px;
 
       label {
         display: flex;
