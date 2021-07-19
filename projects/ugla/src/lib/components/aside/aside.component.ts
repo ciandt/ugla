@@ -16,10 +16,10 @@ export class AsideComponent implements OnInit, AfterViewInit {
   @Input() iconLogout = 'power_settings_new';
   @Input() iconLinks = ['keyboard_arrow_right', 'keyboard_arrow_down', 'keyboard_arrow_up'];
   @Input() altPhoto = 'foto';
+  @Input() show = true;
 
   @Output() logoutAction = new EventEmitter<any>();
 
-  toggleMenu = true;
 
   constructor(private el: ElementRef, private asideService: AsideService) { }
 
@@ -84,7 +84,7 @@ export class AsideComponent implements OnInit, AfterViewInit {
   }
 
   toggle() {
-    this.toggleMenu = !this.toggleMenu;
+    this.show = !this.show;
     this.resizeContent();
     this.asideService.toggled();
   }
@@ -93,7 +93,7 @@ export class AsideComponent implements OnInit, AfterViewInit {
     const sections = document.getElementsByClassName('has-aside');
     const breadcrumb = document.getElementsByClassName('breadcrumb');
 
-    if (!this.toggleMenu) {
+    if (!this.show) {
       this.toggleClass(sections, true);
       this.toggleClass(breadcrumb, true);
     } else {
