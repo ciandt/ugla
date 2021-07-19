@@ -1,16 +1,16 @@
 <div class="listbox" [ngClass]="stylized ? 'stylized ' + theme : theme">
   <label [for]="select.id" [ngClass]="{'required': required, 'invalid': invalid, 'disabled': disabled}">{{ label }}</label>
-  <i class="material-icons" aria-hidden="true" [ngClass]="{'readonly': readonly, 'disabled': disabled}">keyboard_arrow_down</i>
 
   <div class="select" [ngClass]="{'opened': opened, 'disabled': disabled}" (click)="open(disabled)">
     <span [ngClass]="{'required': required, 'invalid': invalid}">{{ label }}</span>
+    <i class="material-icons" aria-hidden="true" [ngClass]="{'readonly': readonly, 'disabled': disabled}">keyboard_arrow_down</i>
   </div>
 
   <ul *ngIf="opened">
     <li *ngFor="let op of select.options; let i = index">
       <label [for]="select.name +'-'+ i" [ngClass]="{'disabled': op.disabled}">
-        {{ op.description }}
         <input type="checkbox" [checked]="op.checked" (change)="check($event)" [value]="op.description" [name]="select.name" [id]="select.name +'-'+ i" [disabled]="op.disabled">
+        {{ op.description }}
       </label>
     </li>
   </ul>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, ViewChild, ElementRef, Type } from '@angular/core';
 import { Form } from '../../enum';
 import { Select, Options } from '../../models';
 import { UglaService } from '../../ugla.service';
@@ -17,14 +17,14 @@ export class ListboxComponent implements OnInit {
   @Input() stylized = false;
   @Input() disabled = false;
 
-	@Output() selected = new EventEmitter<Options>();
+  @Output() selected = new EventEmitter<Options>();
 
 	invalid = false;
 	originalMessage: string;
 	theme: string;
 	current: string;
 
-	constructor(ugla: UglaService) {
+	constructor(ugla: UglaService, private el: ElementRef) {
 		this.theme = ugla.theme;
 	}
 

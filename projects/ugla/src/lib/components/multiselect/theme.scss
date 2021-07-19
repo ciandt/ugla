@@ -100,9 +100,13 @@
 
     label {
       display: flex;
-      justify-content: space-between;
       color: color('_others', 'dark');
       cursor: pointer;
+      align-items: center;
+
+      input {
+        margin-right: 5px;
+      }
 
       &.disabled {
         color: color('_others', 'disabled');
@@ -152,7 +156,6 @@
 
       label {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         color: color('_others', 'dark');
         cursor: pointer;

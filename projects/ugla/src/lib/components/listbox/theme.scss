@@ -1,6 +1,8 @@
 .listbox {
   position: relative;
   margin-bottom: 1rem;
+  background-color: color('_others', 'light');
+  border-radius: .5rem;
 
   label {
     position: absolute;
@@ -35,6 +37,7 @@
     top: 0.9rem;
     right: 0.5rem;
     font-size: 1.5rem;
+    z-index: 1;
 
     &.readonly {
       display: none;
@@ -50,15 +53,17 @@
   }
 
   select {
+    position: relative;
     -webkit-appearance: none;
     width: 100%;
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: color('_others', 'light');
     font-size: 1rem;
     color: color('_others', 'dark');
+    background-color: transparent;
     cursor: pointer;
     border: 1px solid color('_others', 'dark');
+    z-index: 2;
 
     &.readonly {
       pointer-events: none;
@@ -131,6 +136,8 @@
 
 .listbox {
   &.stylized {
+    border-radius: 16px;
+
     select {
       padding: 4px 30px 4px 10px;
       border: 2px solid color('_others', 'dark');
