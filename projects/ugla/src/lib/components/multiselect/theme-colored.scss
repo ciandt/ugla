@@ -47,6 +47,15 @@
         ul {
           border-color: color(_#{$theme}, 'medium');
 
+          &::-webkit-scrollbar {
+            width: 4px;
+            border-radius: 8px;
+
+            &-thumb {
+              background-color: color(_#{$theme}, 'medium');
+            }
+          }
+
           label:hover:not(.disabled) {
             color: color(_#{$theme}, 'medium');
           }
