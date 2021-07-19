@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import { Menu } from './../../models/menu';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -6,15 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
 })
-export class BreadcrumbComponent implements OnInit {
+export class BreadcrumbComponent {
 
   @Input() menu: Menu;
   @Input() title: string;
   @Input() logo: string;
+  @Input() ngClass: NgClass;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

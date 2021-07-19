@@ -1,4 +1,4 @@
-<nav class="breadcrumb">
+<nav class="breadcrumb" [ngClass]="ngClass">
   <div class="title" *ngIf="logo || title">
     <img *ngIf="logo" [src]="logo" [alt]="title">
     <h2 *ngIf="title">{{ title }}</h2>

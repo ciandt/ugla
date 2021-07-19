@@ -36,7 +36,6 @@ export class AsideComponent implements OnInit, AfterViewInit {
         });
       }
     });
-    this.resizeContent();
   }
 
   ngAfterViewInit() {
