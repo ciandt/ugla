@@ -31,6 +31,7 @@ export class AsideComponent implements OnInit, AfterViewInit {
         item.submenu.forEach(subitem => {
           if (subitem.url === path) {
             item.open = true;
+            subitem.open = true;
           }
         });
       }
