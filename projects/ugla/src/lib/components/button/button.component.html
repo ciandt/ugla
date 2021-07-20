@@ -1,3 +1,10 @@
-<button [id]="id" [type]="type" [ngClass]="groupClass" [title]="title" [disabled]="disabled" tabindex="{{ disabled ? '-1' : tabindex }}" (click)="clickedButton($event)">
+<button [id]="id"
+        [type]="type"
+        [ngClass]="groupClass"
+        [title]="title"
+        [disabled]="disabled"
+        tabindex="{{ disabled ? '-1' : tabindex }}"
+        (click)="clickedButton($event)"
+        [uglTooltip]="{placement: tooltip}">
   <ng-content></ng-content>
 </button>

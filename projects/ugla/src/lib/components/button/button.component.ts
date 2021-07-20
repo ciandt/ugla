@@ -96,6 +96,8 @@ export class ButtonComponent implements OnInit, OnChanges {
 
   @Input() rotated = false;
 
+  @Input() tooltip = 'top';
+
   /**
    * Function to action
    */
