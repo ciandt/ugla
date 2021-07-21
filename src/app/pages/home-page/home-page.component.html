@@ -1,29 +1,11 @@
-<ugl-header
-	[header]="header"
-	(logoutAction)="logout($event)"
-	[logoutText]="'Logout now'"
-	*ngIf="isAutenticated"
->
-	<div uglGrid [grid]="true" [col]="2">
-		<ugl-button
-			[id]="'test'"
-			[size]="'small'"
-			[color]="'purple'"
-			[style]="'fill'"
-			[wave]="true"
-			[title]="'Ocultar Menu'"
-			[type]="'button'"
-			(action)="hideMenu()"
-			>Ocultar Menu</ugl-button
-		>
-	</div>
-</ugl-header>
+<ugl-aside
+  [menu]="aside"
+  [people]="people"
+  [show]="false"
+></ugl-aside>
 
-<section class="has-header">
-  <div class="container container--central container--white">
-    <div style="display: grid; grid-template-columns: repeat(5, 1fr);">
-      <ugl-listbox [select]="select" [label]="'Teste'" [stylized]="true"></ugl-listbox>
-      <ugl-listbox [select]="select" [label]="'Teste'" [stylized]="false"></ugl-listbox>
-    </div>
-  </div>
+<section style="background-color: white; height: 300px; padding: 30px" class="has-aside breadcrumb">
+    <ugl-button [tooltip]="'right'" [color]="'gray'" [id]="'btn-remove'" [title]="'Remove Link'"  [type]="'button'">
+      <span class="material-icons close-btn">close</span> Teste
+    </ugl-button>
 </section>

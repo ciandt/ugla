@@ -24,6 +24,7 @@
               [routerLinkActive]="'active'"
               [routerLinkActiveOptions]="{exact: true}"
               class="gtm-menu-subitem"
+              (click)="toggle()"
               [id]="'aside-submenu-' + jx">{{ subitem.description }}<span class="material-icons">{{ subitem.icon || getIcon(idx, jx) }}</span></a>
         </li>
       </ul>

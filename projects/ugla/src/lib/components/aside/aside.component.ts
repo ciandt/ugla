@@ -20,7 +20,6 @@ export class AsideComponent implements OnInit, AfterViewInit {
 
   @Output() logoutAction = new EventEmitter<any>();
 
-
   constructor(private el: ElementRef, private asideService: AsideService) { }
 
   ngOnInit() {

@@ -47,7 +47,7 @@ export class HomePageComponent implements OnInit {
 
 	menu = new Menu([new MenuItem('Home', '/', true)]);
   aside = [
-    new AsideItem('Item 1', '/teste', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
+    new AsideItem('Item 1', '/teste', true, false, null, [new AsideItem('teste', '/home'), new AsideItem('teste', '/home'), new AsideItem('teste', '/home'), new AsideItem('teste', '/home')]),
     new AsideItem('Item 2', '/teste2', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
     new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
     new AsideItem('Item 3', '/teste3', true, false, null, [new AsideItem('teste', '/1'), new AsideItem('teste', '/2'), new AsideItem('teste', '/3'), new AsideItem('teste', '/4')]),
