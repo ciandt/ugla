@@ -16,6 +16,15 @@
             border-color: color('_others', 'disabled');
           }
         }
+
+        &::-webkit-scrollbar {
+          width: 4px;
+          border-radius: 8px;
+
+          &-thumb {
+            background-color: color(_#{$theme}, 'medium');
+          }
+        }
       }
 
       &.stylized {

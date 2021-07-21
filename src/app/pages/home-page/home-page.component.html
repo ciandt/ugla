@@ -8,4 +8,7 @@
     <ugl-button [tooltip]="'right'" [color]="'gray'" [id]="'btn-remove'" [title]="'Remove Link'"  [type]="'button'">
       <span class="material-icons close-btn">close</span> Teste
     </ugl-button>
+
+    <ugl-listbox [select]="select" [label]="'Currency'" [stylized]="false"
+      (selected)="selectItem($event)"></ugl-listbox>
 </section>
